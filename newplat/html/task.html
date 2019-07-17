@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>新投票平台</title>
+		<link rel="stylesheet" href="../bootstrapv3/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/public.css" />
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/home.css" />
+		<link rel="stylesheet" type="text/css" href="../css/zzlist.css" />
+	</head>
+
+	<body>
+		<!--左侧-->
+		<div class="index-menuleft hidden-xs">
+			<a class="logo-left" href="index.html">
+				<img src="../img/newlogo.png" />
+			</a>
+			<a class="logo-left mt5" href="home.html" title='首页'>
+				<span class="fa fa-home lefticon"></span>
+			</a>
+			<a class="logo-left mt5" href="#" title='退出'>
+				<span class="fa fa-power-off lefticon"></span>
+			</a>
+		</div>
+		<!--右侧-->
+		<div class="index-menurightbtn">
+			<a href="javascript:void(0);" onclick="openNav()">
+				<span class="fa fa-bars" style="font-weight: 900;"></span>
+			</a>
+		</div>
+		<div id="sidenav" class="side-nav" style="right: -240px;">
+			<div class="close-menurightbtn">
+				<a href="javascript:void(0);" onclick="closeNav()">
+					<span class="fa fa-close"></span>
+				</a>
+			</div>
+			<ul class="nav home-rightnav">
+				<li>
+					<div class="user-view">
+						<div class="home-rightmenu-bg">
+							<img src="../img/bg-user.jpg" />
+						</div>
+						<img class="user-avator" src="http://www.17sucai.com/preview/1424582/2018-10-21/Flyors/images/profile.png" />
+						<span class="white-text username">John Roe</span>
+					</div>
+				</li>
+				<li class="nav-item active">
+					<a href="home.html">
+						<img src="../img/home.png" />
+						<p>首页</p>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						<img src="../img/task2.png" />
+						<p>任务中心</p>
+						<span class="caret"></span>
+					</a>
+					<div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+						<ul class="nav second-nav">
+							<li class="active">
+								<a href="task.html">
+									<span class="link-collapse">任务列表</span>
+								</a>
+							</li>
+							<li>
+								<a href="list.html">
+									<span class="link-collapse">自助列表</span>
+								</a>
+							</li>
+							<li>
+								<a href="mptask.html">
+									<span class="link-collapse">mp任务</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="zzlist.html">
+									<span class="link-collapse">三方自助</span>
+								</a>
+							</li>
+							<li>
+								<a href="mpcontorl.html">
+									<span class="link-collapse">MP监控</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+						<img src="../img/caiwu.png" />
+						<p>财务中心</p>
+						<span class="caret"></span>
+					</a>
+					<div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+						<ul class="nav second-nav">
+							<li class="active">
+								<a href="payin.html">
+									<span class="link-collapse">在线充值</span>
+								</a>
+							</li>
+							<li>
+								<a href="pay.html">
+									<span class="link-collapse">充值记录</span>
+								</a>
+							</li>
+							<li>
+								<a href="paylist.html">
+									<span class="link-collapse">财务明细</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a href="mycenter.html">
+						<img src="../img/user.png" />
+						<p>个人中心</p>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="fankui.html">
+						<img src="../img/fankui.png" />
+						<p>关于我们</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!--中间内容-->
+		<div class="home-contentright" style="background-color: whie;height: auto;">
+			<div class="hometwo-top height-200">
+				<div class="homebannerbox">
+					<img src="../img/banner.jpg" class="height-200">
+					<div class="homecarousel-caption text-left">
+						<p>新投票<span> &nbsp;&nbsp;toupiao</span></p>
+						<p class="text-white">专业微信投票制作平台</p>
+					</div>
+				</div>
+			</div>
+			<div class="hometwo-mainbox" style="background-color: white;">
+				<div class="mycontainer">
+					<div class="homebox-top">
+						<p>任务列表</p>
+						<div class="line"></div>
+					</div>
+					<div class="taskhtml-box">
+						<div class="taskhtml-header">
+							<div class="">
+								<form class="form-inline mytaskform">
+									<div class="form-group mr-15 mb-15">
+										<label for="" class="sr-only"></label>
+										<select class="form-control" name="type" onchange="subform(this);">
+											<option value="all">所有状态</option>
+											<option value="take">请下单</option>
+											<option value="run">执行中</option>
+											<option value="success">执行成功</option>
+											<option value="end">已结算</option>
+											<option value="task">任务名称</option>
+											<option value="name">选手名称</option>
+											<option value="url">任务链接</option>
+										</select>
+									</div>
+									<div class="form-group mr-15 mb-15">
+										<label class="sr-only" for="taskname"></label>
+										<input type="text" class="form-control" name="name" id="taskname" placeholder="任务名称">
+									</div>
+									<div class="form-group mr-15 mb-15">
+										<label class="sr-only" for="taskname"></label>
+										<input type="date" class="form-control" name="time" value="" id="datetimepicker" data-date-format="yyyy-mm-dd" placeholder="请选择时间">
+									</div>
+									<a href="" class="btn mybtn mb-15"><i class="fa fa-send"></i>&nbsp;&nbsp;提交</a>
+								</form>
+								
+								<div class="mydatatableheader">
+									<div class="hh-header"></div>
+									<span style="padding-left: 15px;">任务表</span>
+								</div>
+								<table id="users" class="table table-bordered mydataTable">
+									<thead>
+										<tr role="row">
+											<th class="sorting_asc" tabindex="0" rowspan="1" colspan="1">单号</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">任务名称</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">选手名称</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">选手链接</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">总需求量/隐藏</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">已完成</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">限速/60秒</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">状态</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">发布时间</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">终止时间</th>
+											<th class="sorting beizhu" tabindex="0" rowspan="1" colspan="1">备注</th>
+											<th class="sorting jianjie" tabindex="0" rowspan="1" colspan="1">简介</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">单价</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">操作</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="odd">
+											<td>
+												<span class="tbody_header">单号:</span>
+												<span>3000066</span>
+											</td>
+											<td>
+												<span class="tbody_header">任务名称:</span>
+												<span>中国好声音金华赛区复赛人气王评选</span>
+											</td>
+											<td>
+												<span class="tbody_header">选手名称:</span>
+												<span>18.郭艺蕾</span>
+											</td>
+											<td>
+												<span class="tbody_header">选手链接:</span>
+												<a class="mytask-a" href="http://wxtp100001.zhifouyun.cn/app/index.php?i=2&amp;c=entry&amp;rid=18&amp;do=index&amp;m=tyzm_diamondvote" target="_blank">点击打开</a>
+											</td>
+											<td>
+												<span class="tbody_header">总需求量/隐藏:</span>
+												<span>614/0</span>
+											</td>
+											<td>
+												<span class="tbody_header">已完成:</span>
+												<span>604</span>
+											</td>
+											<td>
+												<span class="tbody_header">限速/60秒:</span>
+												<span>0</span>
+											</td>
+											<td class="task-statue">
+												<span class="tbody_header">状态:</span>
+												<span class="table-status">已结算</span>
+											</td>
+											<td>
+												<span class="tbody_header">发布时间:</span>
+												<span>2019-05-08 18:15:21</span>
+											</td>
+											<td>
+												<span class="tbody_header">结束时间:</span>
+												<span>0000-00-00 00:00:00</span>
+											</td>
+
+											<td class="beizhu">
+												<span class="tbody_header">备注:</span>
+												<span>活动已经结束:异常自动停止</span>
+											</td>
+											<td class="jianjie">
+												<span class="tbody_header">简介:</span>
+												<span></span>
+											</td>
+											<td>
+												<span class="tbody_header">单价:</span>
+												<span style="color: red;">0.2</span>
+											</td>
+											<td style="min-width: 90px;">
+												<span class="tbody_header">操作:</span>
+												<div class="btn-group dropup operatingone">
+													<button type="button" class="btn btn-success dropdown-toggle btn-operation" data-toggle="dropdown" aria-expanded="false"> 
+														<span class="operatename">操作</span>
+														<span class="caret"></span>
+													</button>
+													<div class="dropdown-menu">
+														<div class="dropdown-divider"></div>
+														<a class="dropdown-item" href="#" onclick="taskzjxg(this,3000066)">
+															<span class="fa fa-italic" style="display: inline; margin-right: 8px;margin-left: 8px;"></span>发布
+														</a>
+														<a class="dropdown-item" href="#" onclick="taskzjxg(this,3000066)">
+															<span class="fa fa-italic" style="display: inline; margin-right: 8px;margin-left: 8px;"></span> 追加修改
+														</a>
+
+														<div class="dropdown-divider"></div>
+														<a class="dropdown-item" href="#" onclick="taskcxfb(this,3000066)">
+															<span class="fa fa-reply" style="display: inline;margin-right: 8px;margin-left: 8px;"></span> 重新发布
+														</a>
+
+														<div class="dropdown-divider"></div>
+														<a class="dropdown-item" href="#" onclick="taskstop(3000066)">
+															<span class="fa fa-power-off" style="display: inline;margin-right: 10px;margin-left: 10px;"></span> 终止任务
+														</a>
+														<div class="dropdown-divider"></div>
+														<a class="dropdown-item" href="#" onclick="stoptask(3000066)">
+															<span class="fa fa-trash" style="display: inline;margin-right: 8px;margin-left: 8px;"></span> 取消审核
+														</a>
+														<div class="dropdown-divider"></div>
+													</div>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<div class="footerbox">
+					<p>网站主要提供以下服务：自助下单，mp投票，mp监控，微信投票，网络投票等。</p>
+					<p>版权所有：投票网 &nbsp;&nbsp;&nbsp;&nbsp; 如果问题请联系<span style="font-weight: 600;">客服：3688552445</span></p>
+				</div>
+			</div>
+		</div>
+		<!--发布模态框-->
+		<div class="task-fabu-content" style="display: none;">
+			<form style="padding: 20px;">
+				<div class="form-group">
+					<h4 class="yytask-name">任务名称标题：中国好声音金华赛区复赛人气王评选</h4> </div>
+				<p class="yytask-link">http://wxtp100001.zhifouyun.cn/app/index.php?i=2&amp;c=entry&amp;rid=18&amp;do=index&amp;m=tyzm_diamondvote</p>
+				<div class="form-group"> <label for="danjia">单价:</label> <input type="number" class="form-control" id="danjia" value="0.040" disabled="disabled" placeholder=""> </div>
+				<div class="form-group"> <label for="num">下单数量:</label> <input type="zj-num" class="form-control" name="num" id="zj-num" value="" placeholder=""></div>
+				<div class="form-group"> <label for="xs-num">限速:</label> <input type="number" class="form-control" name="xzno" id="xs-num" value="0" placeholder=""> </div>
+			</form>
+		</div>
+		<!--追加模态框-->
+		<div class="task-zjxg-content" style="display: none;">
+			<form style="padding: 20px;">
+				<div class="form-group">
+					<h4 class="yytask-name">任务名称标题：中国好声音金华赛区复赛人气王评选</h4> </div>
+				<p class="yytask-link">http://wxtp100001.zhifouyun.cn/app/index.php?i=2&amp;c=entry&amp;rid=18&amp;do=index&amp;m=tyzm_diamondvote</p>
+				<div class="form-group"> <label for="danjia">单价:</label> <input type="number" class="form-control" id="danjia" value="0.040" disabled="disabled" placeholder=""> </div>
+				<div class="form-group"> <label for="num">追加数量:</label> <input type="zj-num" class="form-control" name="num" id="zj-num" value="" placeholder=""> </div>
+				<div class="form-group"> <label for="xs-num">限速每分钟:</label> <input type="number" class="form-control" name="xzno" id="xs-num" value="0" placeholder=""> </div>
+				<div class="form-group"> <label for="xs-num">简介:</label> <textarea class="form-control" name="jianjie" rows="3"></textarea> </div>
+				<div class="form-group"> <label for="xs-num">备注:</label> <textarea class="form-control" name="beizhu" rows="3"></textarea> </div>
+			</form>
+		</div>
+		<!--重发模态框-->
+		<div class="task-cxfb-content" style="display: none;">
+			<form style="padding: 20px">
+				<div class="form-group">
+					<h4 class="yytask-name">任务名称标题：中国好声音金华赛区复赛人气王评选</h4> </div>
+				<p class="yytask-link">http://wxtp100001.zhifouyun.cn/app/index.php?i=2&amp;c=entry&amp;rid=18&amp;do=index&amp;m=tyzm_diamondvote</p>
+				<div class="form-group"> <label for="fb-num">发布数量:</label> <input type="number" class="form-control" name="num" id="fb-num" value="" placeholder=""> </div>
+				<div class="form-group"> <label for="xs-num">限速每分钟:</label> <input type="number" name="xzno" class="form-control" id="xs-num" value="0" placeholder=""> </div>
+				<div class="form-group"> <label for="xs-num">简介:</label> <textarea class="form-control" name="jianjie" rows="3"></textarea> </div>
+				<div class="form-group"> <label for="xs-num">备注:</label> <textarea name="beizhu" class="form-control" rows="3"></textarea> </div>
+			</form>
+		</div>
+
+
+		<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrapv3/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/global.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			let width;
+			$(function() {
+				width = $("html").width();
+			})
+
+			function taskzjxg(el, index) {
+				console.log("123");
+				let areawidth, areaheight;
+				if(width <= 767) {
+					areawidth = '100%';
+					areaheight = '100%';
+				} else {
+					areawidth = '65%';
+					areaheight = '85%';
+				}
+				layer.open({
+					type: 1,
+					title: "追加修改",
+					btn: ['确定', '取消'],
+					area: [areawidth, areaheight],
+					content: $(".task-zjxg-content")
+				}, function() {
+					layer.msg("退出成功", {
+						icon: 1
+					});
+				}, function() {
+					layer.closeAll();
+				});
+			}
+
+			function taskcxfb(el, index) {
+				let areawidth, areaheight;
+				if(width <= 767) {
+					areawidth = '100%';
+					areaheight = '100%';
+				} else {
+					areawidth = '65%';
+					areaheight = '85%';
+				}
+				layer.open({
+					type: 1,
+					title: "重新发布",
+					btn: ['确定', '取消'],
+					area: [areawidth, areaheight],
+					content: $(".task-cxfb-content")
+				}, function() {
+					layer.msg("退出成功", {
+						icon: 1
+					});
+				}, function() {
+					layer.closeAll();
+				});
+			}
+
+			function taskstop(el, index) {
+				layer.confirm('终止任务？', {
+					btn: ['确定', '取消'] //按钮
+				}, function() {
+					layer.msg("终止成功", {
+						icon: 1
+					});
+				}, function() {
+					layer.closeAll();
+				});
+			}
+			//			function showtask(index) {
+			//				console.log('1');
+			//				let areawidth, areaheight;
+			//				if(width <= 767) {
+			//					areawidth = '100%';
+			//					areaheight = '100%';
+			//				} else {
+			//					areawidth = '65%';
+			//					areaheight = '85%';
+			//				}
+			//				layer.open({
+			//					type: 1,
+			//					title: "人工审核",
+			//					btn: ['确定', '取消'],
+			//					area: [areawidth, areaheight],
+			//					content: $(".zztaskcontent")
+			//				}, function() {
+			//					layer.msg('退出成功', {
+			//						icon: 1
+			//					});
+			//				}, function() {
+			//					layer.closeAll();
+			//				});
+			//			}
+		</script>
+	</body>
+
+</html>

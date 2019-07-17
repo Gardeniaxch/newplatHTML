@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>新投票平台</title>
+		<link rel="stylesheet" href="../bootstrapv3/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/public.css" />
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/home.css" />
+	</head>
+
+	<body>
+		<!--左侧-->
+		<div class="index-menuleft hidden-xs">
+			<a class="logo-left" href="index.html">
+				<img src="../img/newlogo.png" />
+			</a>
+			<a class="logo-left mt5" href="home.html" title='首页'>
+				<span class="fa fa-home lefticon"></span>
+			</a>
+			<a class="logo-left mt5" href="#" title='退出'>
+				<span class="fa fa-power-off lefticon"></span>
+			</a>
+		</div>
+		<!--右侧-->
+		<div class="index-menurightbtn">
+			<a href="javascript:void(0);" onclick="openNav()">
+				<span class="fa fa-bars" style="font-weight: 900;"></span>
+			</a>
+		</div>
+		<div id="sidenav" class="side-nav" style="right: -240px;">
+			<div class="close-menurightbtn">
+				<a href="javascript:void(0);" onclick="closeNav()">
+					<span class="fa fa-close"></span>
+				</a>
+			</div>
+			<ul class="nav home-rightnav">
+				<li>
+					<div class="user-view">
+						<div class="home-rightmenu-bg">
+							<img src="../img/bg-user.jpg" />
+						</div>
+						<img class="user-avator" src="http://www.17sucai.com/preview/1424582/2018-10-21/Flyors/images/profile.png" />
+						<span class="white-text username">John Roe</span>
+					</div>
+				</li>
+				<li class="nav-item active">
+					<a href="home.html">
+						<img src="../img/home.png" />
+						<p>首页</p>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						<img src="../img/task2.png" />
+						<p>任务中心</p>
+						<span class="caret"></span>
+					</a>
+					<div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+						<ul class="nav second-nav">
+							<li>
+								<a href="task.html">
+									<span class="link-collapse">任务列表</span>
+								</a>
+							</li>
+							<li>
+								<a href="list.html">
+									<span class="link-collapse">自助列表</span>
+								</a>
+							</li>
+							<li class="active">
+								<a href="mptask.html">
+									<span class="link-collapse">mp任务</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="zzlist.html">
+									<span class="link-collapse">三方自助</span>
+								</a>
+							</li>
+							<li>
+								<a href="mpcontorl.html">
+									<span class="link-collapse">MP监控</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+						<img src="../img/caiwu.png" />
+						<p>财务中心</p>
+						<span class="caret"></span>
+					</a>
+					<div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+						<ul class="nav second-nav">
+							<li class="active">
+								<a href="payin.html">
+									<span class="link-collapse">在线充值</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="pay.html">
+									<span class="link-collapse">充值记录</span>
+								</a>
+							</li>
+							<li>
+								<a href="paylist.html">
+									<span class="link-collapse">财务明细</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a href="mycenter.html">
+						<img src="../img/user.png" />
+						<p>个人中心</p>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="fankui.html">
+						<img src="../img/fankui.png" />
+						<p>关于我们</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!--中间内容-->
+		<div class="home-contentright" style="background-color: #F6F8FC;">
+			<div class="hometwo-top">
+				<div class="homebannerbox">
+					<img src="../img/banner.jpg">
+					<div class="homecarousel-caption text-left">
+						<p>新投票<span> &nbsp;&nbsp;toupiao</span></p>
+						<p class="text-white">专业微信投票制作平台</p>
+						<a href="zzlist.html" class="btn"><i class="fa fa-rocket"></i>&nbsp; 进入投票</a>
+					</div>
+				</div>
+			</div>
+			<div class="hometwo-mainbox" style="background-color: #F6F8FC;">
+				<div class="mycontainer">
+					<div class="homebox-top">
+						<p>MP投票任务</p>
+						<div class="line"></div>
+					</div>
+					<div class="mptask">
+						<form class="mptaskform">
+							<div class="form-group">
+								<label for="mplink"><span class="redcolor">*</span>&nbsp;链接:</label>
+								<textarea name="mplink" class="form-control" rows="5" cols="20" placeholder="请输入活动链接"></textarea>
+							</div>
+							<div class="form-group">
+								<label for="mpxx"><span class="redcolor">*</span>&nbsp;投票选项: （请认真选择要投票的项）</label>
+								<!--<input type="text" class="form-control" id="mpxx" placeholder="Email">-->
+								<div class="input-group">
+									请
+									<a>点击这里</a>重新获取</div>
+							</div>
+							<div class="form-group">
+								<label for="mpnum">限速（每60s跑多少票，0为不限速）:</label>
+								<input type="text" class="form-control" id="mpxs" placeholder="0">
+							</div>
+							<div class="form-group">
+								<label for="mpnum"><span class="redcolor">*</span>&nbsp;数量:</label>
+								<input type="text" class="form-control" id="mpnum" placeholder="0">
+							</div>
+							<div class="mpmo-btnbox">
+								<a href="" class="btn"><i class="fa fa-send"></i>&nbsp;&nbsp;提交</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<div class="footerbox">
+					<p>网站主要提供以下服务：自助下单，mp投票，mp监控，微信投票，网络投票等。</p>
+					<p>版权所有：投票网 &nbsp;&nbsp;&nbsp;&nbsp; 如果问题请联系<span style="font-weight: 600;">客服：3688552445</span></p>
+				</div>
+			</div>
+		</div>
+
+		<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrapv3/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/global.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

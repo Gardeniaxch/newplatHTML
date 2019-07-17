@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>新投票平台</title>
+		<link rel="stylesheet" href="../bootstrapv3/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/public.css" />
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/home.css" />
+	</head>
+
+	<body>
+		<!--左侧-->
+		<div class="index-menuleft hidden-xs">
+			<a class="logo-left" href="index.html">
+				<img src="../img/newlogo.png" />
+			</a>
+			<a class="logo-left mt5" href="home.html" title='首页'>
+				<span class="fa fa-home lefticon"></span>
+			</a>
+			<a class="logo-left mt5" href="#" title='退出' onclick="logout()">
+				<span class="fa fa-power-off lefticon"></span>
+			</a>
+		</div>
+		<!--右侧-->
+		<div class="index-menurightbtn">
+			<a href="javascript:void(0);" onclick="openNav()">
+				<span class="fa fa-bars" style="font-weight: 900;"></span>
+			</a>
+		</div>
+		<div id="sidenav" class="side-nav" style="right: -240px;">
+			<div class="close-menurightbtn">
+				<a href="javascript:void(0);" onclick="closeNav()">
+					<span class="fa fa-close"></span>
+				</a>
+			</div>
+			<ul class="nav home-rightnav">
+				<li>
+					<div class="user-view">
+						<div class="home-rightmenu-bg">
+							<img src="../img/bg-user.jpg" />
+						</div>
+						<img class="user-avator" src="http://www.17sucai.com/preview/1424582/2018-10-21/Flyors/images/profile.png" />
+						<span class="white-text username">John Roe</span>
+					</div>
+				</li>
+				<li class="nav-item active">
+					<a href="home.html">
+						<img src="../img/home.png" />
+						<p>首页</p>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						<img src="../img/task2.png" />
+						<p>任务中心</p>
+						<span class="caret"></span>
+					</a>
+					<div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+						<ul class="nav second-nav">
+							<li>
+								<a href="task.html">
+									<span class="link-collapse">任务列表</span>
+								</a>
+							</li>
+							<li>
+								<a href="list.html">
+									<span class="link-collapse">自助列表</span>
+								</a>
+							</li>
+							<li>
+								<a href="mptask.html">
+									<span class="link-collapse">mp任务</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="zzlist.html">
+									<span class="link-collapse">三方自助</span>
+								</a>
+							</li>
+							<li>
+								<a href="mpcontorl.html">
+									<span class="link-collapse">MP监控</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+						<img src="../img/caiwu.png" />
+						<p>财务中心</p>
+						<span class="caret"></span>
+					</a>
+					<div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+						<ul class="nav second-nav">
+							<li class="active">
+								<a href="payin.html">
+									<span class="link-collapse">在线充值</span>
+								</a>
+							</li>
+							<li>
+								<a href="pay.html">
+									<span class="link-collapse">充值记录</span>
+								</a>
+							</li>
+							<li>
+								<a href="paylist.html">
+									<span class="link-collapse">财务明细</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a href="mycenter.html">
+						<img src="../img/user.png" />
+						<p>个人中心</p>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="fankui.html">
+						<img src="../img/fankui.png" />
+						<p>关于我们</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!--中间内容-->
+		<div class="home-contentright">
+			<div class="hometwo-top">
+				<div class="homebannerbox">
+					<img src="../img/banner.jpg">
+					<div class="homecarousel-caption text-left">
+						<p>新投票<span> &nbsp;&nbsp;toupiao</span></p>
+						<p class="text-white">专业微信投票制作平台</p>
+						<a href="zzlist.html" class="btn"><i class="fa fa-rocket"></i>&nbsp; 进入投票</a>
+					</div>
+				</div>
+			</div>
+			<div class="hometwo-mainbox">
+				<div class="mycontainer">
+					<div class="homebox-top">
+						<p>任务中心</p>
+						<div class="line"></div>
+					</div>
+					<div class="taskcenter-list">
+						<div class="row">
+							<div class="col-sm-3">
+								<a class="taskcenter-box">
+									<img src="../img/task8.png"/>
+									<h4>人工审核</h4>
+								</a>
+							</div>
+							
+							<div class="col-sm-3">
+								<a class="taskcenter-box">
+									<img src="../img/task7.png"/>
+									<h4>三方自助</h4>
+								</a>
+							</div>
+							<div class="col-sm-3">
+								<a class="taskcenter-box">
+									<img src="../img/task1.png"/>
+									<h4>任务列表</h4>
+								</a>
+							</div>
+							<div class="col-sm-3">
+								<a class="taskcenter-box">
+									<img src="../img/task5.png"/>
+									<h4>自助列表</h4>
+								</a>
+							</div>
+							
+							<div class="col-sm-3">
+								<a class="taskcenter-box" onclick="onshowMP();">
+									<img src="../img/task6.png"/>
+									<h4>mp监控</h4>
+								</a>
+							</div>
+							<div class="col-sm-3">
+								<a class="taskcenter-box">
+									<img src="../img/task3.png"/>
+									<h4>mp任务</h4>
+								</a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="homebox-top" style="margin-top: 30px;">
+						<p>个人账户信息</p>
+						<div class="line"></div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="hometwo-card">
+								<div class="homecard-left">
+									<img src="../img/icon1.png" />
+								</div>
+								<div class="homecard-right">
+									<h3 style="color: #F5B762;">$25000.20</h3>
+									<p>账户余额</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="hometwo-card">
+								<div class="homecard-left">
+									<img src="../img/icon2.png" />
+								</div>
+								<div class="homecard-right">
+									<h3 style="color: #64ADFA;">$12000.20</h3>
+									<p>充值总额</p>
+								</div>
+							</div>
+						</div>
+						<!--<div class="col-md-6">
+							<div class="hometwo-card">
+								<div class="homecard-left">
+									<img src="../img/icon3.png" />
+								</div>
+								<div class="homecard-right">
+									<h3 style="color: #64ADFA;">$12000.20</h3>
+									<p>投票统计</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="hometwo-card">
+								<div class="homecard-left">
+									<img src="../img/icon4.png" />
+								</div>
+								<div class="homecard-right">
+									<h3 style="color: #5AE05A;">$12000.20</h3>
+									<p>消费总额</p>
+								</div>
+							</div>
+						</div>-->
+					</div>
+					
+				</div>
+			</div>
+			
+			<div class="hometwo-mainbox newbg">
+				<div class="homebox-top" style="padding-bottom: 10px;">
+					<p style="display: flex;align-items: center;justify-content: center;"><span class="fa fa-volume-down" style="display: inline-block;margin-right: 10px; color: #FF7E00;font-size: 30px;"></span> 公告信息</p>
+				</div>
+				<p class="newbg-p"><span style="color: red;">*</span>公告将为你展示最新的消息,其中包含投票价格信息、投票排行榜、投票活动内容以及活动通知。请投票之前先仔细阅读公告信息。谢谢合作!
+				</p>
+				<!--<a href=""></a>-->
+				<div class="new_bg_btn" onclick="openSearch();">点击查看公告内容</div>
+			</div>
+			<div class="footer">
+				<div class="footerbox">
+					<p>网站主要提供以下服务：自助下单，mp投票，mp监控，微信投票，网络投票等。</p>
+					<p>版权所有：投票网 &nbsp;&nbsp;&nbsp;&nbsp; 如果问题请联系<span style="font-weight: 600;">客服：3688552445</span></p>
+				</div>
+
+			</div>
+		</div>
+
+		<div id="searchoverlay" class="gg-overlay">
+			<div class="search-close-btn">
+				<a href="javascript:void(0);" onclick="closeSearch();">×</a>
+			</div>
+			<div class="gg-content">
+				<div class="gg-header">
+					公告信息
+				</div>
+				<div class="gg-center">
+					<!--放公告内容-->
+					公告内容
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="task-mp-content" style="display: none;">
+			<!--重发模态框-->
+			<form style="padding: 20px">
+				<div class="alert alert-danger" role="alert">欢迎使用mp监控，请正确填写mp官方链接！</div>
+				<div class="form-group" style="margin-top: 20px;"> 
+					<label for="mplink"><span style="color: red;">*</span>&nbsp;官方链接:</label> 
+					<textarea id="mplink" class="form-control" name="mplink" rows="10" cols="" value="" placeholder="填写mp官方链接！" style="margin-top: 15px;"></textarea>
+				</div>
+			</form>
+		</div>
+		<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrapv3/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/global.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function logout() {
+				layer.confirm('退出登录', {
+					btn: ['确定', '取消'] //按钮
+				}, function() {
+					layer.msg("退出成功", {
+						icon: 1
+					});
+				}, function() {
+					layer.closeAll();
+				});
+
+			}
+			let width;
+			$(function() {
+				width = $("html").width();
+			})
+
+			function onshowMP(el, index) {
+				console.log("123");
+				let areawidth, areaheight;
+				if(width <= 767) {
+					areawidth = '100%';
+					areaheight = '100%';
+				} else {
+					areawidth = '65%';
+					areaheight = '85%';
+				}
+				layer.open({
+					type: 1,
+					title: "MP监控",
+					btn: ['确定', '取消'],
+					area: [areawidth, areaheight],
+					content: $(".task-mp-content")
+				}, function() {
+					layer.msg("退出成功", {
+						icon: 1
+					});
+				}, function() {
+					layer.closeAll();
+				});
+			}
+		</script>
+	</body>
+
+</html>

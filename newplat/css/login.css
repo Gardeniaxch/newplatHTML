@@ -1,0 +1,282 @@
+.login-wrapper{
+	background: url(../img/bg.jpg) center center no-repeat;
+	background-size: cover;
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	/*align-items: center;*/
+	justify-content: center;
+}
+.login-loginbox{
+	background-color: white;
+	width: 100%;
+	max-width: 500px;
+    border-radius: 10px;
+    position: absolute;
+    margin-top: 8%;
+}
+.login-innerbox{
+	position: relative;
+    top: 0;
+    opacity: 1;
+    float: left;
+    padding: 30px 20px;
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    z-index: 5;
+}
+.login-innerbox.back{
+	 transform: scale(.95); 
+    -webkit-transform: scale(.95);
+    -ms-transform: scale(.95);
+    top: -20px;
+    opacity: .8;
+    z-index: 0;
+}
+.login-innerbox:before{
+	content: "";
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    position: absolute;
+    top: -10px;
+    background: rgba(255, 255, 255, .6);
+    left: 0;
+    transform: scale(.95);
+    -webkit-transform: scale(.95);
+    -ms-transform: scale(.95);
+    z-index: -1;
+}
+.login-toptile{
+	margin: 1em 0;
+	width: 100%;
+	padding-left: 20px;
+	color: #07A0FD;
+	font-size: 34px;
+	letter-spacing: 2px;
+	font-weight: 700;
+	position: relative;
+}
+.login-toptile:before{
+	position: absolute;
+	content: "";
+	width: 5px;
+	height: 100%;
+	background-color: #07A0FD;
+	top: 0;
+	left: -20px;
+}
+.overbox .login-toptile:before{
+	position: absolute;
+	content: "";
+	width: 5px;
+	height: 100%;
+	background-color: white;
+	top: 0;
+	left: -20px;
+}
+.login-inputbox{
+	width: 100%;
+	margin-top: 1em;
+}
+.login-input{
+	margin-bottom: 20px;
+}
+.login-input label{
+	font-size: 16px;
+	font-weight: 100;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+.login-input input{
+	border: 0;
+	border-radius: 0;
+	border-bottom: 1px solid #E5E5E5;
+	height: 40px;
+	padding: 6px 20px;
+	box-shadow: none;
+}
+.login-input input:focus{
+	outline: none;
+}
+.input-buttom,.reg-buttom{
+	width: 100%;
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+
+.input-buttom button{
+	width: 100%;
+	padding: 15px ;
+	background-color: white;
+	border: 3px solid rgba(0, 0, 0, 0.1);
+	font-size: 16px;
+	font-weight: 600;
+	color: rgba(0, 0, 0, 0.2);
+}
+.input-buttom button:hover,.input-buttom button:focus{
+	border: 3px solid #07A0FD;
+	color: #07A0FD;
+	outline: none;
+}
+
+.reg-buttom .reg-buttomsubmit{
+	width: 100%;
+	padding: 15px ;
+	background-color: white;
+	font-size: 16px;
+	font-weight: 600;
+	color: #07A0FD;
+	border: 0;
+	border-radius:10px ;
+}
+.overbox{
+	width: 100%;
+	/*height: 100%;*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: inherit;
+	border-radius: 10px;
+	padding: 30px 20px;
+}
+.material-button,.alt-2{
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background-color: #07A0FD;
+	position: absolute;
+	top: 45px;
+	right: -40px;
+	cursor: pointer;
+	z-index: 100;
+	transform: translate(0%, 0%);
+    -webkit-transform: translate(0%, 0%);
+    -ms-transform: translate(0%, 0%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+.minmaterial-button{
+	background-color: white;
+	right: 0px;
+	border-radius: 0;
+	    text-align: center;
+    line-height: 80px;
+    font-size: 16px;
+}
+.minmaterial-button span.register{
+	color: #07A0FD!important;
+}
+.alt-2.active{
+	top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%) rotate(0deg);
+    -webkit-transform: translate(50%, -50%) rotate(0deg);
+    -ms-transform: translate(50%, -50%) rotate(0deg);
+}
+    
+
+.overbox .login-toptile{
+	display: none;
+	width: 80%;
+	z-index: 111;
+    position: relative;
+    color: #fff !important;
+    display: none;
+    margin-top: 1em;
+}
+.overbox .login-inputbox{
+	display: none;
+	z-index: 111;
+    position: relative;
+    color: #fff !important;
+}
+.overbox .login-inputbox .login-input input{ 
+	 background-color: transparent;
+	 outline: none;
+	 color: white;
+	 display: inline-block;
+     width: 100%;
+     padding: 6px 20px;
+}
+.overbox .login-inputbox .login-input input::-webkit-input-placeholder{
+	color: rgba(255,255,255,0.8);	
+}
+.overbox .login-inputbox .login-input input::-moz-placeholder{
+	color: rgba(255,255,255,0.8);	
+}
+.overbox .login-inputbox .login-input input::-moz-placeholder{
+	color: rgba(255,255,255,0.8);
+}
+.overbox .login-inputbox .login-input input::-ms-input-placeholder{
+	color: rgba(255,255,255,0.8);
+}
+
+.fa-rotate-45{
+	transform: rotate(45deg);
+}
+.reg-yzmbox{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+.codeinput{
+	width: 49%!important;
+	margin-right: 1%;
+	height: 50px!important;
+}
+.reg-code{
+	width: 49%;
+	background-color: white;
+	height: 50px;
+}
+
+
+@media only screen and (max-width: 767px) {
+	.login-loginbox{
+		max-width: 420px;
+	}
+}
+
+@media only screen and (max-width: 560px) {
+	.login-loginbox{
+		max-width: 400px;
+	}
+}
+
+
+/*@media only screen and (max-width: 460px) {
+	.login-loginbox{
+		max-width: 100px;
+	}
+}*/
+
+@media only screen and (max-width: 460px) {
+	.login-loginbox{
+		max-width: 100%;
+		height: 100%;
+		margin-top: 0;
+	}
+	.login-innerbox{
+		height: 100%;
+		border-radius: 0;
+	}
+	.overbox{
+		height: auto;
+		border-radius: 0;
+	}
+	.material-button, .alt-2{
+		width: 60px;
+		height: 60px;
+		right: 0;
+		top: 50px;
+	}
+}

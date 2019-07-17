@@ -1,0 +1,103 @@
+body {
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	min-height: 100vh;
+	overflow-x: hidden;
+	background-color: #f0f0f0;
+}
+
+a {
+	text-decoration: none;
+	color: #333333;
+	cursor: pointer;
+}
+
+a:hover,
+a:focus {
+	text-decoration: none;
+	color: #333333;
+}
+
+img {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+ul {
+	padding: 0;
+}
+
+ul li {
+	list-style: none;
+}
+
+.w-full {
+	width: 100%;
+}
+
+.h-full {
+	height: 100%;
+}
+
+.xs-vistive {
+	display: none!important;
+}
+
+.vistive-xs {
+	display: none!important;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.m-b-80 {
+	margin-bottom: 80px;
+}
+.redcolor{
+	color: red;
+}
+.mr-15{
+	margin-right: 15px
+}
+.mb-15{
+	margin-bottom: 15px!important;
+}
+@media (max-width: 1199px) and (min-width: 768px) {
+	.text-md-center {
+		text-align: center;
+	}
+}
+
+/*@media (max-width: 991px) and (min-width: 768px) {
+	.text-sm-center {
+		text-align: center;
+	}
+}*/
+
+@media only screen and (max-width:767px) {
+	.vistive-xs {
+		display: inline-block!important;
+	}
+	.hidden-xs {
+		display: none!important;
+	}
+	.text-xs-center {
+		text-align: center;
+	}
+}
+
+@media only screen and (max-width: 460px) {
+	.xs-vistive {
+		display: inline-block!important;
+	}
+	.xs-hidden {
+		display: none!important;
+	}
+}

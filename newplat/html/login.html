@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>新投票平台</title>
+		<link rel="stylesheet" href="../bootstrapv3/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/public.css" />
+		<link rel="stylesheet" type="text/css" href="../css/login.css" />
+	</head>
+
+	<body>
+		<div class="login-wrapper">
+			<div class="login-loginbox">
+				<div class="login-innerbox">
+					<div class="login-toptile">
+						登录
+					</div>
+					<div class="login-inputbox">
+						<form>
+							<div class="form-group login-input">
+								<label for="username">用户名:</label>
+								<input type="text" class="form-control" id="username" name="username" placeholder="用户名">
+							</div>
+							<div class="form-group login-input">
+								<label for="password">密码:</label>
+								<input type="password" class="form-control" id="username" name="password" placeholder="密码">
+							</div>
+							<!--<div class="checkbox">
+								<label>
+							      <input type="checkbox"> 忘记密码
+							    </label>
+							</div>-->
+							<div class="input-buttom">
+								<button type="submit" class="btn">登录</button>
+							</div>
+
+						</form>
+					</div>
+				</div>
+				<!--注册-->
+				<div class="overbox">
+
+					<div class="alt-2 material-button">
+						<span class="register" style="color: white;">注册</span>
+						<span class="login" style="display:none;color: white;">登录</span>
+						<!--<span class="fa fa-plus shape" style="display:none;color: white;font-size: 20px;"></span>-->
+					</div>
+					<div class="login-toptile">
+						注册
+					</div>
+					<div class="login-inputbox">
+						<form>
+							<div class="form-group login-input">
+								<label for="reg-username">用户名:</label>
+								<input type="text" class="reg-input" id="reg-username" name="reg-username" placeholder="请输入您的用户名">
+							</div>
+							<div class="form-group login-input">
+								<label for="reg-password">密码:</label>
+								<input type="password" class="reg-input" id="reg-password" name="reg-password" placeholder="请输入您的密码">
+							</div>
+
+							<div class="form-group login-input">
+								<label for="reg-repassword">确认密码:</label>
+								<input type="password" class="reg-input" id="reg-repassword" name="reg-repassword" placeholder="请输入您的确认密码">
+							</div>
+
+							<div class="form-group login-input">
+								<label for="reg-repassword">验证码:</label>
+								<div class="reg-yzmbox">
+									<input type="text" class="codeinput" id="reg-yzm" name="reg-yzm" placeholder="请输入您的确认密码">
+									<div class="reg-code">
+
+									</div>
+								</div>
+							</div>
+							<div class="reg-buttom">
+								<!--<button class="btn">注册</button>-->
+								<input type="button" name="" class="reg-buttomsubmit" value="注册" />
+							</div>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+		<script type="text/javascript" src="../bootstrapv3/js/bootstrap.min.js"></script>
+		<script src="../layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				
+				let width = $("html").width();
+				let boxwidth;
+				let boxright;
+				let boxtop;
+				if(width <= 460){
+					boxwidth= '60px';
+					boxright = '0px';
+					boxtop = '50px'
+				}else{
+					boxright = '-40px';
+					boxwidth = '80px';
+					boxtop = '45px'
+				}
+				
+				$(".alt-2").click(function() {
+					if(!$(this).hasClass('material-button')) {
+						$(".shape").css({
+							"transform": "rotate(0deg)"
+						})
+						$(".overbox").css({
+							"overflow": "initial"
+						})
+
+						$(this).animate({
+							"width": boxwidth,
+							"height":boxwidth,
+							"right": boxright,
+							"top": boxtop
+						}, 100, function() {
+							$(".login-innerbox").removeClass("back");
+							$(this).removeClass('active')
+						});
+						$(this).children('.register').show();
+						$(this).children('.login').hide();
+						$(".overbox .login-toptile").fadeOut(300);
+						$(".overbox .login-inputbox").fadeOut(300);
+						$(".alt-2").addClass('material-buton');
+					}
+
+				})
+				$(".material-button").click(function() {
+					if($(this).hasClass('material-button')) {
+						setTimeout(function() {
+							$(".overbox").css({
+								"overflow": "hidden",
+								"background-color": "#07A0FD",
+							})
+							$(".login-innerbox").addClass("back");
+						}, 200)
+						$(this).css({
+							"right": "0px",
+							"top": "50px"
+						})
+						$(".shape").css({
+							"transform": "rotate(45deg)"
+						})
+						$(this).children('.register').hide();
+						$(this).children('.login').show();
+						$(".overbox .login-toptile").fadeIn(300);
+						$(".overbox .login-inputbox").fadeIn(300);
+						$(this).removeClass('material-button');
+					}
+
+					if($(".alt-2").hasClass('material-buton')) {
+						$(".alt-2").removeClass('material-buton');
+						$(".alt-2").addClass('material-button');
+					}
+
+				});
+
+			})
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>新投票平台</title>
+		<link rel="stylesheet" href="../bootstrapv3/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/public.css" />
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/home.css" />
+		<link rel="stylesheet" type="text/css" href="../css/zzlist.css" />
+		<link rel="stylesheet" type="text/css" href="../css/payin.css" />
+	</head>
+
+	<body>
+		<!--左侧-->
+		<div class="index-menuleft hidden-xs">
+			<a class="logo-left" href="index.html">
+				<img src="../img/newlogo.png" />
+			</a>
+			<a class="logo-left mt5" href="home.html" title='首页'>
+				<span class="fa fa-home lefticon"></span>
+			</a>
+			<a class="logo-left mt5" href="#" title='退出'>
+				<span class="fa fa-power-off lefticon"></span>
+			</a>
+		</div>
+		<!--右侧-->
+		<div class="index-menurightbtn">
+			<a href="javascript:void(0);" onclick="openNav()">
+				<span class="fa fa-bars" style="font-weight: 900;"></span>
+			</a>
+		</div>
+		<div id="sidenav" class="side-nav" style="right: -240px;">
+			<div class="close-menurightbtn">
+				<a href="javascript:void(0);" onclick="closeNav()">
+					<span class="fa fa-close"></span>
+				</a>
+			</div>
+			<ul class="nav home-rightnav">
+				<li>
+					<div class="user-view">
+						<div class="home-rightmenu-bg">
+							<img src="../img/bg-user.jpg" />
+						</div>
+						<img class="user-avator" src="http://www.17sucai.com/preview/1424582/2018-10-21/Flyors/images/profile.png" />
+						<span class="white-text username">John Roe</span>
+					</div>
+				</li>
+				<li class="nav-item active">
+					<a href="home.html">
+						<img src="../img/home.png" />
+						<p>首页</p>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						<img src="../img/task2.png" />
+						<p>任务中心</p>
+						<span class="caret"></span>
+					</a>
+					<div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+						<ul class="nav second-nav">
+							<li>
+								<a href="task.html">
+									<span class="link-collapse">任务列表</span>
+								</a>
+							</li>
+							<li>
+								<a href="list.html">
+									<span class="link-collapse">自助列表</span>
+								</a>
+							</li>
+							<li>
+								<a href="mptask.html">
+									<span class="link-collapse">mp任务</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="zzlist.html">
+									<span class="link-collapse">三方自助</span>
+								</a>
+							</li>
+							<li>
+								<a href="mpcontorl.html">
+									<span class="link-collapse">MP监控</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+						<img src="../img/caiwu.png" />
+						<p>财务中心</p>
+						<span class="caret"></span>
+					</a>
+					<div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+						<ul class="nav second-nav">
+							<li>
+								<a href="payin.html">
+									<span class="link-collapse">在线充值</span>
+								</a>
+							</li>
+							<li>
+								<a href="pay.html">
+									<span class="link-collapse">充值记录</span>
+								</a>
+							</li>
+							<li>
+								<a href="paylist.html">
+									<span class="link-collapse">财务明细</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="nav-item active">
+					<a href="mycenter.html">
+						<img src="../img/user.png" />
+						<p>个人中心</p>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="fankui.html">
+						<img src="../img/fankui.png" />
+						<p>关于我们</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!--中间内容-->
+		<div class="home-contentright" style="background-color: whie;height: auto;">
+			<div class="hometwo-top height-80">
+				<div class="mycenterbox">
+					<img src='../img/newlogo.png' />
+				</div>
+			</div>
+			<div class="hometwo-mainbox" style="background-color: white;padding: 15px 0;">
+				<div class="mycontainer">
+					<p class="mycenter-logo"><span class="fa fa-user" style="margin-right: 10px;"></span>个人中心</p>
+					<div class="mycenter-bigbox">
+						<div class="mc-containerbox">
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs" role="tablist">
+								<!--<li>-->
+								<div class="user-view hidden-xs">
+									<div class="home-rightmenu-bg">
+										<img src="../img/bg-user.jpg" />
+									</div>
+									<img class="user-avator" src="http://www.17sucai.com/preview/1424582/2018-10-21/Flyors/images/profile.png" />
+									<span class="white-text username">John Roe</span>
+								</div>
+								<!--</li>-->
+								<div class="mc-left-bold hidden-xs">
+									<span class="fa fa-user"></span> 个人中心
+								</div>
+								<li role="presentation" class="active">
+									<a href="#home" aria-controls="home" role="tab" data-toggle="tab">个人主页</a>
+								</li>
+								<li role="presentation">
+									<a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">编辑信息</a>
+								</li>
+								<li role="presentation">
+									<a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">安全中心</a>
+								</li>
+							</ul>
+							<!-- Tab panes -->
+							<div class="tab-content">
+								<div role="tabpanel" class="tab-pane active" id="home">
+									<div class="zy-container">
+										<div class="zy-left">
+											<h4>username18652462551</h4>
+											<p><span>欢迎回来~</span></p>
+											<div class="">
+												<p>本次登录时间：</p>
+												<p style="color: #9EA09F;padding-left: 15px;font-size: 13px;">2019-07-16 09:14</p>
+											</div>
+										</div>
+										<div class="zy-right">
+											<p style="color: #9FD237;font-weight: 600;font-size: 15px;"><span>总金额:</span>2500000.00</p>
+											<p><span>总积分:</span>268积分</p>
+											<p style="color: #07A0FD;font-weight: 600;font-size: 15px;"><span>推荐码:</span>sdfjk22445</p>
+										</div>
+									</div>
+									<p><span class="fa fa-align-left fa-rotate-270" style="color: #72B702;letter-spacing: 2px;"></span>&nbsp;基本资料</p>
+									<div class="mcinfo-box">
+										<div class="mcinfo-row ">
+											<p class="fontweight"><span class="fa fa-address-book"></span>用户名:</p>
+											<p>username18652462551</p>
+										</div>
+										<div class="mcinfo-row">
+											<p class="fontweight"><span class="fa fa-phone-square"></span>手机号码:</p>
+											<p>username18652462551</p>
+										</div>
+										<div class="mcinfo-row">
+											<p><span class="fa fa-envelope"></span>邮箱:</p>
+											<p>username18652462551.com</p>
+										</div>
+										<div class="mcinfo-row">
+											<p><span class="fa fa-address-card"></span>地址:</p>
+											<p>暂无</p>
+										</div>
+									</div>
+									<p style="margin-top: 25px;"><span class="fa fa-align-left fa-rotate-270" style="color: #72B702;letter-spacing: 2px;"></span>&nbsp;资产信息</p>
+									<div class="mcinfo-box">
+										<div class="line-row">
+											<p>账户可用余额：</p>
+											<h3>685723.02元</h3>
+										</div>
+										<div class="line-row" style="margin-bottom: 20px;">
+											<p style="font-size: 14px;">充值总额: 56000.00元</p>
+											<p style="font-size: 14px;">消费总额: 26000.00元</p>
+										</div>
+									</div>
+
+								</div>
+								<div role="tabpanel" class="tab-pane" id="profile">
+									<p>
+										<span class="fa fa-align-left fa-rotate-270" style="color: #72B702;letter-spacing: 2px;"></span> &nbsp;编辑信息
+									</p>
+									<div class="mcinfo-box">
+										<form>
+											<div class="form-group">
+												<label for="zhanghu">账号:</label>
+												<input type="text" disabled="disabled" class="form-control" id="zhanghu" value="username1456135" placeholder="1234565">
+											</div>
+											<div class="form-group">
+												<label for="username">用户名:</label>
+												<input type="text" class="form-control" value="username" id="username" placeholder="请输入用户名">
+											</div>
+											<div class="form-group">
+												<label for="phone">固定号码:</label>
+												<input type="text" class="form-control" value="15616255355" id="phone" placeholder="请输入固定号码">
+											</div>
+											<div class="form-group">
+												<label for="phone">邮箱:</label>
+												<input type="email" class="form-control" value="15616255355@qq.com" id="phone" placeholder="请输入邮箱">
+											</div>
+											<div class="form-group">
+												<label for="address">地址:</label>
+												<!--<input type="email" class="form-control" value="15616255355@qq.com" id="phone" placeholder="请输入邮箱">-->
+												<textarea class="form-control" name="address" rows="5" cols="" placeholder="请输入地址"></textarea>	
+											</div>
+											<div class="jstyspace">
+												<button type="submit" class="btn btn-info">提交</button>
+												<button type="reset" class="btn btn-default">提交</button>
+											</div>
+										</form>
+									</div>
+								</div>
+								<div role="tabpanel" class="tab-pane" id="messages">
+									<p>
+										<span class="fa fa-align-left fa-rotate-270" style="color: #72B702;letter-spacing: 2px;"></span> &nbsp;安全中心
+									</p>
+									<div class="mcinfo-box" style="padding: 60px 30px;">
+										<form class="passform">
+											<div class="form-group">
+												<label for="zhanghu">账号:</label>
+												<input type="text" disabled="disabled" class="form-control" id="zhanghu" value="username1456135" placeholder="1234565">
+											</div>
+											<div class="form-group">
+												<label for="username">原始密码:</label>
+												<input type="password" class="form-control" value="" id="username" placeholder="请输入原始密码">
+											</div>
+											<div class="form-group">
+												<label for="phone">新密码:</label>
+												<input type="password" class="form-control" value="" id="phone" placeholder="请输入新密码">
+											</div>
+											<div class="form-group">
+												<label for="phone">确认密码:</label>
+												<input type="password" class="form-control" value="" id="phone" placeholder="请输入确认密码">
+											</div>
+											<div class="jstyspace">
+												<button type="submit" class="btn btn-info">提交</button>
+												<button type="reset" class="btn btn-default">提交</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--<div class="row">
+							<div class="col-sm-3">
+								<div class="mycenter-big-left">
+									<div class="user-view hidden-xs">
+										<div class="home-rightmenu-bg">
+											<img src="../img/bg-user.jpg" />
+										</div>
+										<img class="user-avator" src="http://www.17sucai.com/preview/1424582/2018-10-21/Flyors/images/profile.png" />
+										<span class="white-text username">John Roe</span>
+									</div>
+									<div class="">
+										个人信息
+									</div>
+									<div class="">
+										修改信息
+									</div>
+									<div class="">
+										安全中心
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-9">
+								<div class="mycenter-big-right">
+
+								</div>
+							</div>
+						</div>-->
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<div class="footerbox">
+					<p>网站主要提供以下服务：自助下单，mp投票，mp监控，微信投票，网络投票等。</p>
+					<p>版权所有：投票网 &nbsp;&nbsp;&nbsp;&nbsp; 如果问题请联系<span style="font-weight: 600;">客服：3688552445</span></p>
+				</div>
+			</div>
+		</div>
+		<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrapv3/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/global.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../layer/layer.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

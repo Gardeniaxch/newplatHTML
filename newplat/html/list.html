@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>新投票平台</title>
+		<link rel="stylesheet" href="../bootstrapv3/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/public.css" />
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/home.css" />
+		<link rel="stylesheet" type="text/css" href="../css/zzlist.css" />
+	</head>
+
+	<body>
+		<!--左侧-->
+		<div class="index-menuleft hidden-xs">
+			<a class="logo-left" href="index.html">
+				<img src="../img/newlogo.png" />
+			</a>
+			<a class="logo-left mt5" href="home.html" title='首页'>
+				<span class="fa fa-home lefticon"></span>
+			</a>
+			<a class="logo-left mt5" href="#" title='退出'>
+				<span class="fa fa-power-off lefticon"></span>
+			</a>
+		</div>
+		<!--右侧-->
+		<div class="index-menurightbtn">
+			<a href="javascript:void(0);" onclick="openNav()">
+				<span class="fa fa-bars" style="font-weight: 900;"></span>
+			</a>
+		</div>
+		<div id="sidenav" class="side-nav" style="right: -240px;">
+			<div class="close-menurightbtn">
+				<a href="javascript:void(0);" onclick="closeNav()">
+					<span class="fa fa-close"></span>
+				</a>
+			</div>
+			<ul class="nav home-rightnav">
+				<li>
+					<div class="user-view">
+						<div class="home-rightmenu-bg">
+							<img src="../img/bg-user.jpg" />
+						</div>
+						<img class="user-avator" src="http://www.17sucai.com/preview/1424582/2018-10-21/Flyors/images/profile.png" />
+						<span class="white-text username">John Roe</span>
+					</div>
+				</li>
+				<li class="nav-item active">
+					<a href="home.html">
+						<img src="../img/home.png" />
+						<p>首页</p>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						<img src="../img/task2.png" />
+						<p>任务中心</p>
+						<span class="caret"></span>
+					</a>
+					<div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+						<ul class="nav second-nav">
+							<li>
+								<a href="task.html">
+									<span class="link-collapse">任务列表</span>
+								</a>
+							</li>
+							<li class="active">
+								<a href="list.html">
+									<span class="link-collapse">自助列表</span>
+								</a>
+							</li>
+							<li>
+								<a href="mptask.html">
+									<span class="link-collapse">mp任务</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="zzlist.html">
+									<span class="link-collapse">三方自助</span>
+								</a>
+							</li>
+							<li>
+								<a href="mpcontorl.html">
+									<span class="link-collapse">MP监控</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+						<img src="../img/caiwu.png" />
+						<p>财务中心</p>
+						<span class="caret"></span>
+					</a>
+					<div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+						<ul class="nav second-nav">
+							<li class="active">
+								<a href="payin.html">
+									<span class="link-collapse">在线充值</span>
+								</a>
+							</li>
+							<li>
+								<a href="pay.html">
+									<span class="link-collapse">充值记录</span>
+								</a>
+							</li>
+							<li>
+								<a href="paylist.html">
+									<span class="link-collapse">财务明细</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a href="mycenter.html">
+						<img src="../img/user.png" />
+						<p>个人中心</p>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="fankui.html">
+						<img src="../img/fankui.png" />
+						<p>关于我们</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!--中间内容-->
+		<div class="home-contentright" style="background-color: whie;height: auto;">
+			<div class="hometwo-top height-200">
+				<div class="homebannerbox">
+					<img src="../img/banner.jpg" class="height-200">
+					<div class="homecarousel-caption text-left">
+						<p>新投票<span> &nbsp;&nbsp;toupiao</span></p>
+						<p class="text-white">专业微信投票制作平台</p>
+					</div>
+				</div>
+			</div>
+			<div class="hometwo-mainbox" style="background-color: white;">
+				<div class="mycontainer">
+					<div class="homebox-top">
+						<p>自助列表</p>
+						<div class="line"></div>
+					</div>
+					<div class="taskhtml-box">
+						<div class="taskhtml-header">
+							<div class="">
+								<form class="form-inline mytaskform">
+									<div class="form-group mr-15 mb-15">
+										<label for="" class="sr-only"></label>
+										<select class="form-control" name="type" onchange="subform(this);">
+											<option value="all">所有状态</option>
+											<option value="take">请下单</option>
+											<option value="run">执行中</option>
+											<option value="success">执行成功</option>
+											<option value="end">已结算</option>
+											<option value="task">任务名称</option>
+											<option value="name">选手名称</option>
+											<option value="url">任务链接</option>
+										</select>
+									</div>
+									<div class="form-group mr-15 mb-15">
+										<label class="sr-only" for="taskname"></label>
+										<input type="text" class="form-control" name="name" id="taskname" placeholder="任务名称">
+									</div>
+									<div class="form-group mr-15 mb-15">
+										<label class="sr-only" for="taskname"></label>
+										<input type="date" class="form-control" name="time" value="" id="datetimepicker" data-date-format="yyyy-mm-dd" placeholder="请选择时间">
+									</div>
+									<a href="" class="btn mybtn mb-15"><i class="fa fa-send"></i>&nbsp;&nbsp;提交</a>
+								</form>
+								<div class="mydatatableheader">
+									<div class="hh-header"></div>
+									<span style="padding-left: 15px;">自助活动表</span>
+								</div>
+								<table id="users" class="table table-bordered mydataTable">
+									<thead>
+										<tr role="row">
+											<th class="sorting_asc" tabindex="0" rowspan="1" colspan="1">编号</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">活动类型名称:</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">活动名称:</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">活动链接</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">创建时间:</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">操作</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="odd">
+											<td>
+												<span class="tbody_header">编号:</span>
+												<span>3000066</span>
+											</td>
+											<td>
+												<span class="tbody_header">活动类型名称:</span>
+												<span>中国好声音金华赛区复赛人气王评选</span>
+											</td>
+											<td>
+												<span class="tbody_header">活动名称:</span>
+												<span>18.郭艺蕾</span>
+											</td>
+											<td>
+												<span class="tbody_header">活动链接:</span>
+												<a class="mytask-a" href="http://wxtp100001.zhifouyun.cn/app/index.php?i=2&amp;c=entry&amp;rid=18&amp;do=index&amp;m=tyzm_diamondvote" target="_blank">右击复制打开</a>
+											</td>
+											<td>
+												<span class="tbody_header">创建时间：</span>
+												<span>2019-07-15 19:31:10</span>
+											</td>
+											<td style="min-width: 90px;">
+												<span class="tbody_header">操作:</span>
+												<div class="btn-group dropup operatingone">
+													<a href="javascript:void(0)" class="btn mybtn" onclick="order();"><i class="fa fa-plus"></i>&nbsp;&nbsp;下单</a>
+												</div>
+											</td>
+										</tr>
+										<tr class="odd">
+											<td>
+												<span class="tbody_header">编号:</span>
+												<span>3000066</span>
+											</td>
+											<td>
+												<span class="tbody_header">活动类型名称:</span>
+												<span>中国好声音金华赛区复赛人气王评选</span>
+											</td>
+											<td>
+												<span class="tbody_header">活动名称:</span>
+												<span>18.郭艺蕾</span>
+											</td>
+											<td>
+												<span class="tbody_header">活动链接:</span>
+												<a class="mytask-a" href="http://wxtp100001.zhifouyun.cn/app/index.php?i=2&amp;c=entry&amp;rid=18&amp;do=index&amp;m=tyzm_diamondvote" target="_blank">右击复制打开</a>
+											</td>
+											<td>
+												<span class="tbody_header">创建时间：</span>
+												<span>2019-07-15 19:31:10</span>
+											</td>
+											<td style="min-width: 90px;">
+												<span class="tbody_header">操作:</span>
+												<div class="btn-group dropup operatingone">
+													<!--<a href="" class="btn mybtn" onclick="order();"><i class="fa fa-plus"></i>&nbsp;&nbsp;下单</a>-->
+												</div>
+											</td>
+										</tr>
+										<tr class="odd">
+											<td>
+												<span class="tbody_header">编号:</span>
+												<span>3000066</span>
+											</td>
+											<td>
+												<span class="tbody_header">活动类型名称:</span>
+												<span>中国好声音金华赛区复赛人气王评选</span>
+											</td>
+											<td>
+												<span class="tbody_header">活动名称:</span>
+												<span>18.郭艺蕾</span>
+											</td>
+											<td>
+												<span class="tbody_header">活动链接:</span>
+												<a class="mytask-a" href="http://wxtp100001.zhifouyun.cn/app/index.php?i=2&amp;c=entry&amp;rid=18&amp;do=index&amp;m=tyzm_diamondvote" target="_blank">右击复制打开</a>
+											</td>
+											<td>
+												<span class="tbody_header">创建时间：</span>
+												<span>2019-07-15 19:31:10</span>
+											</td>
+											<td style="min-width: 90px;">
+												<span class="tbody_header">操作:</span>
+												<div class="btn-group dropup operatingone">
+													<!--<a href="" class="btn mybtn " onclick="order();"><i class="fa fa-plus"></i>&nbsp;&nbsp;下单</a>-->
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<div class="footerbox">
+					<p>网站主要提供以下服务：自助下单，mp投票，mp监控，微信投票，网络投票等。</p>
+					<p>版权所有：投票网 &nbsp;&nbsp;&nbsp;&nbsp; 如果问题请联系<span style="font-weight: 600;">客服：3688552445</span></p>
+				</div>
+			</div>
+		</div>
+		<!--下单模态框-->
+		<div class="zztable-content" style="display: none;">
+			<form class="" style="padding: 20px;font-size: 14px;">
+				<div class="form-group">
+					<h4 class="yytask-name">任务名称标题：“最美加油员”评选（可多选）</h4>
+				</div>
+				<div class="form-group"> <label for="yytask-link">链接:</label>
+					<textarea type="text" rows="5" class="form-control" id="zzable-link" disabled="disabled">
+						https://poll2.fengchuanba.com/index.html#5345676990-ZAx6CkR3oUepmuFfWGa9jgL73BlT3LgY
+					</textarea>
+				</div>
+				<div class="form-group">
+					<label for="xs-name">选手名称:</label>
+					<div class="dropdown " style="width: 100%;">
+						<div class="secondarydiv" style="display: flex; flex-direction: row;">
+							<div style="width: 100%; display: flex; flex-direction: row;justify-content: space-around;">
+								<div style="display: flex; flex: 1;">
+									<input type="input" name="taskPlanDay" class="form-control xs_name" style="font-size: 12px" disabled="" placeholder="选项将会显示在此..."> </div>
+								<div class="btn btn-light select-btnla rounded-right" onclick="$(this).parents('.dropdown').toggleClass('show');$(this).parents('.secondarydiv').next('.dropdown-menu').toggleClass('show'); $(this).find('span').toggleClass('fa-rotate-180');">
+									<span class="fa fa-chevron-down"></span>
+								</div>
+								<button class="btn btn-outlineop" style="margin:0 3px;border: 1px solid #dddddd" type="button" onclick="removeLastItem(this);">删除</button>
+								<button class="btn btn-outlineop btn-danger" style="background-color: #DC3545" type="button" onclick="clearSelected(this);">清空</button>
+							</div>
+						</div>
+						<div class="dropdown-menu" style="width: 100%; height: 400px; overflow-y: auto;">
+							<li style="display: flex; flex-direction: row; justify-content: space-between; cursor: pointer;padding: 8px;border-bottom: 1px solid #dddddd;" onclick="itemsSelected(this);">
+								<a href="javascript:;" style="color: #333333;font-size: 12px">陈卫</a>
+								<span class="fa fa-check" style="display: none; color: #777; margin-right: 0.8rem;"></span>
+							</li>
+							<li style="display: flex; flex-direction: row; justify-content: space-between; cursor: pointer;padding: 8px;border-bottom: 1px solid #dddddd;" onclick="itemsSelected(this);">
+								<a href="javascript:;" style="color: #333333;font-size: 12px">丁芸</a>
+								<span class="fa fa-check" style="display: none; color: #777; margin-right: 0.8rem;"></span>
+							</li>
+						</div>
+					</div>
+				</div>
+				<div class="form-group"> <label for="fabu-num">发布数量:</label> <input type="text" class="form-control" id="fabu-num" value="0" name="num" placeholder="发布的数量，不能小于100"> </div>
+				<div class="form-group"> <label for="zzxs-num">限速每分钟:</label> <input type="number" class="form-control" id="zzxs-num" name="xzno" value="0" placeholder=""> </div>
+				<div class="form-group"> <label for="jianjie">简介:</label> <textarea class="form-control" name="jianjie" rows="3"></textarea> </div>
+				<div class="form-group"> <label for="beizhu">备注:</label> <textarea class="form-control" name="beizhu" rows="3"></textarea> </div>
+			</form>
+		</div>
+
+		<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrapv3/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/global.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			let width;
+			$(function() {
+				width = $("html").width();
+			})
+
+			function order() {
+				console.log("123");
+				let areawidth, areaheight;
+				if(width <= 767) {
+					areawidth = '100%';
+					areaheight = '100%';
+				} else {
+					areawidth = '65%';
+					areaheight = '85%';
+				}
+				layer.open({
+					type: 1,
+					title: "下单",
+					btn: ['确定', '取消'],
+					area: [areawidth, areaheight],
+					content: $(".zztable-content")
+				}, function() {
+					layer.msg("退出成功", {
+						icon: 1
+					});
+				}, function() {
+					layer.closeAll();
+				});
+			}
+
+			function getsoso() {
+				var type = $('.sosodata').serialize();
+				window.location.href = '/Index/autoordes?' + type;
+
+			}
+
+			function removeLastItem(that) {
+				var input = $(that).parent()
+					.find("[name='taskPlanDay']");
+				// 没有项目
+				if(input.val() == "") return;
+				var text = /,?([^,]+)$/.exec(input.val())[1];
+				if(!text) return;
+				input.val(input.val()
+					.toString()
+					.replace(/,?[^,]+$/, "")
+					.replace(/^,/, ""));
+				$(that).parents(".dropdown")
+					.find(".dropdown-menu > li").each(function(i, e) {
+						if($(e).find("a").text() == text) {
+							$(e).attr("selected", false)
+								.find("span")
+								.hide();
+						}
+					});
+			}
+
+			function clearSelected(that) {
+				$(that).parents(".dropdown")
+					.find(".dropdown-menu > li")
+					.attr("selected", false)
+					.find("span")
+					.hide();
+				$(that).parent()
+					.find("[name='taskPlanDay']")
+					.val("");
+			}
+			// 选中了下单中选项列表中的一项
+			function itemsSelected(that) {
+				// 如果没有被选中
+				if(!$(that).attr("selected")) {
+					// 设置选中
+					$(that).attr("selected", true);
+					// 显示图标
+					$(that).find("span").show();
+					// 添加值到 input
+					var input = $(that).parents('.dropdown').find('[name=\'taskPlanDay\']');
+					// window.inputOfMe = input;
+					input.val(input.val() != "" ?
+						(input.val() + "," + $(that).find("a").text()) :
+						$(that).find("a").text());
+					// window.textOfMe = $(that);
+
+				}
+				// 如果被选中
+				else {
+					// 做与上相反的事情
+					$(that).attr("selected", false);
+					$(that).find("span").hide();
+					var input = $(that).parents('.dropdown').find('[name=\'taskPlanDay\']');
+					// var reg = 
+					input.val(input.val()
+						.toString()
+						.replace($(that).find("a").text(), "")
+						.replace(/^,/, "")
+						.replace(/,$/, ""));
+
+				}
+			}
+		</script>
+	</body>
+
+</html>
