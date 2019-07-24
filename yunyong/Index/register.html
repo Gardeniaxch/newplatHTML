@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>注册</title>
+		<link rel="stylesheet" href="__PUBLIC__/Tphomeyy/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Tphomeyy/font/iconfont.css" />
+		<link rel="stylesheet" href="__PUBLIC__/Tphomeyy/css/login.css" />
+	</head>
+
+	<body>
+		<div class="login-wrapps">
+			<h3 class="login-title">{$title}平台</h3>
+			<div class="wrappercenter">
+				<h4>注册</h4>
+				<form class="login-form" style="margin-top: 20px;" id="register-form">
+					<div class="form-group">
+						<label for="username"><span class="iconfont icon-people"></span>用户名</label>
+						<input type="text" class="form-control" id="txtUserName" name="txtUserName" placeholder="请输入您的用户名" required="required">
+					</div>
+					<div class="form-group">
+						<label for="password"><span class="iconfont icon-lock"></span>密码</label>
+						<input type="password" class="form-control" id="txtPassworde" name="txtPassworde" placeholder="请输入您的密码" required="required">
+					</div>
+					<div class="form-group">
+						<label for="re-password"><span class="iconfont icon-lock"></span>确认密码</label>
+						<input type="password" class="form-control" id="txtPassword1" name="txtPassword1" placeholder="请确认您的密码" required="required">
+					</div>
+					<div class="form-group">
+						<label for="yqcode"><span class="iconfont icon-manage"></span>邀请码</label>
+						<input type="text" class="form-control" name="txtCode"  id="txtCode" placeholder="请输入邀请码" required="required">
+					</div>
+					<!-- <div class="form-group">
+						<label for="yzcode"><span class="iconfont icon-mobilephone"></span>验证码</label>
+						<div class="form-yzm">
+							<input class="col-md-6" type="text" name="yzcode" id="yzcode" value="" placeholder="请输入验证码" />
+							<a class="yzcode-img"><img src="../img/home_betheme_slider_slide1.jpg" /></a>
+						</div>
+						
+					</div> -->
+					<input type="button" onclick="sendreg();"  value="注册" class="login-sub" />
+					<div class="toregister">
+						<span>已有账号？<a href='{:U("Tphomeyy/Index/index")}'>前往登录</a></span>
+					</div>
+				</form>
+			</div>
+		</div>
+		<script type="text/javascript" src="__PUBLIC__/Tphomeyy/js/jquery-3.3.1.js" ></script>
+		<script type="text/javascript"  src="__PUBLIC__/Tphomeyy/layer/layer.js" ></script>
+		<script type="text/javascript">
+		function sendreg() {
+            var pw = $("#txtPassworde").val();
+            if(pw==null||pw==""){
+            layer.msg('请输入密码')
+            return;
+            }
+            var pw1 = $("#txtPassword1").val();
+            if (pw != pw1) {
+            layer.msg('两次密码不一至请重新输入')
+            return;
+            }
+            var data = $("#register-form").serialize();
+            var indexx = layer.load(1, {
+                shade: [0.1,'#fff'] //0.1透明度的白色背景
+            });
+            $.post('{:U("Tphomeyy/Index/register")}',data, function(data) {
+            layer.msg(data.msg)
+            layer.close(indexx);
+            if (data.status == 1) {
+            	setTimeout(function() {
+            		window.location.href = '{:U("Tphomeyy/Index/index")}'
+            	}, 1000);
+            }
+            }, "json")
+        }
+		</script>
+		
+	</body>
+
+</html>

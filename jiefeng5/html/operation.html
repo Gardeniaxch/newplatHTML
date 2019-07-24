@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" />
+		<link rel="stylesheet" type="text/css" href="../css/public.css" />
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/auto.css" />
+		<link rel="stylesheet" type="text/css" href="../css/task.css" />
+		<link rel="stylesheet" href="../css/swiper-3.4.2.min.css" />
+	</head>
+
+	<body>
+		<div class="wrappercontainer">
+			<nav class="navbar navbar-default main-navbar">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					        <span class="fa fa-navicon"></span>
+					    </button>
+						<div class="xs-gg-help visible-xs">
+							<a href="help.html" title="帮助中心"><span class="fa fa-book icon-color"></span></a>
+						</div>
+						<a class="navbar-brand" href="#">
+							<img class="main-logo" src="http://statics.techuangyi.com/statics/images/bootstrap/new_website_1/logo.png" />
+						</a>
+					</div>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav main-navleft">
+							<li class="hidden-xs">
+								<a href="help.html" title="帮助中心" style="padding: 5px;"><span class="fa fa-book icon-color"></span></a>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right main-navleft">
+							<li>
+								<a href="index.html">首页</a>
+							</li>
+							<li>
+								<a href="auto.html">小号列表</a>
+							</li>
+							<li>
+								<a href="trusteeship.html">登记小号</a>
+							</li>
+							<li class="dropdown active">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									解封任务 <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu mydropdown">
+									<li>
+										<a href="taskguide.html">任务向导</a>
+									</li>
+									<li>
+										<a href="unblocklist.html">领取任务</a>
+									</li>
+									<li>
+										<a href="myunblockTask.html">任务列表</a>
+									</li>
+									<li class="active">
+										<a href="operation.html">微信步骤</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="myonline.html">下线统计</a>
+							</li>
+							<li>
+								<a href="payinfo.html">收支账单</a>
+							</li>
+							<li>
+								<a href="info.html">账户信息</a>
+							</li>
+							<li>
+								<a class="logout" title="退出登录">
+									<span class="fa fa-power-off mr-1 powercolor"></span>
+									<span class="power-hidde">退出登录</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<!--任务列表开始-->
+			<div class="home-gg" style="padding-top: 90px;">
+				<div class="container">
+					<h4 class="second-title"><span class="fa fa-wechat"></span>微信步骤</h4>
+					<div class="alert alert-danger">
+						<p><strong>注意：</strong></p>
+						<p>当领取任务后，十分钟内未完成提交，便作无效处理并扣除信誉分！ </p>
+						<p>当连续失败两至三次将禁止一个小时领取任务，连续四次或者四次以上将今天一天都不可在领取任务。</p>
+						<p>当信誉分低于980分或者连续失败二十次将终生不可在领取任务！</p>
+					</div>
+					<div class="timeline animated" style="background-color: #5BBCD5;padding: 15px;">
+						<div class="timeline-row">
+							<div class="timeline-icon">
+								<div class="bg-primary"><i class="fa fa-weixin"></i></div>
+							</div>
+							<div class="panel timeline-content">
+								<div class="panel-body">
+									<h3 class="task-h3">第一步</h3>
+									<div class="showimgdiv">
+										<a onclick="showSwiper(this,0)" class="opa-showimg">
+											<img src="../img/01.png" />
+											<div class="img-lay">
+												<span>点击预览</span>
+											</div>
+										</a>
+										<span>
+											打开微信，搜索‘微信团队’，点进去
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="timeline-row">
+							<div class="timeline-icon">
+								<div class="bg-warning"><i class="fa fa-weixin"></i></div>
+							</div>
+							<div class="panel timeline-content">
+								<div class="panel-body">
+									<h3 class="task-h3">第二步</h3>
+									<div class="showimgdiv">
+										<a onclick="showSwiper(this,1)" class="opa-showimg">
+											<img src="../img/02.png" />
+											<div class="img-lay">
+												<span>点击预览</span>
+											</div>
+										</a>
+										<span>
+											点击下方的"自助工具"
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="timeline-row">
+							<div class="timeline-icon">
+								<div class="bg-info"><i class="fa fa-weixin"></i></div>
+							</div>
+							<div class="panel timeline-content">
+								<div class="panel-body">
+									<h3 class="task-h3">第三步</h3>
+									<div class="showimgdiv">
+										<a onclick="showSwiper(this,2)" class="opa-showimg">
+											<img src="../img/03.png" />
+											<div class="img-lay">
+												<span>点击预览</span>
+											</div>
+										</a>
+										<span>点击"解封/申诉辅助验证"</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="timeline-row">
+							<div class="timeline-icon">
+								<div class="bg-success"><i class="fa fa-weixin"></i></div>
+							</div>
+							<div class="panel timeline-content">
+								<div class="panel-body">
+									<h3 class="task-h3">第四步</h3>
+									<div class="showimgdiv">
+										<a onclick="showSwiper(this,3)" class="opa-showimg">
+											<img src="../img/04.png" />
+											<div class="img-lay">
+												<span>点击预览</span>
+											</div>
+										</a>
+										<span>点击‘确定是他本人联系我’按钮</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="timeline-row">
+							<div class="timeline-icon">
+								<div class="bg-orange"><i class="fa fa-weixin"></i></div>
+							</div>
+							<div class="panel timeline-content">
+								<div class="panel-body">
+									<h3 class="task-h3">第五步</h3>
+									<div class="showimgdiv">
+										<a onclick="showSwiper(this,4)" class="opa-showimg">
+											<img src="../img/05.png" />
+											<div class="img-lay">
+												<span>点击预览</span>
+											</div>
+										</a>
+										<span>再次确定选择‘已经确认身份’这一项</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="timeline-row">
+							<div class="timeline-icon">
+								<div class="bg-info"><i class="fa fa-weixin"></i></div>
+							</div>
+							<div class="panel timeline-content">
+								<div class="panel-body">
+									<h3 class="task-h3">第六步</h3>
+									<div class="showimgdiv">
+										<a onclick="showSwiper(this,5)" class="opa-showimg">
+											<img src="../img/06.png" />
+											<div class="img-lay">
+												<span>点击预览</span>
+											</div>
+										</a>
+										<span>出现"操作成功"页面即为辅助解封成功</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--任务列表结束-->
+		</div>
+		<!--显示图片弹窗-->
+		<div class="swiper-container bg-container">
+			<!--关闭按钮-->
+			<div class="close-swiper">
+				<img src="../img/close.png"/>
+			</div>
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<img src="../img/01.png" />
+				</div>
+				<div class="swiper-slide">
+					<img src="../img/02.png" />
+				</div>
+				<div class="swiper-slide">
+					<img src="../img/03.png" />
+				</div>
+				<div class="swiper-slide">
+					<img src="../img/04.png" />
+				</div>
+				<div class="swiper-slide">
+					<img src="../img/05.png" />
+				</div>
+				<div class="swiper-slide">
+					<img src="../img/06.png" />
+				</div>
+			</div>
+			<!-- 如果需要分页器 -->
+			<div class="swiper-pagination"></div>
+			<!-- 如果需要导航按钮 -->
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
+		</div>
+		<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+		<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../layer/layer.js"></script>
+		<script type="text/javascript" src="../js/main.js"></script>
+		<script type="text/javascript" src="../js/swiper-3.4.2.jquery.min.js"></script>
+		<script type="text/javascript">
+			$(".logout").on('click', function() {
+				layer.confirm('确定退出登陆吗？', {
+					title: "退出登录",
+					btn: ['确定', '取消']
+				}, function() {
+					layer.msg('退出成功', {
+						icon: 1
+					});
+				}, function() {
+					layer.closeAll();
+				});
+			})
+
+			function showSwiper(el, id) {
+				console.log(id);
+				$(".bg-container").show();
+				var swiper = new Swiper('.swiper-container', {
+					initialSlide :id,
+					zoom: true,
+					pagination: '.swiper-pagination',
+					nextButton: '.swiper-button-next',
+					prevButton: '.swiper-button-prev'
+				});
+			}
+			
+			$(".close-swiper").on("click",function(){
+				console.log("123123");
+				$(".bg-container").hide();
+			})
+
+//			var swiper = new Swiper('.swiper-container', {
+//				//				initialSlide :2,
+//				zoom: true,
+//				pagination: '.swiper-pagination',
+//				nextButton: '.swiper-button-next',
+//				prevButton: '.swiper-button-prev'
+//			});
+		</script>
+	</body>
+
+</html>

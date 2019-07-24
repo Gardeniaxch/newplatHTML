@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/public.css" />
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/auto.css" />
+	</head>
+
+	<body>
+		<div class="wrappercontainer">
+			<nav class="navbar navbar-default main-navbar">
+				<div class="container">
+					<div class="navbar-header">
+
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					        <span class="fa fa-navicon"></span>
+					    </button>
+						<div class="xs-gg-help visible-xs">
+							<a href="help.html" title="帮助中心"><span class="fa fa-book icon-color"></span></a>
+						</div>
+						<a class="navbar-brand" href="#">
+							<img class="main-logo" src="http://statics.techuangyi.com/statics/images/bootstrap/new_website_1/logo.png" />
+						</a>
+					</div>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav main-navleft">
+							<li class="hidden-xs">
+								<a href="help.html" title="帮助中心" style="padding: 5px;"><span class="fa fa-book icon-color"></span></a>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right main-navleft">
+							<li>
+								<a href="index.html">首页</a>
+							</li>
+							<li>
+								<a href="auto.html">小号列表</a>
+							</li>
+							<li class="active">
+								<a href="trusteeship.html">登记小号</a>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									解封任务 <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu mydropdown">
+									<li>
+										<a href="taskguide.html">任务向导</a>
+									</li>
+									<li>
+										<a href="unblocklist.html">领取任务</a>
+									</li>
+									<li>
+										<a href="myunblockTask.html">任务列表</a>
+									</li>
+									<li>
+										<a href="operation.html">微信步骤</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="myonline.html">下线统计</a>
+							</li>
+							<li>
+								<a href="payinfo.html">收支账单</a>
+							</li>
+							<li>
+								<a href="info.html">账户信息</a>
+							</li>
+							<li>
+								<a class="logout" title="退出登录">
+									<span class="fa fa-power-off mr-1 powercolor"></span>
+									<span class="power-hidde">退出登录</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<!--小号列表开始-->
+			<div class="home-gg" style="padding-top: 90px;">
+				<div class="container">
+					<h4 class="second-title"><span class="fa fa-registered"></span>登记小号</h4>
+					<div class="dj-container">
+						<h5 class="dj-header"><span class="line-header"></span>登记步骤：</h5>
+						<div class="row">
+							<div class="col-md-4">
+								<div class="card">
+									<div class="img-center">
+										<img src="../img/card5.png" />
+									</div>
+									<h4 class="step-h4">第一步：手机扫描下方的二维码，并授权登录。</h4>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="card">
+									<div class="img-center">
+										<img src="../img/card5.png" />
+									</div>
+									<h4 class="step-h4">第二步：扫描后，在手机上点击“登录”，等几秒。</h4>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="card">
+									<div class="img-center">
+										<img src="../img/card5.png" />
+									</div>
+									<h4 class="step-h4">第三步：登记成功后。请到<a href="auto.html" style="color: #FA8F0C;">小号列表</a>里查看！</h4>
+								</div>
+							</div>
+						</div>
+						<h5 class="dj-header" style="margin-top: 20px;"><span class="line-header"></span>二维码图</h5>
+						<div class="dj-code">
+							<img src="../img/下载.png" />
+						</div>
+						<div class="line-row p-1">
+							<button class="btn btn-info">刷新二维码</button>
+							<p style="margin: 0;margin-left: 15px;"><span class="time">30</span>秒后自动刷新页面！</p>
+						</div>
+						<div class="alert alert-danger" style="margin-left: 10px;margin-top: 15px;">
+							<strong>注意:</strong>二维码30秒过期后会自动刷新 ，<span style="color: red;">第一次打开请等上十秒后再点刷新按钮</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--小号列表结束-->
+		</div>
+		<!--输入密码-->
+		<div class="page-pwd" style="display: none;">
+			<form style="padding: 20px;">
+				<div class="form-group">
+					<label for="pad">密码:</label>
+					<input type="text" class="form-control" id="pad" name="pwdedit" placeholder="请输入密码">
+				</div>
+			</form>
+		</div>
+		<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+		<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../layer/layer.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				var timer = 30;
+				var msg = $('.time');
+				var tt = window.setInterval(function() {
+					timer--;
+					if(timer <= 0) {
+						timer = 30;
+					}
+					msg.html(timer);
+				}, 1000);
+
+				$(".logout").on('click', function() {
+					layer.confirm('确定退出登陆吗？', {
+						title: "退出登录",
+						btn: ['确定', '取消']
+					}, function() {
+						layer.msg('退出成功', {
+							icon: 1
+						});
+					}, function() {
+						layer.closeAll();
+					});
+				})
+
+			})
+		</script>
+	</body>
+
+</html>

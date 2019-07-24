@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" />
+		<link rel="stylesheet" type="text/css" href="../css/public.css" />
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/auto.css" />
+		<link rel="stylesheet" type="text/css" href="../css/task.css" />
+	</head>
+
+	<body>
+		<div class="wrappercontainer">
+			<nav class="navbar navbar-default main-navbar">
+				<div class="container">
+					<div class="navbar-header">
+
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					        <span class="fa fa-navicon"></span>
+					    </button>
+						<div class="xs-gg-help visible-xs">
+							<a href="help.html" title="帮助中心"><span class="fa fa-book icon-color"></span></a>
+						</div>
+						<a class="navbar-brand" href="#">
+							<img class="main-logo" src="http://statics.techuangyi.com/statics/images/bootstrap/new_website_1/logo.png" />
+						</a>
+					</div>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav main-navleft">
+							<li class="hidden-xs">
+								<a href="help.html" title="帮助中心" style="padding: 5px;"><span class="fa fa-book icon-color"></span></a>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right main-navleft">
+							<li>
+								<a href="index.html">首页</a>
+							</li>
+							<li>
+								<a href="auto.html">小号列表</a>
+							</li>
+							<li>
+								<a href="trusteeship.html">登记小号</a>
+							</li>
+							<li class="dropdown active">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									解封任务 <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu mydropdown">
+									<li class="active">
+										<a href="taskguide.html">任务向导</a>
+									</li>
+									<li>
+										<a href="unblocklist.html">领取任务</a>
+									</li>
+									<li>
+										<a href="myunblockTask.html">任务列表</a>
+									</li>
+									<li>
+										<a href="operation.html">微信步骤</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="myonline.html">下线统计</a>
+							</li>
+							<li>
+								<a href="payinfo.html">收支账单</a>
+							</li>
+							<li>
+								<a href="info.html">账户信息</a>
+							</li>
+							<li>
+								<a class="logout" title="退出登录">
+									<span class="fa fa-power-off mr-1 powercolor"></span>
+									<span class="power-hidde">退出登录</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<!--任务列表开始-->
+			<div class="home-gg" style="padding-top: 90px; background-color: #5bbcd5;padding-bottom: 83px;">
+				<div class="container">
+					<h4 class="second-title"><span class="fa fa-calendar-check-o"></span>任务向导</h4>
+					<h2 class="step-title">简单三步，轻松搞定解封任务</h2>
+					<p class="step-p">新手一定要看完喔，否则步骤出了问题可就麻烦了。</p>
+					<div class="timeline animated" style="margin-top: 25px;">
+						<div class="timeline-row">
+							<div class="timeline-icon">
+								<div class="bg-primary"><i class="fa fa-pencil"></i></div>
+							</div>
+							<div class="panel timeline-content">
+								<div class="panel-body">
+									<h3 class="task-h3">第一步：领取任务</h3>
+									<p style="margin: 15px 0;line-height: 26px;">
+										在<a class="blod" href="unblocklist.html">"领取任务"</a>页面中，找到要领取的任务，点击<strong>"领取任务"</strong>操作按钮，并填写<strong>辅助手机号</strong>即可.
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="timeline-row">
+							<div class="timeline-icon">
+								<div class="bg-warning"><i class="fa fa-bullseye"></i></div>
+							</div>
+							<div class="panel timeline-content">
+								<div class="panel-body">
+									<h3 class="task-h3">第二步：查看已领取的任务</h3>
+									<p style="margin: 15px 0;line-height: 26px;">
+										在<a class="blod" href="myunblockTask.html">"任务列表"</a>页面中，可查看自己已领取的任务，如果没有查找到领取过的任务，请重新领取任务
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="timeline-row">
+							<div class="timeline-icon">
+								<div class="bg-info"><i class="fa fa-weixin"></i></div>
+							</div>
+							<div class="panel timeline-content">
+								<div class="panel-body">
+									<h3 class="task-h3">第三步：微信解封</h3>
+									<p style="margin: 15px 0;line-height: 26px;">
+										在<a class="blod" href="operation.html">"微信步骤"</a>页面中，根据页面中的微信解封步骤图一步一步进行操作即可成功完成解封。
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--<h5 class="task_guide">
+						<span class="task-red-line"></span>
+						第一步：领取任务
+					</h5>
+					<div class="alert alert-danger task-step">
+						<p><span class="fa fa-circle mr-1" style="color: #ff0000;"></span>
+							在<a class="blod" href="unblocklist.html">"领取任务"</a>页面中，找到要领取的任务，点击<strong>"领取任务"</strong>操作按钮，并填写<strong class="blod">辅助手机号</strong>即可.
+						</p>
+					</div>
+					<h5 class="task_guide">
+						<span class="task-red-line"></span>
+						第二步：查看已领取的任务
+					</h5>
+					<div class="alert alert-danger task-step">
+						<p><span class="fa fa-circle mr-1" style="color: #ff0000;"></span>
+							在<a class="blod" href="myunblockTask.html">"任务列表"</a>页面中，可查看自己领取的任务
+						</p>
+					</div>
+					<h5 class="task_guide">
+						<span class="task-red-line"></span>
+						第三步：查看已领取的任务
+					</h5>
+					<div class="alert alert-danger task-step">
+						<p><span class="fa fa-circle mr-1" style="color: #ff0000;"></span>
+							在<a class="blod" href="operation.html">"微信步骤"</a>页面中，根据页面中的微信解封步骤图一步一步进行操作即可成功完成解封。
+						</p>
+					</div>-->
+				</div>
+			</div>
+			<!--任务列表结束-->
+		</div>
+		<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+		<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../layer/layer.js"></script>
+		<script type="text/javascript" src="../js/main.js"></script>
+		<script type="text/javascript">
+			$(".logout").on('click', function() {
+				layer.confirm('确定退出登陆吗？', {
+					title: "退出登录",
+					btn: ['确定', '取消']
+				}, function() {
+					layer.msg('退出成功', {
+						icon: 1
+					});
+				}, function() {
+					layer.closeAll();
+				});
+			})
+		</script>
+	</body>
+
+</html>

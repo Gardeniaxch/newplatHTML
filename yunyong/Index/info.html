@@ -1,0 +1,135 @@
+<include file="public/Tphomeyy/head.html" info='active'  biaoti='个人信息' fdnew="{:sp_getad('滚动活动公告')}" />
+	<!--自助列表-->
+				<div class="zzlistcontainer">
+					<div class="container">
+						<div class="widget widget-padding span12" style="margin-top: 120px;">
+							<div class="tasktable-header">
+								<h5><span class="iconfont icon-celanliebiaogengduo1"></span>个人信息</h5>
+							</div>
+							<div class="task-body">
+								<div class="setinfo-content">
+									<div class="setinfo-avator">
+										<span style="color: #333333;font-weight: 600;">头像:</span>
+										<div style="display: flex;flex-direction: row;">
+											<div class="info-avator">
+												<img src="{$user.avatar}" />
+											</div>
+											<div class="setavator">
+												<span class="btn-setavator">
+											修改头像
+											<input type="file" class="upload_pic" id="takephoto" />
+										</span>
+											</div>
+										</div>
+
+									</div>
+									<form class="info-form updateinfo">
+											<div class="form-group">
+												<label for="info-username">用户名：</label>
+												<input type="text" class="form-control" disabled="disabled" id="username" value="{$user.user_login}" >
+											</div>
+											<div class="form-group">
+												<label for="info-email">余额：</label>
+												<input type="email" class="form-control" disabled="disabled"  value="{$user.coin}" placeholder="0.00">
+											</div>
+											<div class="form-group">
+												<label for="info-email">最近登录时间：</label>
+												<input type="text" class="form-control" disabled="disabled"  value="{$user.last_login_time}" >
+											</div>
+											<div class="form-group">
+												<label for="info-zfb">微信号：</label>
+												<input type="text" class="form-control" disabled="disabled"  value="{$user.weixin}" placeholder="微信号">
+											</div>
+											<div class="form-group">
+												<label for="info-email">支付宝:</label>
+												<input type="text" class="form-control" id="zfbno" disabled="disabled"  value="{$user.alipay}"  placeholder="支付宝账号">
+											</div>
+											<div class="form-group">
+												<label for="nicheng">昵称：</label>
+												<input type="text" class="form-control" id="nicheng" name="nicename" value="{$user.user_nicename}" placeholder="昵称">
+											</div>
+											<div class="form-group">
+												<label for="nicheng">手机号码：</label>
+												<input type="text" class="form-control" value="{$user.mobile}" name="mobile"  placeholder="手机号码">
+											</div>
+											<div class="info-formline">
+												<button type="button" onclick="updateinfo()" class="btn btn-danger">修改</button>
+												<button type="reset" class="btn btn-default">重置</button>
+											</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--自助列表结束-->
+<include file="public/Tphomeyy/foot.html" />
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/js/dialog-plus-min.js"></script>
+<script src="__PUBLIC__/plupload/js/plupload.full.min.js"></script>
+<script src="__PUBLIC__/qiniu/qiniu.js"></script>
+<script>
+$(function(){
+	var d = dialog({
+        content: '<img src="__PUBLIC__/images/loading.gif"/> 上传中'
+    });
+    var uploader = Qiniu.uploader({
+        runtimes: 'html5,flash,html4', // 上传模式,依次退化
+        browse_button: 'takephoto', // 上传选择的点选按钮，**必需**
+        uptoken: '{$upToken}', // uptoken 是上传凭证，由其他程序生成
+        get_new_uptoken: false, // 设置上传文件的时候是否每次都重新获取新的 uptoken
+        unique_names: true, // 默认 false，key 为文件名。若开启该选项，JS-SDK 会为每个文件自动生成key（文件名）
+        save_key: true, // 默认 false。若在服务端生成 uptoken 的上传策略中指定了 `sava_key`，则开启，SDK在前端将不对key进行任何处理
+        domain: 'http://qn.pybycl.com', // bucket 域名，下载资源时用到，**必需**
+        multi_selection: false,
+        max_file_size: '4mb', // 最大文件体积限制
+        flash_swf_url: '__PUBLIC__/plupload/js/Moxie.swf', //引入 flash,相对路径
+        dragdrop: false, // 开启可拖曳上传
+        chunk_size: '4mb', // 分块上传时，每块的体积
+        auto_start: true, // 选择文件后自动上传，若关闭需要自己绑定事件触发上传,
+        deleteAfterDays: 1,
+        init: {
+            'BeforeUpload': function(up, file) {
+                // 每个文件上传前,处理相关的事情
+            },
+            'UploadProgress': function(up, file) {
+                // 每个文件上传时,处理相关的事情
+                d.showModal();
+            },
+            'FileUploaded': function(up, file, info) {
+                // 每个文件上传成功后,处理相关的事情
+                var domain = up.getOption('domain');
+                var res = $.parseJSON(info);
+                var sourceLink = domain + "/" + res.key; //获取上传成功后的文件的Url
+                $.post('{:U("Tphomeyy/server/avatar")}',{"url":sourceLink},function(data){
+                	layer.msg(data.msg);
+                	if(data.status == 1){
+                		 setTimeout(function() {
+                			 window.location.reload()
+                         }, 1000);
+                	}
+                },"json");
+                //把链接放进任务链接输入框中
+                d.close().remove();
+            },
+            'Error': function(up, err, errTip) {
+                //上传出错时,处理相关的事情
+                d.close().remove();
+                alert(errTip);
+            }
+        }
+    });
+});
+function updateinfo(){
+	var data = $(".updateinfo").serialize();
+	$.get('{:U("Tphomeyy/server/userinfo")}',data,function(data){
+		layer.msg(data.msg);
+		if(data.status == 1){
+			 setTimeout(function() {
+             	window.location.reload()
+             }, 1000);
+		}
+	},"json");
+}
+</script>
+</body>
+</html>

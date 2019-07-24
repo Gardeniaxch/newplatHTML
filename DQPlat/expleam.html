@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>测试</title>
+		<style type="text/css">
+			body {
+				padding: 0;
+				margin: 0;
+				font-size: 14px;
+			}
+			
+			.main {
+				width: 500px;
+				margin: 0 auto;
+			}
+			
+			.list-yx {
+				margin-top: 20px;
+			}
+			
+			.list-yx select {
+				width: 200px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="main">
+			<form method="" action="">
+				<div class="list-yx">
+					游戏类别:
+					<select id="gametype" onchange="changeGame();">
+						<option>---游戏类别---</option>
+					</select>
+				</div>
+				<div class="list-yx">
+					游戏名称:
+					<select id="gamename">
+						<option>---游戏名称---</option>
+					</select>
+				</div>
+
+			</form>
+		</div>
+		<script type="text/javascript">
+			var games = new Array();
+			games["棋牌游戏"] = ["五子棋","象棋","围棋","飞行棋","跳棋"];
+			games["麻将游戏"] = ["广东麻将","四川麻将","湖南麻将"];
+			games["其他游戏"] = ["吃鸡","LOL","王者荣耀"];
+			
+			function changeGame(){
+				var gametype = document.getElementById('gametype').value;
+				var gamename = document.getElementById('gamename');
+				gamename.options.length = 0;
+				for(var i in games){
+					if(i == gametype){
+						console.log(i);
+//						console.log(games[i]);
+						for(var j in games[i]){
+							console.log(j);
+							gamename.add(new Option(games[i][j],games[i][j]),null)
+						}
+						
+					}
+				}
+				
+			}
+			
+			function startin(){
+				var gametype = document.getElementById('gametype');
+				for(var i in games){
+				
+//					console.log(i);
+					gametype.add(new Option(i,i),null);
+				}
+			}
+			
+			window.onload = startin();
+			
+			
+		</script>
+	</body>
+
+</html>

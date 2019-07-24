@@ -1,0 +1,63 @@
+<include file="public/Tphomeyy/head.html" pay='active' biaoti='在线充值' fdnew="{:sp_getad('滚动活动公告')}" />
+<include file="public/Tphomeyy/pay.html"  pay='active'/>
+	<div class="tab-content">
+								<div role="tabpanel" class="tab-pane active" id="zzlist">
+									<div class="zzmpinfo" style="text-align: start;">
+										<span style="display: flex;flex-direction: row;align-items: center;">
+											<span class="glyphicon glyphicon-exclamation-sign" style="color: red;font-size: 18px;margin-right: 8px;"></span>
+											提示:在线充值一般需要等待几秒或者十几秒才会自动到账！如有错误，请及时联系客服
+										</span>
+									</div>
+									<div class="widget widget-padding span12" style="text-align: start;">
+										<div class="tasktable-header">
+											<h5><span class="iconfont icon-celanliebiaogengduo1"></span>在线充值</h5>
+										</div>
+										<div class="task-body" style="border: 1px solid #DDDDDD;padding: 25px 0;">
+											<div class="row" style="padding: 20px;">
+												<div class="col-md-6">
+													<div class="pay-left">
+														<img class="paycode" alt="支付宝二维码" src="{:sp_get_asset_upload_path($fdini['pay_pic'])}" />
+														<p style="padding-top: 8px;">(支付宝二维码)</p>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="code-info">
+														<h5>充值方法</h5>
+														<p>1.扫描左侧二维码完成支付。 </p>
+														<p>2.支付的时候请确认支付宝名称: *{$fdini['pay_name']}。 </p>
+														<p>3.转账完成后,点击付款页面的详情查看更多信息复制订单号 </p>
+														<p>4.稍等 几 秒钟,在本页面输入交易号,等待后台自动确认。 </p>
+														<p>5.如果付款后提示交易号无法充值,请联系冲值客服QQ:{$fdini['q1']}。 </p>
+														<form name="form1" method="post" action="{:U('Server/payform')}" id="form1">
+															<h6 style="padding-bottom: 10px;color: #BB3756;font-size: 13px">请在下方输入您转账成功后的订单交易号</h6>
+															<!-- <div class="input-group">
+																<input type="text" name="orderid"  class="form-control codeno-input" value="" placeholder="请在此输入你的订单交易号" aria-describedby="basic-addon2">
+																<button type="submit"  class="input-group-addon codeno" id="basic-addon2">提交</button>
+															</div> -->
+															<div class="row">
+																<div class="col-lg-12">
+																	<div class="input-group">
+																		<input type="text"  name="orderid" value="" class="form-control codeno-input" placeholder="请在此输入你的订单交易号">
+																		<span class="input-group-btn codeno">
+																			<button type="submit" class="btn btn-default" style="background-color: #BB3756;color: white;border: 1px solid #BB3756">提交</button>
+																		</span>
+																	</div>
+																</div>
+															</div>
+														</form>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--<div role="tabpanel" class="tab-pane" id="messages">...</div>-->
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+<include file="public/Tphomeyy/foot.html" />
+</body>
+</html>

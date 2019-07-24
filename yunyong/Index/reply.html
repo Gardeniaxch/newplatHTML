@@ -1,0 +1,107 @@
+<include file="public/Tphomeyy/head.html" question='active' biaoti='反馈中心' fdnew="{:sp_getad('滚动活动公告')}" />
+<div class="zzlistcontainer">
+					<div class="container">
+						<div class="widget widget-padding span12" style="margin-top: 100px;min-height: 450px;">
+							<div class="tasktable-header">
+								<h5><span class="iconfont icon-icon_compile" style="margin-right: 10px;"></span>回复查看----{$data.biaoti}</h5>
+							</div>
+							<div class="task-body questionbody" style="margin-top: 10px;">
+								<div class="fankuiques">
+									<div class="questop">
+										<div class="queuser-ava">
+											<img src="{$data.avatar}" />
+										</div>
+										<p style="text-align: center;margin-bottom: 0;margin: 8px 0;">用户</p>
+										<span class="laber-q">楼主</span>
+									</div>
+									<div class="quesright">
+										<div class="quescontent">
+											<span class="fa fa-question-circle  mr-3"></span> {$data.neirong}
+										</div>
+										<div class="ques-time">
+											<a class="mr-2" style="color: #007BFF;cursor: pointer;" onclick="answer(this)"><span class="fa fa-edit mr-2"></span>回复&nbsp;&nbsp;&nbsp;&nbsp;</a>
+											<div class="answer-content" style="display: none;">
+												<form style="padding: 10px;">
+													<input type="hidden" name="questionId" value="{$data.id}">
+													<div class="form-group">
+														<label for="exampleInputPassword1" style="font-size:14px ;font-weight: 600;">回复:</label>
+														<textarea class="form-control" cols="3" placeholder="回复内容" name="content" style="min-height: 100px;"></textarea>
+													</div>
+												</form>
+											</div>
+											{$data.add_time}
+										</div>
+									</div>
+								</div>
+								<foreach name="list" item="vo">
+								<div class="otherpeople">
+									<div class="other-top">
+										回复
+									</div>
+									<div class="fankuiques otherfankui">
+										<div class="questop">
+											<div class="queuser-ava otherava">
+												<img src="{$vo.avatar}" />
+											</div>
+											<p style="text-align: center;margin-bottom: 0;margin: 8px 0;font-size: 12px;">用户</p>
+											<if condition="$vo['user_id'] eq $data['user_id']">
+												<span class="laber-q other-laber-q" style="background-color: red;">楼主</span>
+											<else/>
+												<span class="laber-q other-laber-q">用户</span>
+											</if>
+										</div>
+										<div class="quesright">
+											<div class="quescontent">
+												<span class="fa  fa-commenting  mr-3" style="font-size: 18px;color: #FD482C;"></span> {$vo.neirong}
+											</div>
+											<div class="ques-time">
+												<span class="fa fa-circle-o-notch mr-2"></span>{$vo.add_time}
+											</div>
+										</div>
+									</div>
+								</div>
+								</foreach>
+							</div>
+							{$page}
+						</div>
+					</div>
+				</div>
+<include file="public/Tphomeyy/foot.html" />
+<script>
+function answer(el) {
+	var fbwidth, fbheight;
+	if($("html").width() <= 460) {
+		fbwidth = '100%';
+	} else {
+		fbwidth = '460px';
+	}
+	layer.open({
+		type: 1,
+		title: "回复",
+		btn: ['回复', '取消'],
+		btn1:function(index,layero){
+			 var data = $(layero).find('form').serialize();
+			 var indexx = layer.load(1, {
+                shade: [0.1,'#fff'] //0.1透明度的白色背景
+            });
+			$.post('{:U("Tphomeyy/server/reply")}',data,function(data){
+				layer.msg(data.msg);
+				layer.close(indexx);
+				if(data.status == 1){
+					setTimeout(function() {
+						window.location.reload()
+               	}, 1000);
+				}
+			},'json');
+		},
+		area: [fbwidth, '260px'],
+		content: $(el).next(".answer-content").html()
+	}, function() {
+
+	}, function() {
+		layer.closeAll();
+	});
+}
+</script>
+</body>
+</html>

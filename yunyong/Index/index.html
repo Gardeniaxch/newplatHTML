@@ -1,0 +1,146 @@
+<include file="public/Tphomeyy/head.html" index='active' biaoti='首页' fdnew="{:sp_getad('滚动活动公告')}" />
+	<div id="home">
+					<div id="home_pic">
+						<!--中间内容开始-->
+						<div class="banner_text">
+							<h2>Hi！ {$user.user_login}</h2>
+							<p>欢迎使用{$title}平台，本次登录时间为<span class="time-year"></span>年</p>
+							<!--timer开始-->
+							<div class="timewe">
+								<div class="time_iner">
+									<div class="timer_day">
+										<div class="timer time-month">10</div>
+										<div style="color: white;">月</div>
+									</div>
+									<div class="timer_day">
+										<div class="timer time-day">23</div>
+										<div style="color: white;">日</div>
+									</div>
+									<div class="timer_day">
+										<div class="timer time-hour">15</div>
+										<div style="color: white;">时</div>
+									</div>
+									<div class="timer_day">
+										<div class="timer time-minter">35</div>
+										<div style="color: white;">分</div>
+									</div>
+								</div>
+							</div>
+							<!--timer结束-->
+							<div class="time_iner" style="margin-top: 20px">
+								<a class="timer_day" href='{:U("Tphomeyy/Index/info")}'>个人信息<span class="glyphicon glyphicon-hand-right" style="margin-left: 5px;"></span></a>
+							</div>
+						</div>
+						<!--中间内容结束-->
+					</div>
+				</div>
+				<!--home结束-->
+				<!--账户信息开始-->
+				<div id="our_gallery" style="background-color: white;">
+					<div class="container">
+						<h3>账户信息</h3>
+						<div class="gallery_center">
+							<div class="col-md-3 col-sm-6 col-xs-12 prices_item">
+								<div class="price_one price_one_one">
+									<div class="price_top">
+										<h5>账户余额</h5>
+										<p>￥ {$user.coin}</p>
+									</div>
+									<div class="price_bottom">
+										<p>查看账户明细</p>
+										<p>-</p>
+										<div class="prices_button">
+											<a href='{:U("Tphomeyy/Index/payout")}'>查看账户明细</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 col-xs-12 prices_item">
+								<div class="price_one price_one_two">
+									<div class="price_top top_two">
+										<h5>今日发布投票任务</h5>
+										<p>{$taskcount}</p>
+									</div>
+									<div class="price_bottom">
+										<p>查看投票列表</p>
+										<!--<p>Dance Troupe</p>-->
+										<p>-</p>
+										<!--<p>Fireworks</p>
+											<p>Live Band</p>-->
+										<div class="prices_button">
+											<a href='{:U("Tphomeyy/Index/mywork")}'>查看投票列表</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 col-xs-12 prices_item">
+								<div class="price_one price_one_three">
+									<div class="price_top top_three">
+										<h5>今日消费</h5>
+										<p>￥ {$coinsum}</p>
+									</div>
+									<div class="price_bottom">
+										<p>查看账户明细</p>
+										<p>-</p>
+										<div class="prices_button">
+											<a href='{:U("Tphomeyy/Index/payout")}'>查看账户明细</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 col-xs-12 prices_item">
+								<div class="price_one price_one_four">
+									<div class="price_top top_four">
+										<h5>充值总额</h5>
+										<p>￥ {$user.all_coin}</p>
+									</div>
+									<div class="price_bottom">
+										<p>查看账户充值明细</p>
+										<p>-</p>
+										<div class="prices_button">
+											<a href='{:U("Tphomeyy/Index/payinfo")}'>查看账户充值明细</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--账户信息结束-->
+				<!--services开始-->
+				<!--<div id="services">
+					<div class="container">
+						<h3 style="margin: 0;">信息服务</h3>
+						<div style="margin-top: 2em;">
+							<a href="#our_staff" class="col-md-4 col-sm-6 col-xs-6 services-grid">
+								<span class="glyphicon glyphicon-bell iconone" aria-hidden="true"></span>
+								<h5>公告</h5>
+								<p>发布任务必读，主要内容包括任务公告，最新活动以及价格表</p>
+							</a>
+							<a href="#our_gallery" class="col-md-4 col-sm-6 col-xs-6 services-grid">
+								<span class="glyphicon glyphicon-credit-card iconone" aria-hidden="true"></span>
+								<h5>账户信息</h5>
+								<p>统计自己的账户余额，充值总额，提现总额，佣金等，详情请看充值记录</p>
+							</a>
+							<a href="#end" class="col-md-4 col-sm-6 col-xs-6 services-grid">
+								<span class="glyphicon glyphicon-headphones iconone" aria-hidden="true"></span>
+								<h5>关于我们</h5>
+								<p>本平台的相关简介，客服的联系方式</p>
+							</a>
+						</div>
+					</div>
+				</div>-->
+				<!--services结束-->
+				<!--公告-->
+				<div id="our_staff" style="padding: 5em 0;background-color: #FFF0F5;width: 100%;">
+					<div class="container out_staff_container" style="text-align: start;">
+						<h3>公告</h3>
+						<div class="staff_center">
+							{:sp_getad('新发布平台首页公告')}
+						</div>
+					</div>
+				</div>
+				<!--公告结束-->
+<include file="public/Tphomeyy/foot.html" />
+</body>
+</html>

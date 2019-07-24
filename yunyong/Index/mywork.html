@@ -1,0 +1,446 @@
+<include file="public/Tphomeyy/head.html" mywork='active' biaoti='我的任务' fdnew="{:sp_getad('滚动活动公告')}" />
+	<!--我的任务-->
+	<style>
+		.mydataTable thead tr th{
+			vertical-align: middle
+		}
+	</style>
+				<div class="taskcontainer-header">
+					<div class="task-title">
+						<h3><span class="iconfont icon-task header-icon"></span>我的任务</h3>
+					</div>
+				</div>
+				<div class="taskcontainer-body">
+					<div class="widget widget-padding" style="margin-bottom: 50px;">
+						<div class="tasktable-header">
+							<h5><span class="iconfont icon-celanliebiaogengduo1"></span> 任务列表</h5>
+						</div>
+						<div class="task-body">
+							<div class="row" style="margin-top: 25px;">
+								<div class="col-sm-2">
+									<a href="" class="btn btn-danger" style="margin-bottom: 10px;background-color: #BB3756"><span class="glyphicon glyphicon-refresh" style="margin-right: 8px"></span>刷新</a>
+								</div>
+								<div class="col-sm-10" style="text-align: right;">
+									<form class="form-inline" method="post" action='{:U("Tphomeyy/Index/mywork")}'>
+										<div class="form-group" style="margin-bottom: 15px;">
+											<select class="form-control" name="type">
+												<option value="all">所有状态</option>
+												<option value="task">任务名称</option>
+												<option value="name">选手名称</option>
+												<option value="name">任务链接</option>
+											</select>
+										</div>
+										<div class="form-group" style="margin-bottom: 15px;">
+											<label class="sr-only" for="taskname"></label>
+											<input type="text" class="form-control" name='name'  id="taskname" placeholder="任务名称">
+										</div>
+										<div class="form-group" style="margin-bottom: 15px;">
+											<label class="sr-only" for="taskname"></label>
+											<input type="date" class="form-control" value=""  name="time"  id="datetimepicker" data-date-format="yyyy-mm-dd" placeholder="请选择时间">
+										</div>
+										<button type="submit" class="btn btn-default" style="color: white;margin-bottom: 15px; background-color: #BB3756;"><span class="glyphicon glyphicon-search" style="padding-right: 8px;"></span>查询</button>
+									</form>
+								</div>
+							</div>
+							<table id="users" class="table table-striped table-bordered mydataTable" style="margin-top:10px;">
+								<thead>
+									<tr role="row" style="background-color: #BB3756;color: #ffffff;font-weight: 600">
+										<th class="sorting_asc" tabindex="0" rowspan="1" colspan="1">单号</th>
+										<th class="sorting" tabindex="0" rowspan="1" colspan="1">任务名称</th>
+										<th class="sorting" tabindex="0" rowspan="1" colspan="1">选手链接</th>
+										<th class="sorting" tabindex="0" rowspan="1" colspan="1">选手名称</th>
+										<th class="sorting" tabindex="0" rowspan="1" colspan="1">下单数量</th>
+										<th class="sorting" tabindex="0" rowspan="1" colspan="1">订单状态</th>
+										<th class="sorting" tabindex="0" rowspan="1" colspan="1">发布时间</th>
+										<th class="sorting" tabindex="0" rowspan="1" colspan="1">到期时间</th>
+										<th class="sorting" tabindex="0" rowspan="1" colspan="1">限速/分</th>
+										<th class="sorting beizhu" tabindex="0" rowspan="1" colspan="1">备注</th>
+										<th class="sorting jianjie" tabindex="0" rowspan="1" colspan="1">说明</th>
+										<th class="sorting" tabindex="0" rowspan="1" colspan="1">单价</th>
+										<th class="sorting" tabindex="0" rowspan="1" colspan="1">完成数量</th>
+										<th class="sorting" tabindex="0" rowspan="1" colspan="1">操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<php>
+                                        $arr_type=array("0"=>L('排队中'),"1"=>L('进行中'),"2"=>'用户中止',"3"=>'到期中止',"4"=>'执行成功',"5"=>'已停止',"6"=>'排队中',"7"=>'审核失败',"8"=>'审核通过',"9"=>'请下单',"1001"=>'',"1002"=>'',"1003"=>'',"1004"=>'',"1005"=>',原因:失败率过高中止',"1006"=>',原因:无法投票'); $dlsk_type=array("0"=>L('代审'),"1"=>L('自审'),"2"=>'代审',"3"=>'到期中止',"4"=>'执行成功');
+                                    </php>
+									<foreach name="list" item="vo">
+									<tr class="odd">
+										<td>
+											<span class="tbody_header">单号:</span>
+											<span>{$vo.task_id}</span>
+										</td>
+										<td>
+											<span class="tbody_header">任务名称:</span>
+											<span>{$vo.name}</span>
+										</td>
+										<td style="min-width: 50px">
+												<span class="tbody_header">选手链接:</span>
+												<a href="{$vo.tpurl}" target="_blank" style="color:#BB3756;">点击打开</a>
+											</td>
+										<td>
+											<span class="tbody_header">选手名称:</span>
+											<span>{$vo.xs_name}</span>
+										</td>
+										
+										<td>
+											<span class="tbody_header">下单数量:</span>
+											<!-- <span>{$vo.num}/{$vo.o_num}</span> -->
+											<span style="font-weight: 600;">{$vo.num}</span>
+										</td>
+										<td>
+												<span class="tbody_header">订单状态:</span>
+												<span class="table-status">
+													<if condition="($vo.task_buff eq 4) or ($vo.task_buff eq 5)">
+														<!-- <font color="#FF0000"> -->
+														<font class="label label-success" style="padding: 5px;background: #FF0000">
+													</if>
+													<if condition="($vo.task_buff eq 6)">
+															<!-- <font color="#64D864"> -->
+															<font class="label label-info" style="padding: 5px;background: #2992E6">
+													</if>
+													<if condition="($vo.task_buff eq 1)">
+															<!-- <font color="#BB3756"> -->
+																<font class="label label-success" style="padding: 5px">
+													</if>
+													<if condition="($vo.task_buff eq 9)">
+															<!-- <font color="#FA8B03"> -->
+															<font class="label label-warning" style="padding: 5px;">
+													</if>
+													<if condition="($vo.task_buff eq 8)">
+															<font class="label label-warning" style="padding: 5px;background-clip:#FFBB96 ">
+													</if>
+													<if condition="($vo.task_buff eq 2)">
+															<font color="#8590a6" style="font-weight: 600">
+													</if>
+													<php>
+														$nameArr = S('task_name' . $vo['task_id']); if($vo['zztask_buff']==7){ echo '不通过:'.$vo['beizhu'];</php>
+													<php>}elseif($vo['task_buff']==1&&$vo['zztask_buff']==2){ echo '停止中';</php>
+													<php>}elseif($vo['task_buff']==6&&isset($nameArr['name'])){ echo '处理中';</php>
+													<php>}else{</php>
+													{$arr_type[$vo['task_buff']]}
+													<php>}</php>
+													</font>
+												</span>
+											</td>
+										
+										<td>
+											<span class="tbody_header">发布时间:</span>
+											<span>{$vo.fatime}</span>
+										</td>
+										<td>
+											<span class="tbody_header">到期时间:</span>
+											<span>{$vo.endtime}</span>
+										</td>
+										<td>
+											<span class="tbody_header">限速/分:</span>
+											<span>{$vo.xzno}</span>
+										</td>
+										
+										<td class="beizhu">
+											<span class="tbody_header">备注:</span>
+											<span>{$vo.beizhu}</span>
+										</td>
+										<td class="jianjie">
+											<span class="tbody_header">说明:</span>
+											<span>{$vo.jianjie}</span>
+										</td>
+										<td>
+											<span class="tbody_header">单价:</span>
+											<span class="label label-danger" style="padding: 5px 10px">
+												<if condition="($is_dispaly eq $vo['id']) or ($is_dispaly eq 85359) or ($is_dispaly eq 2)">
+	                                                {$vo.danjia}
+	                                            </if>
+											</span>
+										</td>
+										<td>
+												<span class="tbody_header">完成数量:</span>
+												<span class="label label-info" style="padding: 5px 10px">{$vo.n_num}</span>
+											</td>
+										<td>
+											<span class="tbody_header">操作:</span>
+											<div class="btn-group operatingone">
+												<a class="btn btn-small btn-success dropdown-toggle" data-toggle="dropdown" href="#">
+													<span class="operatename">操作</span>
+													<span class="caret"></span>
+												</a>
+												<ul class="dropdown-menu pull-right">
+													<if condition="$vo['task_buff'] neq 9">
+                                   					<php>if (($vo['zztask_buff']+0)!=7){</php>
+													<li>
+														<a onclick="taskzjxg(this,{$vo.task_id})" href="#">追加修改</a>
+														<div class="task-zjxg-content" style="display: none;">
+															<form style="padding: 20px;">
+																<div class="form-group">
+																	<h4 class="task-name">任务名称标题：{$vo.name}</h4>
+																</div>
+																<p class="task-link">{$vo.tpurl}</p>
+																<div class="form-group">
+																	<label for="danjia">单价:</label>
+																	<input type="number" class="form-control" id="danjia" value="{$vo.danjia}" disabled="disabled" placeholder="">
+																</div>
+																<div class="form-group">
+																	<label for="num">追加数量:</label>
+																	<input type="zj-num" class="form-control" id="zj-num" name="num" value=""  placeholder="">
+																</div>
+																<div class="form-group">
+																	<label for="xs-num">限速每分钟:</label>
+																	<input type="number" class="form-control"  name="xzno"  id="xs-num" value="0"  placeholder="">
+																</div>
+																<div class="form-group">
+																	<label for="xs-num">简介:</label>
+																	<textarea class="form-control"  name="jianjie" rows="3"></textarea>
+																</div>
+																<div class="form-group">
+																	<label for="xs-num">备注:</label>
+																	<textarea class="form-control" name="beizhu"  rows="3"></textarea>
+																</div>
+															</form>
+														</div>
+													</li>
+													<li>
+														<a onclick="taskcxfb(this,{$vo.task_id})" href="#">重新发布</a>
+														<!--重发模态框-->
+														<div class="task-cxfb-content" style="display: none;">
+															<form style="padding: 20px;">
+																<div class="form-group">
+																	<h4 class="task-name">任务名称标题：{$vo.name}</h4>
+																</div>
+																<p class="task-link">{$vo.tpurl}</p>
+																<div class="form-group">
+																	<label for="fb-num">发布数量:</label>
+																	<input type="number" class="form-control" name="num"  id="fb-num" value=""  placeholder="">
+																</div>
+																<div class="form-group">
+																	<label for="xs-num">限速每分钟:</label>
+																	<input type="number" name="xzno"  class="form-control" id="xs-num" value="0"  placeholder="">
+																</div>
+																<div class="form-group">
+																	<label for="xs-num">简介:</label>
+																	<textarea class="form-control" name="jianjie" rows="3"></textarea>
+																</div>
+																<div class="form-group">
+																	<label for="xs-num">备注:</label>
+																	<textarea name="beizhu"  class="form-control" rows="3"></textarea>
+																</div>
+															</form>
+														</div>
+													</li>
+													<li>
+														<a onclick="taskstop({$vo.task_id})" href="#">终止任务</a>
+													</li>
+													<li>
+														<a onclick="stoptask({$vo.task_id})" href="#">取消审核</a>
+													</li>
+													<?php } ?>
+                                           			<else />
+													<li>
+														<a onclick="taskfabu(this,{$vo.task_id});" href="#">发布</a>
+														<!--发布模态框-->
+														<div class="task-fb-content" style="display: none;">
+															<form style="padding: 20px;">
+																<input type="hidden" name="typeid" id="typeid" value="8888" />
+																<div class="form-group">
+																	<h4 class="task-name">任务名称标题：{$vo.name}</h4>
+																</div>
+																<p class="task-link">{$vo.tpurl}</p>
+																<div class="form-group">
+																	<label for="danjia">单价:</label>
+																	<input type="number" class="form-control" id="danjia" value="{$vo.danjia}" disabled="disabled"  placeholder="">
+																</div>
+																<div class="form-group">
+																	<label for="num">下单数量:</label>
+																	<input type="number" class="form-control" id="num"  value="{$vo.num}"  disabled="disabled"  placeholder="">
+																</div>
+																<div class="form-group">
+																	<label for="xs-num">限速每分钟:</label>
+																	<input type="number" class="form-control" name="xzno"  id="xs-num" value="{$vo.xzno}"  placeholder="">
+																</div>
+															</form>
+														</div>
+													</li>
+													</if>
+												</ul>
+											</div>
+										</td>
+									</tr>
+									</foreach>
+								</tbody>
+							</table>
+							<div class="mypage">
+								{$page}
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--我的任务结束-->
+<include file="public/Tphomeyy/foot.html" />
+<script>
+function taskfabu(el,id) {
+	var fbwidth, fbheight;
+	if($("html").width() <= 600) {
+		fbwidth = '100%';
+		fbheight = '100%';
+	} else {
+		fbwidth = '600px';
+		fbheight = '560px';
+	}
+	layer.open({
+		type: 1,
+		title: "发布任务",
+		btn: ['确定', '取消'],
+		btn1:function(index,layero){
+			 var data = $(layero).find('form').serialize()+"&task_id="+id;
+			 var indexx = layer.load(1, {
+                shade: [0.1,'#fff'] //0.1透明度的白色背景
+            });
+			$.post('{:U("Tphomeyy/Server/addtask")}',data,function(data){
+				layer.msg(data.msg);
+				layer.close(indexx);
+				if(data.status == 1){
+					setTimeout(function() {
+						window.location.reload()
+               		}, 1000);
+				}
+			},'json');
+		},
+		area: [fbwidth, fbheight],
+		content: $(el).next(".task-fb-content").html()
+	}, function() {
+		/* layer.msg('发布成功', {
+			icon: 1
+		}); */
+	}, function() {
+		layer.closeAll();
+	});
+}
+
+function taskzjxg(el,id) {
+	var fbwidth, fbheight;
+	if($("html").width() <= 600) {
+		fbwidth = '100%';
+		fbheight = '100%';
+	} else {
+		fbwidth = '600px';
+		fbheight = '560px';
+	}
+	layer.open({
+		type: 1,
+		title: "追加修改",
+		btn: ['确定', '取消'],
+		btn1:function(index,layero){
+			 var data = $(layero).find('form').serialize();
+			 var indexx = layer.load(1, {
+                shade: [0.1,'#fff'] //0.1透明度的白色背景
+            });
+			$.post('{:U("Tphomeyy/server/addtaskog")}&id='+id,data,function(data){
+				layer.msg(data.msg);
+				layer.close(indexx);
+				if(data.status == 1){
+					setTimeout(function() {
+						window.location.reload()
+               	}, 1000);
+				}
+			},'json');
+		},
+		area: [fbwidth, fbheight],
+		content: $(el).next(".task-zjxg-content").html()
+	}, function() {
+		/* layer.msg('追改成功', {
+			icon: 1
+		}); */
+	}, function() {
+		layer.closeAll();
+	});
+}
+
+function taskcxfb(el,id) {
+	var fbwidth, fbheight;
+	if($("html").width() <= 600) {
+		fbwidth = '100%';
+		fbheight = '100%';
+	} else {
+		fbwidth = '600px';
+		fbheight = '560px';
+	}
+	layer.open({
+		type: 1,
+		title: "重新发布",
+		btn: ['确定', '取消'],
+		btn1:function(index,layero){
+			 var data = $(layero).find('form').serialize();
+			 var indexx = layer.load(1, {
+               shade: [0.1,'#fff'] //0.1透明度的白色背景
+           });
+			$.post('{:U("Tphomeyy/server/addtaskogex")}&id='+id,data,function(data){
+				layer.msg(data.msg);
+				layer.close(indexx);
+				if(data.status == 1){
+					setTimeout(function() {
+						window.location.reload()
+               	}, 1000);
+				}
+			},'json');
+		},
+		area: [fbwidth, fbheight],
+		content: $(el).next(".task-cxfb-content").html()
+	}, function() {
+		/* layer.msg('重发成功', {
+			icon: 1
+		}); */
+	}, function() {
+		layer.closeAll();
+	});
+}
+
+function taskstop(id) {
+	layer.open({
+        btn: ["确定", "关闭"],
+        btn1: function(index, layero) {
+            var indexx = layer.load(1, {
+                shade: [0.1,'#fff'] //0.1透明度的白色背景
+            });
+            $.post('{:U("Tphomeyy/server/stopTask")}', { "id": id}, function(data) {
+                layer.msg(data.msg)
+                layer.close(indexx);
+                if (data.status == 1) {
+                    setTimeout(function() {
+                    	window.location.reload()
+                    }, 1000);
+                }
+
+            }, "json")
+        },
+        title: '终止任务',
+        skin: 'zizhu',
+        content: "确定终止任务吗？"
+    })
+}
+
+function stoptask(id) {
+	layer.open({
+        btn: ["确定", "关闭"],
+        btn1: function(index, layero) {
+            var indexx = layer.load(1, {
+                shade: [0.1,'#fff'] //0.1透明度的白色背景
+            });
+            $.post('{:U("Tphomeyy/server/taskstop")}', { "id": id}, function(data) {
+                layer.msg(data.msg)
+                layer.close(indexx);
+                if (data.status == 1) {
+                    setTimeout(function() {
+                    	window.location.reload()
+                    }, 1000);
+                }
+
+            }, "json")
+        },
+        title: '取消审核',
+        skin: 'zizhu',
+        content: "确定取消审核吗？"
+    })
+}
+</script>
+</body>
+</html>

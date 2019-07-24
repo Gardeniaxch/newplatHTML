@@ -1,0 +1,139 @@
+.mine-left {
+	/*border: 1px solid #EEEEEE;*/
+	/*box-shadow: 6px 1px 20px rgba(69, 65, 78, 0.1);*/
+	/*padding: 20px;*/
+	/*background-color: #FFFFFF;*/
+	margin-bottom: 20px;
+}
+
+.mine-right {
+	/*border: 1px solid #EEEEEE;*/
+	/*box-shadow: 6px 1px 20px rgba(69, 65, 78, 0.1);*/
+	/*padding: 20px;*/
+	/*background-color: #FFFFFF;*/
+	margin-bottom: 20px;
+}
+
+.profile-avatar {
+	border-radius: 50%;
+	padding: 10px;
+	border: 1px solid #e7e7e2;
+	float: left;
+}
+
+.profile-avatar img {
+	border-radius: 50%;
+	border: 1px solid #e7e7e2;
+	width: 100px;
+	height: 100px;
+}
+
+.profile-name {
+	margin-top: 10px;
+	font-size: 22px;
+	margin-bottom: 10px;
+}
+
+.profile-info .profile-sex {
+	padding: 10px 0;
+	font-size: 18px;
+}
+
+.profile-footer {
+	padding: 15px;
+	font-size: 20px;
+	background: #FFFFFF;
+}
+
+.profile-footer p {
+	padding: 8px 15px;
+	color: #83848A;
+	font-size: 16px;
+}
+
+.profile-footer p span {
+	font-size: 20px;
+	margin-right: 15px
+}
+
+.profile-modify {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 30px;
+}
+
+.profile-btn {
+	border: 0;
+	background: #4D7CFE;
+	color: white;
+	padding: 10px 15px;
+}
+
+.profile-btn:hover {
+	color: white;
+}
+
+.noradius {
+	padding: 10px 15px;
+}
+
+
+/*修改密码*/
+
+.pwd-info {
+	width: 100%;
+	background-color: white;
+}
+
+.pwd-container {
+	background-color: white;
+	padding: 20px;
+	margin-top: 30px;
+	padding-bottom: 60px;
+}
+
+.pwd-header {
+	padding: 10px;
+	width: 100%;
+	border-bottom: 1px solid #E5E5E5;
+}
+
+.pwd-center {
+	margin-top: 20px;
+}
+
+.pwd-input {
+	padding: 15px;
+	height: auto;
+	width: 60%;
+}
+
+.pwd-center form div {
+	margin-bottom: 20px;
+}
+.pwd-center .pwd-buttoms{
+	margin-top:30px ;
+}
+.pwd-center .pwd-buttoms button:first-child{
+	margin-right: 30px;
+	border:0 ;
+	border-radius: 0;
+	background-color: #4D7CFE;
+	color: white;
+	padding: 10px 15px;
+}
+.pwd-center .pwd-buttoms button:last-child{
+	border-radius: 0;
+	padding: 10px 15px;
+}
+
+@media only screen and (max-width:768px) {
+	.profile-avatar {
+		margin-right: 15px;
+	}
+	.pwd-input {
+		width: 100%;
+	}
+}

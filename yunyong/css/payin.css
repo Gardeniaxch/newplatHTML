@@ -1,0 +1,28 @@
+.pay-left{
+	width:210px;
+	text-align:center;
+	margin: auto;
+	/*margin:20px;*/
+	margin-bottom: 30px;
+}
+
+.paycode{
+	width: 210px;
+	height: 210px;
+	display: block;
+	vertical-align: middle;
+}
+.code-info{
+	display: flex;
+	flex-direction: column;
+}
+.code-info h5{
+	clear: both;
+	font-weight: 600;
+	font-size: 18px;
+	color: #333333;
+	margin-bottom: 25px;
+}
+.code-info p{
+	line-height: 16px;
+}

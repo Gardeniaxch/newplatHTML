@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+		<title>DQ平台</title>
+		<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/ready..css" />
+		<link rel="stylesheet" href="../css/home.css" />
+		<link rel="stylesheet" href="../font/iconfont.css" />
+		<link rel="stylesheet" href="../css/mytask.css" />
+		<link rel="stylesheet" href="../bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css" />
+		<style type="text/css">
+			.dropdown-menu{
+				z-index: 20001014;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="wrapper">
+			<!--<div class="main-header">
+				<div class="logo-header">
+					<a href="index.html" class="logo">DQ任务发布平台</a>
+				</div>
+			</div>-->
+			<!--导航栏-->
+			<nav class="navbar navbar-default main-header">
+				<div class="container-fluid">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="glyphicon glyphicon-align-left navbar-icon"></span>
+						</button>
+						<div class="header-logo">
+							<a class="navbar-brand main-logo" href="#">DQ任务发布平台</a>
+						</div>
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					        <span class="sr-only">Toggle navigation</span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					    </button>
+					</div>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav navbar-right">
+							<li class="dropdown">
+								<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+									<img src="http://cdn.duitang.com/uploads/item/201408/25/20140825212121_NePFj.jpeg" alt="user-img" width="36" class="img-circle">
+									<span>Hizrian</span>
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="userinfo.html">个人信息</a>
+									</li>
+									<li role="separator" class="divider"></li>
+									<li>
+										<a href="updatePwd.html">修改密码</a>
+									</li>
+									<!--<li>
+										<a href="#">Something else here</a>
+									</li>-->
+									<li role="separator" class="divider"></li>
+									<li>
+										<a href="#">退出登陆</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<!-- /.navbar-collapse -->
+				</div>
+				<!-- /.container-fluid -->
+			</nav>
+			<!--侧边栏-->
+			<div class="sidebar">
+				<div class="scrollbar-inner sidebar-wrapper">
+					<div class="user">
+						<div class="photo">
+							<img src="http://cdn.duitang.com/uploads/item/201408/25/20140825212121_NePFj.jpeg" alt="user-img">
+						</div>
+						<div class="info">
+							<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+								<span>
+									Hizrian
+									<span class="user-level"><span class="iconfont icon-xingbienv" style="font-size: 16px;color:#FF3EC9 ;"></span></span>
+								<span class="caret"></span>
+								</span>
+							</a>
+							<div class="clearfix"></div>
+							<div class="collapse in" id="collapseExample" aria-expanded="true" style="">
+								<ul class="nav userul">
+									<li class="active">
+										<a href="userinfo.html">
+											<span class="link-collapse">个人信息</span>
+										</a>
+									</li>
+									<li>
+										<a href="updatePwd.html">
+											<span class="link-collapse">修改密码</span>
+										</a>
+									</li>
+									<!--<li>
+										<a href="#settings">
+											<span class="link-collapse">Settings</span>
+										</a>
+									</li>-->
+								</ul>
+							</div>
+						</div>
+					</div>
+					<ul class="nav">
+						<li class="nav-item active">
+							<a href="index.html">
+								<!--<span class="glyphicon glyphicon-asterisk"></span>-->
+								<span class="glyphicon glyphicon-home"></span>
+								<p>首页</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="mytask.html">
+								<!--<span class="glyphicon glyphicon-th-list"></span>-->
+								<span class="iconfont icon-renwuliebiao"></span>
+								<p>我的任务</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="zzlist.html">
+								<!--<span class="glyphicon glyphicon-th-list"></span>-->
+								<span class="iconfont icon-dingdan"></span>
+								<p>自助活动</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="OnlineRecharge.html">
+								<span class="iconfont icon-chongzhi3"></span>
+								<p>在线充值</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="RechargeRecord.html">
+								<span class="iconfont icon-chongzhijilu1"></span>
+								<p>充值记录</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="xiaxian.html">
+								<span class="iconfont icon-group"></span>
+								<p>我的下线</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="inoutBill.html">
+								<span class="iconfont icon-baojia"></span>
+								<p>收支账单</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="icons.html">
+								<span class="iconfont icon-gerenzhongxin-shiyongbangzhu"></span>
+								<p>帮助中心</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--中间内容-->
+			<div class="main-panel">
+				<div class="content" style="margin-bottom: 60px;">
+					<div class="container-fluid">
+						<!--<h4 class="page-title"><span class="iconfont icon-renwuliebiao" style="font-size: 18px; margin-right: 8px;"></span>我的任务</h4>-->
+						<div class="task_title">
+							<h4 class="task_page-title"><span class="iconfont icon-renwuliebiao" style="font-size: 18px; margin-right: 8px;"></span>我的任务</h4>
+							<div class="tasktile-right">
+								<a class="tasktile-link zzmp"><span class="glyphicon glyphicon-plus" style="color: white;margin: 0 5px;"></span>自助MP</a>
+								<!--<a class="tasktile-link"><span class="glyphicon glyphicon-plus" style="color: white;margin: 0 8px;"></span>自助列表</a>-->
+								<a class="tasktile-link zzqt"><span class="glyphicon glyphicon-plus" style="color: white;margin: 0 5px;"></span>自助其他</a>
+							</div>
+						</div>
+						<div class="widget widget-padding span12">
+							<div class="task-header">
+								<h5><span class="iconfont icon-celanliebiaogengduo1"></span> 任务列表</h5>
+							</div>
+							<div class="task-body">
+								<div class="row-fluid" style="padding: 10px;margin: 10px 0px;">
+									<form class="form-inline">
+										<div class="form-group" style="margin-bottom: 15px;">
+											<select class="form-control">
+												<option>所有状态</option>
+												<option>任务名称</option>
+												<option>选手名称</option>
+											</select>
+										</div>
+										<div class="form-group" style="margin-bottom: 15px;">
+											<label class="sr-only" for="taskname"></label>
+											<input type="text" class="form-control" id="taskname" placeholder="任务名称">
+										</div>
+										<div class="form-group" style="margin-bottom: 15px;">
+											<label class="sr-only" for="taskname"></label>
+											<input type="text" class="form-control" value="" id="datetimepicker" data-date-format="yyyy-mm-dd" placeholder="请选择时间">
+										</div>
+										<button type="submit" class="btn btn-default" style="color: white;margin-bottom: 15px; background-color: #4D7CFE;"><span class="glyphicon glyphicon-search" style="padding-right: 8px;"></span>查询</button>
+									</form>
+								</div>
+								<table id="users" class="table table-striped table-bordered mydataTable">
+									<thead>
+										<tr role="row">
+											<th class="sorting_asc" tabindex="0" rowspan="1" colspan="1">编号</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">任务名称</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">选手名称</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">选手链接</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">总需求量/隐藏</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">已完成</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">发布时间</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">终止时间</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">限速/60秒</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">状态</th>
+											<th class="sorting beizhu" tabindex="0" rowspan="1" colspan="1">备注</th>
+											<th class="sorting jianjie" tabindex="0" rowspan="1" colspan="1">简介</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">单价</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1">操作</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="odd">
+											<td>
+												<span class="tbody_header">编号:</span>
+												<span>001</span>
+											</td>
+											<td>
+												<span class="tbody_header">任务名称:</span>
+												<span>自助: 湖南 三方</span>
+											</td>
+											<td>
+												<span class="tbody_header">选手名称:</span>
+												<span>选手名称：会昂家那好的罚送到家了神经分裂</span>
+											</td>
+											<td>
+												<span class="tbody_header">选手链接:</span>
+												<a href="http://www.baidu.com" target="_blank">点击打开</a>
+											</td>
+											<td>
+												<span class="tbody_header">总需求量/隐藏:</span>
+												<span>1 / 0</span>
+											</td>
+											<td>
+												<span class="tbody_header">已完成:</span>
+												<span>0</span>
+											</td>
+											<td>
+												<span class="tbody_header">发布时间:</span>
+												<span>2019-01-11 15:34:22</span>
+											</td>
+											<td>
+												<span class="tbody_header">结束时间:</span>
+												<span>2019-01-12 15:34:22</span>
+											</td>
+											<td>
+												<span class="tbody_header">限速/60秒:</span>
+												<span>0</span>
+											</td>
+											<td>
+												<span class="tbody_header">状态:</span>
+												<span class="table-status">中止且结算</span>
+											</td>
+											<td class="beizhu">
+												<span class="tbody_header">备注:</span>
+												<span>15084784815</span>
+											</td>
+											<td class="jianjie">
+												<span class="tbody_header">简介:</span>
+												<span></span>
+											</td>
+											<td>
+												<span class="tbody_header">单价:</span>
+												<span>2.00</span>
+											</td>
+											<td>
+												<span class="tbody_header">操作:</span>
+												<div class="btn-group operatingone">
+													<a class="btn btn-small btn-success dropdown-toggle" data-toggle="dropdown" href="#">
+														<span class="operatename">操作</span>
+														<span class="caret"></span>
+													</a>
+													<ul class="dropdown-menu pull-right">
+														<li>
+															<a onclick="task_zjxg(this);" href="#">追加修改</a>
+														</li>
+														<li>
+															<a href="#">重新发布</a>
+														</li>
+														<li>
+															<a href="#">打包下载</a>
+														</li>
+														<li>
+															<a href="#">查图外链</a>
+														</li>
+														<li>
+															<a href="#">终止任务</a>
+														</li>
+														<li>
+															<a href="#">刷新任务</a>
+														</li>
+													</ul>
+												</div>
+												<div class="operatingtow">
+													<button onclick="task_zjxg(this);" class="btn btn-default">追加修改</button>
+													<button class="btn btn-danger">重新发布</button>
+													<button class="btn btn-info">终止任务</button>
+												</div>
+											</td>
+										</tr>
+										<tr class="even">
+											<td class="  sorting_1">
+												<span class="tbody_header">编号:</span>
+												<span>002</span>
+											</td>
+											<td>
+												<span class="tbody_header">任务名称:</span>
+												<span>自助: 湖南 三方</span>
+											</td>
+											<td>
+												<span class="tbody_header">选手名称:</span>
+												<span>选手名称：会昂家那好的罚送到家了神经分裂</span>
+											</td>
+											<td>
+												<span class="tbody_header">选手链接:</span>
+												<a href="http://www.baidu.com" target="_blank">点击打开</a>
+											</td>
+											<td>
+												<span class="tbody_header">总需求量/隐藏:</span>
+												<span>1 / 0</span>
+											</td>
+											<td>
+												<span class="tbody_header">已完成:</span>
+												<span>0</span>
+											</td>
+											<td>
+												<span class="tbody_header">发布时间:</span>
+												<span>2019-01-11 15:34:22</span>
+											</td>
+											<td>
+												<span class="tbody_header">结束时间:</span>
+												<span>2019-01-12 15:34:22</span>
+											</td>
+											<td>
+												<span class="tbody_header">限速/60秒:</span>
+												<span>0</span>
+											</td>
+											<td>
+												<span class="tbody_header">状态:</span>
+												<span class="table-status">中止且结算</span>
+											</td>
+											<td class="beizhu">
+												<span class="tbody_header">备注:</span>
+												<span>15084784815</span>
+											</td>
+											<td class="jianjie">
+												<span class="tbody_header">简介:</span>
+												<span></span>
+											</td>
+											<td>
+												<span class="tbody_header">单价:</span>
+												<span>2.00</span>
+											</td>
+											<td>
+												<span class="tbody_header">操作:</span>
+												<div class="btn-group operatingone">
+													<a class="btn btn-small btn-success dropdown-toggle" data-toggle="dropdown" href="#">
+														<span class="operatename">操作</span>
+														<span class="caret"></span>
+													</a>
+													<ul class="dropdown-menu pull-right">
+														<li>
+															<a href="#"><i class="icon-envelope"></i> Email</a>
+														</li>
+														<li>
+															<a href="#"><i class="icon-edit"></i> Edit</a>
+														</li>
+														<li>
+															<a href="#"><i class="icon-trash"></i> Delete</a>
+														</li>
+													</ul>
+												</div>
+												<div class="operatingtow">
+													<button class="btn btn-default">增加</button>
+													<button class="btn btn-danger">修改</button>
+													<button class="btn btn-info">删除</button>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="zzmpcontent" style="display: none;">
+					<div class="zzmpcenter">
+						<form>
+							<div class="zzmpinfo">
+								<span>投票系统正式上线，所有投票均为真实用户，数据可靠、安全，欢迎使用！</span>
+							</div>
+							<div class="form-group">
+								<label for="mp-link">
+									<span class="glyphicon glyphicon-link" style="color: #FF0000;margin-right: 8px;"></span>
+									链接
+								</label>
+								<textarea id="mp-link" class="form-control" rows="3" placeholder="请输入活动链接" required="required"></textarea>
+							</div>
+							<div class="form-group">
+								<label for="mp-item">
+									<span style="color: #FF0000;margin-right: 5px;">*</span>
+									投票选项
+									<span style="color: #FF0000;margin-right: 5px;font-size: 12px;">（请认真选择要投票的项）</span>
+								</label>
+								<div class="mpitemtext">
+									<span>请<a href="#" style="color: #1E9FFF;">点击这里</a>获取</span>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="mp-xs">限速（每60s跑多少票，0为不限速）</label>
+								<input type="email" class="form-control" id="mp-xs" name="mp-xs" value="0" placeholder="限速(默认为0)">
+							</div>
+							<div class="form-group">
+								<label for="mp-times">
+									<span style="color: #FF0000;margin-right: 5px;">*</span>
+									次数
+									<span style="margin-right: 5px;font-size: 12px;">（必须为100的倍数）</span>
+								</label>
+								<input type="password" class="form-control" id="mp-times" name="mp-times" value="" placeholder="次数（必须为100的倍数）">
+							</div>
+							<div class="checkbox">
+								<label>
+							      <input type="checkbox" class="mpcheck"> 载图模式 （每千次加￥10）
+							    </label>
+							</div>
+							<div style="width: 100%;margin-top: 10px;">
+								<span style="margin-right: 25px;">当前余额:&nbsp;&nbsp;<span style="background-color: #59D05D;padding: 4px 8px;color: white;border-radius: 8px;font-weight: 600;">$ 12345.00</span></span>
+								<span>本次价格:&nbsp;&nbsp;<span style="background-color: #B84442;padding: 4px 8px;color: white;border-radius: 8px;">$ 2.00</span></span>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="zzqtcontent" style="display: none;">
+					<div class="zzqtcenter">
+						<form class="form-horizontal">
+							<div class="form-group">
+								<label for="zzqt-type" class="col-sm-2 control-label">任务类型</label>
+								<div class="col-sm-10">
+									<div class="checkbox">
+										<label>
+								          <input id="zzqt-type" type="checkbox" checked="checked"> 通用《审》
+								        </label>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputEmail3" class="col-sm-2 control-label">活动类型</label>
+								<div class="col-sm-10">
+									<select class="form-control">
+										<option>人工审核</option>
+										<option>51直投</option>
+										<option>七七投票</option>
+										<option>会小二直投</option>
+										<option>凡科投票</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="zzqt-link" class="col-sm-2 control-label">地址</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" id="zzqt-link" placeholder="如:http://mp.weixin.qq.com/s?__biz=***=&mid=*mp;sn=***#wechat_redirect">
+								</div>
+								<span class="zzqtspan" style="color: red;">*</span>
+							</div>
+							<div class="form-group">
+								<label for="zzqt-xsname" class="col-sm-2 control-label">选手名称或编号</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="zzqt-xsname" placeholder="">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="zzqt-gdtitle" class="col-sm-2 control-label">工单标题</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" id="zzqt-gdtitle" placeholder="必填!用于显示的标题内容,如给某某投票等,此处禁止填写链接地址" />
+								</div>
+								<span class="zzqtspan" style="color: red;">*</span>
+							</div>
+							<div class="form-group">
+								<label for="zzqt-number" class="col-sm-2 control-label">票数</label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" id="zzqt-number" placeholder="最低票起" />
+								</div>
+								<span class="zzqtspan" style="color: red;">*(必填!)需要执行的数量, </span>
+							</div>
+							<div class="form-group">
+								<label for="zzqt-lt" class="col-sm-2 control-label">连投</label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" id="zzqt-lt" placeholder="1" />
+								</div>
+								<span class="zzqtspan" style="color: #333333;">连投几票 </span>
+							</div>
+							<div class="form-group">
+								<label for="zzqt-content" class="col-sm-2 control-label">简介内容</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="zzqt-content" placeholder="(请填写投票流程or连投几票，不写出错自负)" />
+								</div>
+							</div>
+							<!--<div class="zzqt-gzh">-->
+							<fieldset class="zzqt-gzh">
+								<legend>公众号</legend>
+								<div class="form-group">
+									<label for="gzh-name" class="col-sm-2 control-label">公众号名字</label>
+									<div class="col-sm-6">
+										<input type="text" class="form-control" id="gzh-name" placeholder="" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="gzh-id" class="col-sm-2 control-label">公众号id</label>
+									<div class="col-sm-6">
+										<input type="text" class="form-control" id="gzh-id" placeholder="" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="gzh-content" class="col-sm-2 control-label">公众号回复内容</label>
+									<div class="col-sm-6">
+										<input type="text" class="form-control" id="gzh-content" placeholder="" />
+									</div>
+								</div>
+							</fieldset>
+							<!--</div>-->
+
+							<div class="form-group">
+								<label for="zzqt-area" class="col-sm-2 control-label">地区限制</label>
+								<div class="col-sm-2">
+									<select class="form-control" id="zzqt-area">
+										<option>无</option>
+										<option>安徽</option>
+										<option>北京</option>
+										<option>上海</option>
+										<option>重庆</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputPassword3" class="col-sm-2 control-label">是否验证</label>
+								<div class="col-sm-10">
+									<div class="radio">
+										<label>
+								          <input type="radio" name="optionsRadios" id="optionsRadiosno"> 否
+								        </label>
+										<label style="margin-left: 20px;">
+								          <input type="radio"  name="optionsRadios" id="optionsRadiosyes"> 是
+								        </label>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<!--追加修改模态框-->
+				<div class="task-zjxg-content" style="display: none;padding: 20px;text-align: start;">
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label for="task_title" class="col-sm-2 control-label">任务名称:</label>
+							<div class="col-sm-9" style="padding-top: 7px;">
+								<span id="task_title">管理员下单，不需要管</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="detail" class="col-sm-2 control-label">详情:</label>
+							<div class="col-sm-9"  style="padding-top: 7px;">
+								<span class="detail" >公众号：</span>
+								<p> 投票链接：http://m.77toupiao.cn/vote/indexshowop?vid=1804021554w7lkju</p>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="price" class="col-sm-2 control-label">单价:</label>
+							<div class="col-sm-9" style="padding-top: 7px;">
+								<span id="price">0.050</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="price" class="col-sm-2 control-label">追加数量:</label>
+							<div class="col-sm-9" style="padding-top: 7px;">
+								<input type="text" name="price" id="price" value="0" class="form-control" datatype="n" nullmsg="请输入数量" errormsg="必须为数字" sucmsg=" "> 
+								（如不需要追加填写0即可）目前发布票数: 100 
+								<span class="Validform_checktip"></span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="xs" class="col-sm-2 control-label">限速:</label>
+							<div class="col-sm-9" style="padding-top: 7px;">
+								<input type="text" name="xs" id="xs" value="0" class="form-control" datatype="n" nullmsg="请输入数量" errormsg="必须为数字" sucmsg=" "> 
+								每60秒多少票。零为不限，注意很多是需要限速的。要不然会锁选手之类的。
+								<span class="Validform_checktip"></span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="jianjie" class="col-sm-2 control-label">简介:</label>
+							<div class="col-sm-9" style="padding-top: 7px;">
+								<textarea id="jianjie" class="form-control" rows="3" placeholder="简介内容"></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="beizhu" class="col-sm-2 control-label">备注:</label>
+							<div class="col-sm-9" style="padding-top: 7px;">
+								<textarea id="beizhu" class="form-control" rows="3" placeholder="仅发布者可见，便于做记录"></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="beizhu" class="col-sm-2 control-label">终止时间:(填选)</label>
+							<div class="col-sm-9" style="padding-top: 7px;">
+								<input type="text" class="form-control" value="" id="endtime" data-date-format="yyyy-mm-dd" placeholder="请选择时间" >	
+							</div>
+						</div>
+
+					</form>
+				</div>
+				<footer class="footer">
+					<div class="container-fluid">
+						<div class="footerconter">
+							<span>客服QQ:376688575</span>
+							<span>©致尚诚网络科技有限公司</span>
+						</div>
+					</div>
+				</footer>
+			</div>
+		</div>
+		<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+		<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.min.js"></script>
+		<!--<script type="text/javascript" src="../bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.fr.js"></script>-->
+		<script type="text/javascript" src="../layer/layer.js"></script>
+		<script type="text/javascript" src="../bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				var nav_open = 1;
+				$(".navbar-toggler").on('click', function() {
+					if(nav_open == 1) {
+						$('html').removeClass('nav_open');
+						nav_open = 0;
+					} else {
+						$('html').addClass('nav_open');
+						nav_open = 1;
+					}
+				});
+				$('#datetimepicker').datetimepicker({
+					language: 'zh-CN',
+					weekStart: 1,
+					todayBtn: 1,
+					autoclose: 1,
+					todayHighlight: 1,
+					startView: 2,
+					minView: 2,
+					forceParse: 0
+				});
+				$('#endtime').datetimepicker({
+					language: 'zh-CN',
+					weekStart: 1,
+					todayBtn: 1,
+					autoclose: 1,
+					todayHighlight: 1,
+					startView: 2,
+					minView: 2,
+					forceParse: 0
+				});
+				$('.zzmp').on('click', function() {
+					//					console.log($("html").width());
+					var areawidth, areaheight;
+					if($("html").width() <= 480) {
+						areawidth = '100%';
+						areaheight = '100%';
+					} else {
+						areawidth = '60%';
+						areaheight = '85%';
+					}
+					layer.open({
+						type: 1,
+						title: "自助MP",
+						btn: ['确定', '取消'],
+						area: [areawidth, areaheight],
+						content: $(".zzmpcontent")
+					}, function() {
+						layer.msg('退出成功', {
+							icon: 1
+						});
+					}, function() {
+						layer.closeAll();
+					});
+
+				});
+
+				$('.zzqt').on('click', function() {
+					var area2width, area2height;
+					if($("html").width() <= 480) {
+						area2width = '100%';
+						area2height = '100%';
+					} else {
+						area2width = '60%';
+						area2height = '85%';
+					}
+					layer.open({
+						type: 1,
+						title: "发布任务",
+						btn: ['确定', '取消'],
+						area: [area2width, area2height],
+						content: $(".zzqtcontent")
+					}, function() {
+						layer.msg('退出成功', {
+							icon: 1
+						});
+					}, function() {
+						layer.closeAll();
+					});
+
+				})
+
+			});
+
+			function task_zjxg(e) {
+				var zjxgwidth, zjxgheight;
+				if($("html").width() <= 480) {
+					zjxgwidth = '100%';
+					zjxgheight = '100%';
+				} else {
+					zjxgwidth = '60%';
+					zjxgheight = '85%';
+				}
+				layer.open({
+					type: 1,
+					title: "追加修改",
+					btn: ['确定', '取消'],
+					area: [zjxgwidth, zjxgheight],
+					content: $(".task-zjxg-content")
+				}, function() {
+					layer.msg('退出成功', {
+						icon: 1
+					});
+				}, function() {
+					layer.closeAll();
+				});
+			}
+		</script>
+	</body>
+
+</html>

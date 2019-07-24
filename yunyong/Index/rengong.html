@@ -1,0 +1,153 @@
+<include file="public/Tphomeyy/head.html" rengong='active' biaoti='人工审核' fdnew="{:sp_getad('滚动活动公告')}" />
+<div class="zzlistcontainer">
+	<div class="container">
+		<div style="margin-top: 40px;">
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="messages">
+					<div class="widget widget-padding span12" style="text-align: start;">
+						<div class="tasktable-header">
+							<h5>
+								<span class="iconfont icon-celanliebiaogengduo1"></span>自助投票</h5>
+						</div>
+						<div class="task-body">
+							<form id="addtaskdata">
+								<input type="hidden" name="typeid" value="8888" />
+								<div class="zzmpinfo">
+									<span>自助投票系统正式上线，所有投票均为真实用户，数据可靠、安全，欢迎使用！</span>
+								</div>
+								<div class="form-group">
+									<label for="zz-type">
+										活动类型
+										<span style="color: red;">*</span>
+									</label>
+									<input type="text" name="task_type" class="form-control" value="{$data.task_type}" readonly="readonly">
+									<p id="autotpmsg" class="text-danger">{$data.msg}</p>
+								</div>
+								<div class="form-group">
+									<label for="zz-link">
+										链接
+										<span style="color: red;">*</span>
+									</label>
+									<textarea onBlur="tpUrl();" class="form-control" name="tp_url" id="tp_url" rows="3" placeholder="请输入活动链接"></textarea>
+									<span style="font-size: 14px; color: green;" class="zzqtspan" id="shuruzhihoudexinxi"></span>
+								</div>
+								<div class="form-group">
+									<label for="zz-xs">
+										选手名称或编号
+										<span style="color: #FF0000">*</span>
+									</label>
+									<input type="text" name="xs_name" class="form-control" id="zz-xs" value="" placeholder="请输入选手名称或编号">
+								</div>
+								<div class="form-group">
+									<label for="zz-gd">工单标题
+										<span style="color: #FF0000">*</span>
+									</label>
+									<input type="text" class="form-control" id="zz-gd" name="name" value="" placeholder="必填!用于显示的标题内容,如给某某投票等,此处禁止填写链接地址">
+								</div>
+								<div class="form-group">
+									<label for="zz-num">票数
+										<span style="color: #FF0000">*</span>
+									</label>
+									<input type="text" class="form-control" id="zz-num" name="tp_number" value="" placeholder="必填!填写自己所需的票数">
+								</div>
+								<div class="form-group">
+									<label for="zz-liant">限速
+										<span style="color: #FF0000">*</span>
+									</label>
+									<input type="text" class="form-control" name="xzno" value="0" placeholder="连投次数">
+								</div>
+								<div class="form-group">
+									<label for="zz-liant">连投
+										<span style="color: #FF0000">*</span>
+									</label>
+									<input type="text" class="form-control" id="zz-liant" name="tp_numlt" value="0" placeholder="连投次数">
+								</div>
+								<div class="form-group"  style="margin-top: 20px">
+									<label for="arealimit">地区限制:</label>
+									<select id="arealimit" name="diq" class="selectlimit">
+										<volist name="province" id="vo">
+											<option>{$vo}</option>
+										</volist>
+									</select>
+								</div>
+								<div class="people-line">
+									<label for="arealimit">验证:</label>
+									<div class="radio" style="margin-left: 20px;">
+										<label>
+											<input type="radio" name="iyz" id="optionsRadios1" value="0" checked /> 否
+										</label>
+									</div>
+									<div class="radio" style="margin-left: 20px;">
+										<label>
+											<input type="radio" name="iyz" id="optionsRadios2" value="1" /> 是
+										</label>
+									</div>
+								</div>
+								<div class="form-group" style="margin-top: 15px">
+									<label for="zz-jianjie">投票步骤:</label>
+									<textarea id="zz-jianjie" class="form-control" name="tp_note" rows="3" placeholder=" 关注订单 请填写 公众号名称和投票步骤 "></textarea>
+								</div>
+								<!-- <fieldset class="gongzhonghao">
+													<legend>公众号</legend>
+													<div class="form-group">
+														<label for="gzh-name">公众号名字：</label>
+														<input type="text" class="form-control" name="gzn"   id="gzh-name" placeholder="">
+													</div>
+													<div class="form-group">
+														<label for="gzh-id">公众号id:</label>
+														<input type="text" class="form-control" name="gzid"  id="gzh-id" placeholder="">
+													</div>
+													<div class="form-group">
+														<label for="gzh-content">公众号回复内容:</label>
+														<textarea id="gzh-content" class="form-control" name="gzhf" rows="3" placeholder=""></textarea>
+													</div>
+												</fieldset> -->
+
+								<div class="list-btn">
+									<button type="button" onclick="subtaskdata()" class="btn btn-danger">提交</button>
+									<button type="reset" class="btn btn-default">取消</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+<include file="public/Tphomeyy/foot.html" />
+<script>
+	function funcMsg() {
+		var vs = $('select  option:selected').attr('msg');
+		$('#autotpmsg').text(vs)
+	}
+	function subtaskdata() {
+		var data = $("#addtaskdata").serialize();
+		$.post('{:U("Tphomeyy/server/addtask")}', data, function (data) {
+			layer.msg(data.msg)
+			if (data.status == 1) {
+				setTimeout(function () {
+					window.location.href = '{:U("Tphomeyy/Index/mywork")}'
+				}, 1000);
+			}
+		}, "json");
+	}
+	function tpUrl() {
+		document.getElementById("shuruzhihoudexinxi").innerHTML = '检测中。。。';
+		var url = document.getElementById("tp_url").value;
+		$.post("{:U('server/geturlagen')}", "param=" + encodeURIComponent(url), function (data, status) {
+			if (status === "success") {
+				if (data.code == 2) {
+					document.getElementById("shuruzhihoudexinxi").innerHTML = data.info;
+				} else {
+					document.getElementById("shuruzhihoudexinxi").innerText = data.info;
+				}
+			}
+		});
+	}
+</script>
+</body>
+
+</html>

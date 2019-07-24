@@ -1,0 +1,178 @@
+.task_title {
+	width: 100%;
+	border-bottom: 1px solid #E5E5E5;
+	display: flex;
+	margin-bottom: 20px;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.task_page-title {
+	font-size: 22px;
+	font-weight: 600;
+	color: #333333;
+	line-height: 30px;
+	font-family: "楷体";
+}
+
+.tasktile-link {
+	padding: 10px 15px;
+	background: #4D7CFE;
+	color: white;
+	cursor: pointer;
+}
+
+.tasktile-link:hover {
+	color: white;
+	background-color: #4D90FE;
+}
+
+.task-header {
+	background-color: #efefef;
+	border-radius: 3px 3px 0 0;
+	border: 1px solid #DDDDDD;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+}
+
+.task-header h5 {
+	font-size: 16px;
+	color: #333333;
+}
+
+.task-body {
+	padding: 15px;
+	border-style: solid;
+	border-width: 0 1px 1px;
+	border-color: #ccc;
+	background-color: #fff;
+}
+
+.tbody_header {
+	display: none;
+}
+
+.operatingtow {
+	display: none;
+}
+
+
+/*自助mp*/
+
+.zzmpcenter {
+	padding: 25px;
+}
+
+.zzmpinfo {
+	width: 100%;
+	padding: 10px 15px;
+	background-color: #F2DEDE;
+	margin-bottom: 20px;
+}
+
+.zzmpinfo span {
+	color: #B84442;
+}
+
+.mpitemtext {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #F5F5F5;
+	/*box-shadow: 1px 0 1px 1px rgba(0,0,0,.075);*/
+	background-color: #F2F2F2;
+}
+
+.zzmpcenter form>div {
+	margin-bottom: 20px;
+}
+
+.zzmpcenter form>div input {
+	padding: 20px;
+}
+
+
+/*自助其他*/
+
+.zzqtcenter {
+	padding: 25px;
+}
+
+.zzqtcenter form .form-group>span {}
+
+.zzqt-gzh{
+	border: 1px dotted #953B39;
+	padding: 15px;
+	margin: 15px 0;
+}
+
+.zzqt-gzh legend{
+	width: auto;
+	border: 0;
+	padding: 0 10px;
+	font-size: 14px;
+}
+
+
+
+@media only screen and (max-width:1120px) {
+	.operatingone .operatename {
+		display: none;
+	}
+	.jianjie {
+		display: none;
+	}
+	.beizhu {
+		display: none;
+	}
+}
+
+@media only screen and (max-width:960px) {
+	.tbody_header {
+		display: inline-block;
+		font-weight: 600;
+		min-width: 100px;
+	}
+	.mydataTable {
+		border: 0;
+	}
+	.mydataTable thead {
+		display: none;
+	}
+	.mydataTable tbody tr {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 35px;
+	}
+	.mydataTable tbody tr td {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+	}
+	.operatingone {
+		display: none;
+	}
+	.operatingtow {
+		display: inline-block;
+	}
+	.zzqtspan {
+		padding-left: 20px;
+	}
+}
+
+@media only screen and (max-width:500px) {
+	.tasktile-link {
+		padding: 5px;
+		background: #4D7CFE;
+		color: white;
+		cursor: pointer;
+		font-size: 10px;
+	}
+	.task_page-title {
+		font-size: 18px;
+	}
+	.operatingtow button {
+		padding: 5px;
+	}
+}

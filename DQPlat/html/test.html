@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!--<button class="mybuttom" onclick="setname()">点击输入名字</button>-->
+		<!--<h1></h1>-->
+		<script type="text/javascript">
+			let username = localStorage.getItem("name");
+			console.log(username)
+			var mytext = document.querySelector("body");
+			if(!username) {
+				var mybuttom = document.createElement('button');
+				mybuttom.innerHTML = "点击输入名字";
+				mybuttom.onclick = setname;
+				document.querySelector("body").appendChild(mybuttom);
+			}else{
+				mytext.textContent = username + "欢迎回来";
+			}
+
+			function setname() {
+				let name = prompt("请输入您的名字");
+				//去除空格
+				let newname = name.replace(/^\s+|\s+$/g,'');
+				if(newname == '' || newname == null){
+					return;
+				}
+				localStorage.setItem("name", newname);
+				mytext.textContent = name + "欢迎回来";
+			}
+
+			//			function setHeading(username) {
+			//				let myheader = document.querySelector('h1');
+			//				myheader.textContent = name + "欢迎回来！";
+			//			}
+		</script>
+	</body>
+
+</html>

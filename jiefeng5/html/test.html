@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>File(s) size</title>
+		<script>
+			function updateSize() {
+				let nBytes = 0,
+					oFiles = document.getElementById("uploadInput").files,
+					nFiles = oFiles.length;
+				for(let nFileId = 0; nFileId < nFiles; nFileId++) {
+					nBytes += oFiles[nFileId].size;
+				}
+				let sOutput = nBytes + " bytes";
+				// optional code for multiples approximation
+				for(let aMultiples = ["KiB", "MiB", "GiB", "TiB", "PiB", "EiB", "ZiB", "YiB"], nMultiple = 0, nApprox = nBytes / 1024; nApprox > 1; nApprox /= 1024, nMultiple++) {
+					sOutput = nApprox.toFixed(3) + " " + aMultiples[nMultiple] + " (" + nBytes + " bytes)";
+				}
+				// end of optional code
+				document.getElementById("fileNum").innerHTML = nFiles;
+				document.getElementById("fileSize").innerHTML = sOutput;
+			}
+		</script>
+	</head>
+
+	<body onload="updateSize();">
+		<form name="uploadForm">
+			<p><input id="uploadInput" type="file" name="myFiles" onchange="updateSize();" multiple> 
+			selected files: <span id="fileNum">0</span>; 
+			total size: <span id="fileSize">0</span></p>
+			
+			<p><input type="submit" value="Send file"></p>
+			
+		</form>
+		<div style="border: 1px solid #D0D0D0; width: 500px;height: 500px;" id="dropbox">
+			
+		</div>
+		
+		<script type="text/javascript">
+			var dropbox = document.getElementById("dropbox");
+			dropbox.addEventListener("dragenter",dragenter,false);
+			dropbox.addEventListener("dragover",ondragover,false);
+			dropbox.addEventListener('drop',drop,false);
+			
+			function dragenter(e){
+				e.stopPropagation();
+				e.preventDefault();
+			}
+			function dragover(e){
+				e.stopPropagation();
+				e.preventDefault();
+			}
+			
+			function drop(e){
+				e.stopPropagation();
+				e.preventDefault();
+				
+				console.log(e);
+			}
+		</script>
+	</body>
+
+</html>

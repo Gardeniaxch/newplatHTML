@@ -1,0 +1,111 @@
+.taskcontainer-header {
+	background: url(../img/home_betheme_slider_slide1.jpg) no-repeat center center;
+	min-height: 280px;
+	position: relative;
+}
+
+.task-title {
+	width: 100%;
+	background-color: #F7F7F7;
+	text-align: center;
+	padding: 0.5em;
+	position: absolute;
+	bottom: 0;
+}
+
+.task-title h3 {
+	font-size: 2em;
+	color: #bb3756;
+	font-family: "楷体";
+}
+
+.taskcontainer-body {
+	width: 100%;
+	padding: 30px;
+	background-color: white;
+}
+
+.tasktable-header {
+	background-color: #efefef;
+	border-radius: 3px 3px 0 0;
+	border: 1px solid #DDDDDD;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	margin-top: 30px;
+}
+
+.tbody_header {
+	display: none;
+}
+
+.task-name {
+	font-weight: 600;
+	font-size: 18px;
+	color: #333333;
+}
+.task-link {
+	font-weight: 600;
+	color: #005580;
+}
+.mydataTable{
+	min-height: 260px;
+}
+
+.nodate{
+	width: 100%;
+	height: 360px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+
+@media only screen and (max-width:1120px) {
+	.operatename {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 960px) {
+	.tbody_header {
+		display: inline-block;
+		font-weight: 600;
+		min-width: 100px;
+	}
+	.mydataTable {
+		border: 0;
+	}
+	.mydataTable thead {
+		display: none;
+	}
+	.mydataTable tbody tr {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 15px;
+	}
+	.mydataTable tbody tr td {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+	}
+	.operatename {
+		display: inline-block;
+	}
+}
+
+@media only screen and (max-width: 375px) {
+	.task-title {
+		padding: 0.4em;
+	}
+	.task-title h3 {
+		font-size: 1.6em;
+	}
+}
+
+@media only screen and (max-width: 520px) {
+	.taskcontainer-body {
+		padding: 15px;
+	}
+}

@@ -1,0 +1,80 @@
+<include file="public/Tphomeyy/head.html" pay='active' biaoti='收支账单' fdnew="{:sp_getad('滚动活动公告')}" />
+<include file="public/Tphomeyy/pay.html"  payout='active'/>
+<!--自助列表-->
+<style>
+	.payoutthead tr th{
+		color: #BB3756;
+		background-color: rgba(221,154,170,0.2)
+	}
+	.payouttbody tr td{
+		padding: 15px 10px!important;
+	}
+</style>				
+<div class="zzlistcontainer">
+					<div class="container" >
+						<div class="widget widget-padding span12" style="margin-top: 50px">
+							<div class="tasktable-header">
+								<h5><span class="glyphicon glyphicon-list-alt" style="margin-right: 5px;"></span>收支账单</h5>
+							</div>
+							<div class="task-body">
+								<!--有数据-->
+								<table id="users" class="table table-bordered  mydataTable" style="margin-top: 40px;">
+									<thead class="payoutthead">
+										<tr role="row" class="listtableheader">
+											<th class="sorting_asc" tabindex="0" rowspan="1" colspan="1" style="padding: 20px 10px;">序号</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1" style="padding: 20px 10px;">时间</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1" style="padding: 20px 10px;">任务</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1" style="padding: 20px 10px;">金额</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1" style="padding: 20px 10px;">剩余</th>
+										</tr>
+									</thead>
+									<tbody class="payouttbody">
+									<php>$arr_type=array("1"=>'+',"2"=>'-');</php>
+									<foreach name="list" item="vo">
+										<tr class="odd">
+											<td class="sorting_1">
+												<span class="tbody_header">序号:</span>
+												<span  style="color:#BB3756;font-weight: 600">{$vo.delta_id}</span>
+											</td>
+											<td>
+												<span class="tbody_header">时间:</span>
+												<span>	{$vo.add_time}</span>
+											</td>
+											<td>
+												<span class="tbody_header">任务:</span>
+												<span>{$vo.delta_dz}</span>
+											</td>
+											<td>
+												<span class="tbody_header">金额:</span>
+												<if condition="$vo['sum_io'] eq 1">
+													<span class="label label-success" style="padding: 5px">{$arr_type[$vo['sum_io']]}{$vo.delta_sum}</span>
+												</if>
+												<if condition="$vo['sum_io'] eq 2">
+													<span class="label label-danger" style="padding: 5px">{$arr_type[$vo['sum_io']]}{$vo.delta_sum}</span>
+												</if>
+											</td>
+											<td>
+												<span class="tbody_header">剩余:</span>
+												<span>{$vo.user_sum}</span>
+											</td>
+										</tr>
+										</foreach>
+									</tbody>
+								</table>
+								<div class="mypage">
+									{$page}
+								</div>
+								<!--无数据-->
+								<!--<div class="nodate">
+									<img src="../img/ganga.png"/>
+									<p style="margin-top: 20px;color: #000000;">您当前还没有下线喔，快去分享你的邀请码给好友注册吧:) </p>
+								</div>-->
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--自助列表结束-->
+<include file="public/Tphomeyy/foot.html" />
+</body>
+</html>

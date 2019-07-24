@@ -1,0 +1,146 @@
+<!--end开始-->
+				<div id="end">
+					<div class="container">
+						<div class="col-md-4  end_contanier">
+							<div class="end_left">
+								<span class="glyphicon glyphicon-headphones end_icon" aria-hidden="true"></span>
+							</div>
+							<div class="end_right">
+								<p>客服QQ1:</p>
+								<h5>{:$fdini['q1']}</h5>
+							</div>
+						</div>
+						<div class="col-md-4  end_contanier">
+							<div class="end_left">
+								<span class="iconfont icon-QQ end_icon" style="font-size: 1.8em;font-weight: 400;line-height: 1;"></span>
+							</div>
+							<div class="end_right">
+								<p>客服QQ2:</p>
+								<h5>{:$fdini['q2']}</h5>
+							</div>
+						</div>
+						<div class="col-md-4 end_contanier">
+							<div class="end_left">
+								<span class="glyphicon glyphicon-time end_icon" aria-hidden="true"></span>
+							</div>
+							<div class="end_right">
+								<p>值班时间：</p>
+								<h5>8:30am-24:00pm</h5>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--end结束-->
+				<!--版权结束-->
+			</div>
+		</div>
+		<!--修改密码-->
+		<div class="password-page" style="display: none;">
+			<form class="pwdhomeform pwdform" style="padding: 30px;">
+				<div class="form-group">
+					<label for="password">当前密码:</label>
+					<input type="password" class="form-control" name="txtOldPassword"  id="oldpassword" placeholder="请输入您当前的密码">
+				</div>
+				<div class="form-group">
+					<label for="newpassword">新密码:</label>
+					<input type="password" class="form-control txtPassword" name="txtPassword"  id="newpwd" placeholder="请输入你要修改的密码">
+				</div>
+				<div class="form-group">
+					<label for="confirmpassword">确认密码:</label>
+					<input type="password" name="txtPassword1" class="form-control txtPassword1" id="confirmpassword" placeholder="请确认你要修改的密码">
+				</div>
+			</form>
+		</div>
+		
+		<script type="text/javascript" src="__PUBLIC__/Tphomeyy/layer/layer.js"></script>
+		<script type="text/javascript">
+			var Width = $(window).innerWidth();
+//			var home = $("#home");
+			$(window).resize(function() {
+				Width = $(window).innerWidth();
+			})
+
+			function getNow(s) {
+				return s < 10 ? '0' + s : s;
+			}
+			var myDate = new Date();
+			var year = myDate.getFullYear();
+			var month = myDate.getMonth() + 1;
+			var date = myDate.getDate();
+			var h = myDate.getHours();
+			var m = myDate.getMinutes();
+			var s = myDate.getSeconds();
+			$('.time-year').html(year);
+			$('.time-month').html(getNow(month));
+			$('.time-day').html(getNow(date));
+			$('.time-hour').html(getNow(h));
+			$('.time-minter').html(getNow(m));
+
+			$(function() {
+				$(".updatapwd").on('click',function(e){
+					e.preventDefault();
+					var pwdwidth, pwdheight;
+					if($("html").width() <= 480) {
+						pwdwidth = '100%';
+						pwdheight = '100%';
+					} else {
+						pwdwidth = '460px';
+						pwdheight = '450px';
+					}
+					layer.open({
+						type: 1,
+						title: "修改密码",
+						btn: ['确定', '取消'],
+						btn1:function(index, layero){
+							var pw = $.trim($(layero).find(".txtPassword").val());
+							 if(pw==null||pw==""){
+					            layer.msg('请输入密码')
+					            return;
+					        }
+						 	var pw1 = $.trim($(layero).find(".txtPassword1").val());
+					        if (pw != pw1) {
+					            layer.msg('两次密码不一至请重新输入')
+					            return;
+					        }
+					        var data = $(layero).find("form").serialize();
+					        var indexx = layer.load(1, {
+					            shade: [0.1,'#fff'] //0.1透明度的白色背景
+					        });
+					      	$.post("__ROOT__/Server/pwdedit", data, function (data) {
+					                            layer.msg(data.msg)
+					                            layer.close(indexx);
+					                            if (data.status == 1) {
+					                                setTimeout(function() {
+					                               layer.closeAll();
+					                            }, 1000);
+					                                
+					                        }
+					                        }, "json")
+						},
+						area: [pwdwidth, pwdheight],
+						content: $(".password-page")
+					}, function() {
+						layer.msg('退出成功', {
+							icon: 1
+						});
+					}, function() {
+						layer.closeAll();
+					});
+				})
+				$('.logout').on('click', function() {
+					layer.confirm('确定退出登陆吗？', {
+						title: "退出登录",
+						btn: ['确定', '取消']
+					}, function() {
+						layer.msg('退出成功', {
+							icon: 1
+						});
+					}, function() {
+						layer.closeAll();
+					});
+				})
+			})
+		</script>
+	</body>
+
+</html>

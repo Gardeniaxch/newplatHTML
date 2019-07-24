@@ -1,0 +1,156 @@
+<include file="public/Tphomeyy/head.html" question='active' biaoti='在线反馈' fdnew="{:sp_getad('滚动活动公告')}" />
+	<div class="zzlistcontainer">
+					<div class="container">
+						<div class="widget widget-padding span12" style="margin-top: 120px;">
+							<div class="tasktable-header">
+								<h5><span class="iconfont icon-icon_compile" style="margin-right: 10px;"></span>在线反馈</h5>
+							</div>
+							<div class="task-body">
+								<div class="fb-btngroup">
+									<button class="btn btn-danger"><span class="glyphicon glyphicon-refresh" style="margin-right: 5px;"></span>刷新</button>
+									<button class="btn btn-success ml-3 sub-feedback"><span class="glyphicon glyphicon-comment" style="margin-right: 5px;"></span>提交反馈</button>
+								</div>
+								<!--有数据-->
+								<table id="users" class="table table-bordered mydataTable">
+									<thead>
+										<tr role="row" class="listtableheader">
+											<th class="sorting_asc" tabindex="0" rowspan="1" colspan="1" style="padding: 20px 10px;">编号</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1" style="padding: 20px 10px;">标题</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1" style="padding: 20px 10px;">内容</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1" style="padding: 20px 10px;">状态</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1" style="padding: 20px 10px;">时间</th>
+											<th class="sorting" tabindex="0" rowspan="1" colspan="1" style="padding: 20px 10px;">操作</th>
+										</tr>
+									</thead>
+									<tbody>
+									<foreach name="list" item="vo">
+										<tr class="odd">
+											<td class="sorting_1">
+												<span class="tbody_header">编号:</span>
+												<span>{$vo.id}</span>
+											</td>
+											<td>
+												<span class="tbody_header">标题:</span>
+												<span>{$vo.biaoti}</span>
+											</td>
+											<td>
+												<span class="tbody_header">内容:</span>
+												<span>{$vo.neirong}</span>
+											</td>
+											<td>
+												<span class="tbody_header">状态:</span>
+												<if condition="$vo.buff eq 1">
+													<span class="fb-status">已回复</span>
+												<elseif condition="$vo.buff eq 2">
+													<span class="fb-status" style="background-color: #28A745;">已关闭</span>
+												<else/>
+													<span class="fb-status" style="background-color: #1E9FFF;">待回复</span>
+												</if>
+											</td>
+
+											<td>
+												<span class="tbody_header">时间:</span>
+												<span>{$vo.add_time}</span>
+											</td>
+											<td>
+												<span class="tbody_header">操作:</span>
+												<span class="fb-opeator"><a href="{:U('Tphomeyy/Index/checkreply')}&questionId={$vo.id}" style="color: #1E9FFF;">查看</a> / <a onclick="reply({$vo.id})" style="color: #E65251;">删除</a></span>
+											</td>
+										</tr>
+									</foreach>
+									</tbody>
+								</table>
+								{$page}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="feedcontent" style="display: none;">
+					<form class="fankuiform" style="padding: 20px;">
+						<div class="form-group">
+							<label for="fb-title">标题</label>
+							<input type="text" class="form-control" id="fb-title" aria-describedby="emailHelp" name="title" placeholder="反馈标题">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPassword1">内容</label>
+							<!--<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">-->
+							<textarea class="form-control" placeholder="反馈内容" style="min-height: 200px;" name="content"></textarea>
+						</div>
+					</form>
+				</div>
+<include file="public/Tphomeyy/foot.html" />
+<script>
+$(function() {
+	//提交反馈
+	$(".sub-feedback").on("click", function() {
+		var areawidth, areaheight;
+		if($("html").width() <= 600) {
+			areawidth = '100%';
+			areaheight = '100%';
+		} else {
+			areawidth = '500px';
+			areaheight = '560px';
+		}
+		layer.open({
+			type: 1,
+			title: "提交反馈",
+			btn: ['提交', '取消'],
+			btn1:function(index,layero){
+				 var data = $(layero).find('form').serialize();
+				 var indexx = layer.load(1, {
+	               shade: [0.1,'#fff'] //0.1透明度的白色背景
+	           });
+				$.post('{:U("Tphomeyy/server/complaint")}',data,function(data){
+					layer.msg(data.msg);
+					layer.close(indexx);
+					if(data.status == 1){
+						setTimeout(function() {
+							window.location.reload()
+	              	}, 1000);
+					}
+				},'json');
+			},
+			area: [areawidth, areaheight],
+			content: $(".feedcontent").html()
+		}, function() {
+			layer.msg('提交成功', {
+				icon: 1
+			});
+		}, function() {
+			layer.closeAll();
+		});
+	})
+})
+
+function reply(id) {
+	layer.open({
+		btn: ["确定", "关闭"],
+        btn1: function(index, layero) {
+            var indexx = layer.load(1, {
+                shade: [0.1,'#fff'] //0.1透明度的白色背景
+            });
+            $.post('{:U("Tphomeyy/server/delquestion")}', { "questionId": id}, function(data) {
+                layer.msg(data.msg)
+                layer.close(indexx);
+                if (data.status == 1) {
+                    setTimeout(function() {
+                    	window.location.reload()
+                    }, 1000);
+                }
+            }, "json")
+        },
+        title: '删除反馈',
+		/* area: [areawidth, areaheight], */
+		content: "确定删除吗？"
+	}, function() {
+		layer.msg('回复成功', {
+			icon: 1
+		});
+	}, function() {
+		layer.closeAll();
+	});
+
+}
+</script>
+</body>
+</html>

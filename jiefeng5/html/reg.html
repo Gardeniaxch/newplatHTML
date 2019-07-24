@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>注册界面</title>
+		<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/public.css" />
+		<link rel="stylesheet" href="../css/login.css" />
+
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<div class="wrapper-top">
+				<nav class="navbar navbar-default wrappertop-nav">
+					<div class="container">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed mt-2" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						       	<span class="fa fa-navicon icon-brand"></span>
+						    </button>
+							<h2 class="wrappertop-title"><span >挂号平台</span></h2>
+							<p class="wrapper_english">REGISTERED PLATFORM</p>
+						</div>
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav navbar-right wrappertop-ul">
+								<li>
+									<a href="login.html">登录</a>
+								</li>
+								<li class="active">
+									<a href="reg.html">注册</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+			<div class="wrapper-center">
+				<div class="container">
+					<div class="login-bg" style="margin-top: 20px;">
+						<div class="login-main">
+							<h3>注册</h3>
+							<div class="login-form">
+								<form>
+									<div class="form-group">
+										<label for="username"><span class="fa fa-user icon-form"></span>用户名：</label>
+										<input type="text" class="form-control" id="username" name="username" placeholder="请输入您的用户名">
+									</div>
+									<div class="form-group">
+										<label for="password"><span class="fa fa-lock icon-form"></span>密码：</label>
+										<input type="password" class="form-control" id="password" name="password" placeholder="请输入您的密码">
+									</div>
+									<div class="form-group">
+										<label for="password2"><span class="fa fa-lock icon-form"></span>确认密码：</label>
+										<input type="password" class="form-control" id="password2" name="password2" placeholder="请输入确认您的密码">
+									</div>
+									<div class="form-group">
+										<label for="code"><span class="fa fa-trophy icon-form"></span>邀请码：</label>
+										<input type="text" class="form-control" id="code" name="code" placeholder="请输入邀请码">
+									</div>
+									<div class="form-line" style="align-items: flex-end;">
+										<div class="yzm-left">
+											<label for="captcha"><span class="fa fa-qrcode icon-form"></span>验证码：</label>
+											<input type="text" class="form-control" id="captcha" name="captcha" placeholder="验证码">
+										</div>
+										<div class="yzm-right">
+											<img src="../img/TIM图片20190422180821.png" />
+										</div>
+									</div>
+									<div class="form-line">
+										<button type="submit" class="btn btn-danger login-btn">登录</button>
+									</div>
+									<p class="flexend" style="text-align: left;">已有账号<a href="login.html" class="login-toreg">前去登录<span class="fa fa-hand-o-right ml-8"></span></a></p>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="wrapper-bottom">
+				<p>@致尚诚网络科技有限公司</p>
+			</div>
+		</div>
+		<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+		<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+	</body>
+
+</html>

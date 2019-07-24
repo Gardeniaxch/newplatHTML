@@ -1,0 +1,108 @@
+.setinfo-content{
+	margin-top: 20px;
+	text-align: start;
+	padding: 10px 20px;
+}
+.setinfo-content .form-group label{
+	color: #333333;
+}
+.setinfo-avator{
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 20px;
+}
+.setinfo-avator .info-avator{
+	margin-left: 50px;
+}
+.setinfo-avator .info-avator img{
+	width: 160px;
+	height: 160px;
+	max-width: 160px;
+	max-height: 160px;
+	border: 1px solid #DDDDDD;
+}
+.setavator{
+	width: 160px;
+	height: 160px;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	margin-left: 30px;
+}
+.btn-setavator{
+	position: relative;
+	width: 100px;
+	height: 30px;
+    line-height: 30px;
+    color: white;
+    text-align: center;
+    font-size: 13px;
+	background-color: #d8b49c;
+}
+.upload_pic{
+	display: block;
+	width: 100px;
+	height: 30px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+}
+
+.setinfo-buttom{
+	margin: 25px 0;
+	display: flex;
+	flex-direction: row;
+}
+.setinfo-buttom button:first-child{
+	margin-right: 20px;
+	background-color: #288FEB;
+	color: white;
+}
+.info-form .form-group>input{
+	height: 45px;
+}
+.info-form .info-formline{
+	margin-top: 30px;
+}
+.info-form .info-formline button:first-child{
+	margin-right: 15px;
+}
+
+@media only screen and (max-width: 768px) {
+	.profileinfo {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+	}
+	.setinfo-avator{
+		flex-direction: column;
+	}
+	.setinfo-avator .info-avator{
+		margin-top: 10px;
+		margin-left: 0px;
+	}
+	.setinfo-avator .info-avator img{
+		width: 120px;
+		height: 120px;
+		max-width: 120px;
+		max-height: 120px;
+		border: 1px solid #DDDDDD;
+	}
+	.setavator{
+		width: 120px;
+		height: 120px;
+		margin-top: 10px;
+		display: flex;
+		flex-direction: row;
+		align-items: flex-end;
+		margin-left: 20px;
+	}
+	.btn-setavator{
+		width: 80px;
+		font-size: 12px;
+	}
+	.upload_pic{
+		width: 80px;
+	}
+}

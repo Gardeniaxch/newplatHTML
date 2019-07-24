@@ -1,0 +1,88 @@
+<include file="public/Tphomeyy/head.html" pay='active' biaoti='充值明细' fdnew="{:sp_getad('滚动活动公告')}" />
+<include file="public/Tphomeyy/pay.html"  payinfo='active'/>
+	<div class="tab-content">
+<div class="tab-pane active" id="profile">
+									<div class="widget widget-padding span12" style="text-align: start;">
+										<div class="tasktable-header">
+											<h5><span class="iconfont icon-celanliebiaogengduo1"></span>充值记录</h5>
+										</div>
+										<div class="task-body" style="padding: 25px 0;">
+											<table id="users" class="table  table-bordered mydataTable">
+											<thead>
+												<tr role="row" class="listtableheader">
+													<th class="sorting_asc" tabindex="0" rowspan="1" colspan="1" style="padding: 20px 10px;">编号</th>
+													<th class="sorting" tabindex="0" rowspan="1" colspan="1" style="padding: 20px 10px;">交易流水号</th>
+													<th class="sorting" tabindex="0" rowspan="1" colspan="1" style="padding: 20px 10px;">充值类型</th>
+													<th class="sorting" tabindex="0" rowspan="1" colspan="1" style="padding: 20px 10px;">充值来源</th>
+													<th class="sorting" tabindex="0" rowspan="1" colspan="1" style="padding: 20px 10px;">金额</th>
+													<th class="sorting" tabindex="0" rowspan="1" colspan="1" style="padding: 20px 10px;">创建时间</th>
+													<th class="sorting" tabindex="0" rowspan="1" colspan="1" style="padding: 20px 10px;">当前状态</th>
+												</tr>
+											</thead>
+											<tbody>
+											<php>
+												$arr_type=array("1"=>L('普通'),"2"=>'升级',"3"=>'到期中止',"4"=>'执行成功'); $arr_type1=array("1"=>L('支付宝'),"2"=>'微信',"3"=>'到期中止',"4"=>'执行成功');
+												$arr_type2=array("1"=>L('冲值确认中'),"2"=>'已冲进帐号',"3"=>'交易码无效',"4"=>'执行成功');
+											</php>
+											<foreach name="list" item="vo">
+												<tr class="odd">
+													<td class="sorting_1">
+														<span class="tbody_header">编号:</span>
+														<span>{$vo.delta_id}</span>
+													</td>
+													<td>
+														<span class="tbody_header">交易流水号:</span>
+														<span> {$vo.delta_num}</span>
+													</td>
+													<td>
+														<span class="tbody_header">充值类型:</span>
+														<span>{$arr_type[$vo['delta_dz']]}</span>
+													</td>
+													<td>
+														<span class="tbody_header">充值来源:</span>
+														<span>{$arr_type1[$vo['delta_src']]}</span>
+													</td>
+													<td>
+														<span class="tbody_header">金额:</span>
+														<!--充值金额与未确定-->
+														<span style="color: red;font-weight: 600;">
+															<if condition="$vo['delta_sum'] lt 1">
+																未确认
+																<else/> {$vo.delta_sum}
+															</if>
+														</span>
+														<!--<span style="color: #333333;font-weight: 600;">未确认</span>-->
+													</td>
+													<td>
+														<span class="tbody_header">创建时间:</span>
+														<span>{$vo.add_time}</span>
+													</td>
+													<td>
+														<span class="tbody_header">当前状态:</span>
+														<if condition="$vo.buff eq 1">
+															<span style="color: #86DB48;font-weight: 600;">
+														<elseif condition="$vo.buff eq 3">
+															<span style="color: #0089CD;font-weight: 600;">
+														<else/>
+															<span style="color: red;font-weight: 600;">
+														</if>
+														{$arr_type2[$vo['buff']]}
+														</span>
+													</td>
+												</tr>
+												</foreach>
+											</tbody>
+										</table>
+										<div class="mypage">
+											{$page}
+										</div>
+										</div>
+									</div>
+								</div>
+								</div>
+						</div>
+					</div>
+				</div>
+<include file="public/Tphomeyy/foot.html" />
+</body>
+</html>
