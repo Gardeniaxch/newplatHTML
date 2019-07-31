@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.mytask_drop li a {
+				display: block;
+				padding: 3px 20px;
+				clear: both;
+				font-weight: 400;
+				line-height: 1.42857143;
+				color: #333!important;
+				white-space: nowrap;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="">
+			<!--<ul class="myul">
+				<li>
+					<a>追加修改</a>
+				</li>
+				<font color="red">
+					<li>
+						<a>重新发布</a>
+					</li>
+					<font color="red">
+						<li>
+							<a>结束任务</a>
+						</li>
+					</font>
+				</font>
+			</ul>-->
+
+		</div>
+	</body>
+	<script type="text/javascript">
+		//创建对象的两种方式
+		//1.声明式创建
+		var person1 = {
+			name: 'BOB',
+			age: 23,
+			gender: 'male',
+			interests: ['music', 'sking'],
+			run: function() {
+				console.log("hello", "I’m " + this.name + ",I'm running");
+			}
+		}
+		console.log(person1);
+		console.log(person1.run())
+
+		//2.构建函数创建
+		function Person(name, age, gender, interests) {
+			this.name = name;
+			this.age = age;
+			this.gender = gender;
+			this.interests = interests;
+			this.run = function() {
+				console.log("我在走路");
+			}
+		}
+		var person = new Person('Bob', 22, '女', ['tennice', 'pingpong-ball']);
+		person.run();
+		console.log(person.name, person.interests[0], person['interests']);
+	</script>
+
+</html>

@@ -1,0 +1,55 @@
+;(function(win,doc,undefined){
+	var zturn = function(turn){
+		console.log(turn);
+		this.turn = turn;
+		this.zturn = $('#'+ turn.id);
+		this.X = 0;
+		//ul 下的li
+		this.zturnitem = this.zturn.children(".zturn-item");
+		//li的个数
+		this.num_li = this.zturnitem.length;
+		this.zturnPy = this.turn.Awidth / (this.num_li - 1);
+		this.init();
+		this.turn_();
+		return this;
+	}
+	
+	zturn.prototype = {
+		constructor : zturn,
+		init : function(){
+			var _self = this;
+			console.log('self',_self);
+			this.zturnitem.each(function(index,element){
+				var rt = 1; //1：右侧 -1：左侧
+				if((index - _self.X) > _self.num_li/2 || (index - _self.X) < 0 && (index - _self.X) > (-_self.num_li/2)){
+					rt = -1;
+				}
+				var i = Math.abs(index - _self.X);
+				if(i > _self.num_li / 2) {
+					i = parseInt(_self.X) + parseInt(_self.num_li) - index
+				}
+				if((index - _self.X) < (-_self.num_li / 2)) {
+					i = _self.num_li + index - _self.X
+				}
+				
+				$(this).css({
+					"position":"absolute",
+					"left":"50%",
+					"margin-left":-_self.turn.width/2 + _self.zturnPy*rt*i+'px',
+					"z-index":_self.num_li - i,
+					'opacity': Math.pow(_self.turn.opacity, i),
+					"transform": "scale(" + Math.pow(_self.turn.scale, i) + ")"
+				})
+				$(this).attr("data_n",index);
+			})
+		},
+		turn_ : function(){
+			var _self = this;
+			this.zturnitem.click(function(){
+				_self.X = $(this).attr("data_n");
+				_self.init();
+			})
+		}
+	}
+	win.zturn = zturn;
+}(window, document))

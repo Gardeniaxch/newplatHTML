@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Our superheroes</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+		<style type="text/css">
+			html {
+				font-family: 'helvetica neue', helvetica, arial, sans-serif;
+			}
+			
+			body {
+				width: 800px;
+				margin: 0 auto;
+			}
+			
+			h1,
+			h2 {
+				font-family: 'Faster One', cursive;
+			}
+			
+			h1 {
+				font-size: 4rem;
+				text-align: center;
+			}
+			
+			header p {
+				font-size: 1.3rem;
+				font-weight: bold;
+				text-align: center;
+			}
+			
+			section article {
+				width: 33%;
+				float: left;
+			}
+			
+			section p {
+				margin: 5px 0;
+			}
+			
+			section ul {
+				margin-top: 0;
+			}
+			
+			h2 {
+				font-size: 2.5rem;
+				letter-spacing: -5px;
+				margin-bottom: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<header>
+			<!--<h1>sdfsdf</h1>
+			<h1>苏妲己</h1>
+			<p>sdfsdf</p>
+			<p>苏妲己</p>-->
+		</header>
+
+		<section>
+
+		</section>
+
+		<script>
+			var header = document.querySelector('header');
+			var section = document.querySelector('section');
+			var requestURL = "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
+			var request = new XMLHttpRequest();
+			request.open('GET', requestURL);
+			request.responseType = 'json';
+			request.send();
+			request.onload = function() {
+				var superHeroes = request.response;
+				console.log("superHeroes：",superHeroes);
+				populateHeader(superHeroes);
+				showHeroes(superHeroes);
+			}
+			function populateHeader(jsonObj){
+				console.log("jsonObj:",jsonObj);
+				var myH1 = document.createElement('h1');
+				myH1.textContent =jsonObj.squadName;
+				header.appendChild(myH1);
+				
+				var myP = document.createElement("p");
+				myP.textContent = "HOMETOWN:"+jsonObj.homeTown+"//Formed:"+jsonObj.formed;
+				header.appendChild(myP);
+			}
+			
+			function showHeroes(jsonObj){
+				var heros = jsonObj.members;
+				for ( i = 0;i < heros.length; i++) {
+					var myArticle = document.createElement('article');
+					var myH2 = document.createElement('h2');
+					var myPara1 = document.createElement("p");
+					var myPara2 = document.createElement('p');
+					var myPara3 = document.createElement("p");
+					var mylist = document.createElement("ul");
+					myH2.textContent = heros[i].name;
+					myArticle.appendChild(myH2);
+					myPara1.textContent = 'secret idenitity:' + heros[i].secretIdentity;
+					myArticle.appendChild(myPara1);
+					myPara2.textContent ='Age:' + heros[i].age;
+					myArticle.appendChild(myPara2);
+					myPara3.textContent = 'Superpowers:';
+					myArticle.appendChild(myPara3);
+					for (j = 0; j < heros[i].powers.length;j++) {
+						var li = document.createElement('li');
+						console.log("heros[i].powers[j]:",heros[i].powers[j]);
+						li.textContent = heros[i].powers[j];
+						mylist.appendChild(li);
+					}
+					myArticle.appendChild(mylist);
+					
+					section.appendChild(myArticle);
+				}
+			}
+			
+		</script>
+	</body>
+
+</html>
