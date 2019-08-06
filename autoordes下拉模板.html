@@ -1,0 +1,320 @@
+<include file="public/Tphome/head.html" biaoti="首页" task="active"  autoordes="sec-active" taskin="in"/>
+<style type="text/css">
+    .droplidiv::-webkit-scrollbar {
+        width: 8px;
+    }
+    .droplidiv::-webkit-scrollbar-track {
+        border-radius: 5px;
+        background-color: #eee;
+    }
+
+    .droplidiv::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background-color: #E0E0E0;
+        /*background: #3DB6A4;*/
+    }
+</style>
+<div class="main-panel">
+		<div class="mypanelcontent">
+				<!--<div class="pageheader">
+					任务列表
+				</div>-->
+				<div class="help-header" style="color: #5974D9;border-radius: 0;">
+					<p class="pagetitle"><span class="fa fa-align-left"></span>自助列表</p>
+					<div class="workheader-right">
+							<a href="__ROOT__/Index/rengong" class="btn mybtn-success"><span class="fa fa-building-o" style="color: white"></span>人工审核</a>
+							<a href="__ROOT__/Index/addtouyon" class="btn mybtn-parimay"><span class="fa fa-sitemap" style="color: white"></span>常见三方自助</a>
+					</div>
+					
+				</div>
+				<div class="task-seach">
+					<form class="form-inline" method="get" action="__ROOT__/Index/autososo">
+						<div class="form-group mr-15" style="margin-bottom: 15px;">
+							<select class="form-control" name="type">
+								<option value="">默认搜索</option>
+								<option value="active_link">搜索链接</option>
+								<option value="active_name">搜索任务名</option>
+								<option value="id">搜索任务id</option>
+							</select>
+						</div>
+						<div class="form-group mr-15" style="margin-bottom: 15px;">
+							<label class="sr-only" for="taskname"></label>
+							<select class="form-control" id="task-time" name="time">
+								<option value="three">近三个月</option>
+								<option value="all">全部</option>
+							</select>
+						</div>
+						<div class="form-group mr-15" style="margin-bottom: 15px;">
+							<label class="sr-only" for="taskname"></label>
+							<input type="text" name="keyword" class="form-control" id="listname" placeholder="活动名称或链接">
+						</div>
+						<button type="submit" class="btn mybtn-parimay" style="color: white;margin-bottom: 15px;"><span class="fa fa-search" style="padding-right: 8px;"></span>查询</button>
+					</form>
+				</div>
+				<table id="users" class="table table-striped table-bordered  mydataTable">
+					<thead>
+						<tr role="row">
+							<th class="sorting_asc header0" tabindex="0" rowspan="1" colspan="1">编号</th>
+							<th class="sorting header1" tabindex="0" rowspan="1" colspan="1">活动类型名称</th>
+							<th class="sorting header0" tabindex="0" rowspan="1" colspan="1">活动名称</th>
+							<th class="sorting header1" tabindex="0" rowspan="1" colspan="1">活动链接</th>
+							<th class="sorting header0" tabindex="0" rowspan="1" colspan="1">创建时间</th>
+							<th class="sorting header1" tabindex="0" rowspan="1" colspan="1">操作</th>
+						</tr>
+					</thead>
+					<if condition="$lists">
+					<tbody>
+						<volist name="lists" id="vo">
+							<tr class="odd">
+								<td>
+									<span class="tbody_header">编号:</span>
+									<span>{$vo.id}</span>
+								</td>
+								<td>
+									<span class="tbody_header">活动类型名称:</span>
+									<span class="mylabel mylabel-info" >{$vo.type_name}</span>
+								</td>
+								<td>
+									<span class="tbody_header">活动名称:</span>
+									<span>{$vo.active_name}</span>
+								</td>
+								<td>
+									<span class="tbody_header">活动链接:</span>
+									<a href="{$vo.active_link}" target="_blank" style="color: #1A89D6;">右键复制链接地址</a>
+								</td>
+								<td>
+									<span class="tbody_header">创建时间:</span>
+									<span>{$vo.found_time}/ <a href="javascript:void(0)" title="隐藏代表投手没有选择做任务，而是丢弃掉任务，一般是因为任务无法正常完成，比如填写的资料不对，或者价格太低。或者投手自身问题">{$vo.o_num}</a></span>
+								</td>
+								<td>
+									<span class="tbody_header">操作:</span>
+									<if condition="$vo['back_buff'] elt 2">
+										<button class="btn mybtn-success" onclick="order(this,{$vo.id});"><span class="fa fa-plus" style="margin-right: 8px;"></span>下单</button>
+										<div class="zztable-content" style="display: none;">
+											<form style="padding: 20px;">
+												<div class="form-group">
+													<h4 class="task-name">任务名称标题：{$vo.active_name}</h4>
+												</div>
+												<div class="form-group">
+													<label for="zzable-link">链接:</label>
+													<textarea type="text" rows="3" class="form-control task-link" id="zzable-link" disabled="disabled">{$vo.active_link}</textarea>
+												</div>
+												<div class="form-group">
+													<label for="xs-name">选手名称:</label>
+													<div class="dropdown " style="width: 100%;">
+														<div class="secondarydiv" style="display: flex; flex-direction: row;">
+															<div style="width: 100%; display: flex; flex-direction: row;justify-content: space-around;">
+																<div style="display: flex; flex: 1;">
+																	<input type="input" name="taskPlanDay" class="form-control xs_name" style="font-size: 12px; border-radius: 0; background-color: white;" disabled placeholder="选项将会显示在此..." />
+																</div>
+																<div class="btn btn-light select-btnla rounded-right" style="background-color: #19c395;border-color: #18b88c; border-radius: 0;color: white" onclick="$(this).parents('.dropdown').toggleClass('show');$(this).parents('.secondarydiv').next('.dropdown-menu').toggleClass('show'); $(this).find('span').toggleClass('fa-rotate-180');">
+																	<span class="fa fa-chevron-down"></span>
+																</div>
+																<button class="btn btn-outlineop btn-danger" style="margin:0 3px;" type="button" onclick="removeLastItem(this);">删除</button>
+																<!-- <button class="btn btn-outlineop btn-danger" style="background-color: #DC3545" type="button" onclick="clearSelected(this);">清空</button> -->
+															</div>
+															
+														</div>
+														<div class="dropdown-menu" style="width: 100%; height: 400px;">
+															<div style="display: flex;flex-direction:row;align-items:center;justify-content:space-between;padding: 5px;border-bottom: 1px solid #eeeeee;box-shadow: 2px 3px 3px #eeeeee;margin-bottom: 5px ">
+																<button class="btn btn-outlineop btn-success" style="background-color: #19C395;border-color:#18b88c;  margin-right: 5px;padding: 3px 12px;font-size: 13px" type="button" onclick="confirmSelected(this);">
+																	<span class="fa fa-check" style="color: white;margin-right: 5px;font-size: 12px"></span>确定</button>
+																<button class="btn btn-outlineop btn-danger" style="background-color: #DC3545;margin-right: 10px;padding: 3px 12px;font-size: 13px" type="button" onclick="clearSelected(this);">
+																	<span class="fa fa-trash-o" style="color: white;margin-right: 5px;font-size: 12px"></span>清空</button>
+															</div>
+															<div class="droplidiv" style="width:100%;height: 352px;overflow-y: auto;">
+																<php>$AutoOrdesData = json_decode(htmlspecialchars_decode($vo['player_list']), true); foreach ($AutoOrdesData
+																	as $k => $word) { echo '
+																	<li style="display: flex; flex-direction: row; justify-content: space-between; cursor: pointer;padding: 8px;border-bottom: 1px solid #dddddd;" onclick="itemsSelected(this);">
+																		<a href="javascript:;" style="color: #333333;font-size: 12px"><span class="fa fa-plus-circle" style="font-size: 12px; margin-right:15px"></span> '.trim($k).'</a>
+																		<span class="fa fa-check checkicon" style="display: none; color: #18b88c; margin-right: 0.8rem;"></span>
+																	</li>'; } </php>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="fabu-num">发布数量:</label>
+													<input type="number" name="num" class="form-control" id="fabu-num" value="0" placeholder="发布的数量，不能小于100">
+												</div>
+												<div class="form-group">
+													<label for="zzxs-num">限速每分钟:</label>
+													<input type="number"  name="xzno" class="form-control" id="zzxs-num" value="0" placeholder="">
+												</div>
+												<div class="form-group">
+													<label for="jianjie">简介:</label>
+													<textarea  name="jianjie"  class="form-control" rows="3"></textarea>
+												</div>
+												<div class="form-group">
+													<label for="beizhu">备注:</label>
+													<textarea name="beizhu"  class="form-control" rows="3"></textarea>
+												</div>
+											</form>
+										</div>
+										<a href="javascript:void(0)" class="btn" style="color: red;text-decoration:underline;" onclick="databack({$vo.id});">报错反馈</a>
+									<else/>
+										<span style="color:red;">正在修复中... ...</span>
+									</if>
+								</td>
+							</tr>
+						</volist>
+					</tbody>
+				</table>
+				<div class="mypage">
+					{$Page}
+				</div>
+				<else/>
+				</table>
+				<div class="nodata">
+						<span class="fa fa-file-text-o"></span>
+						<p>没有相关任务信息,试试人工审核吧:)</p>
+						<a href="__ROOT__/Index/rengong" class="btn mybtn-parimay" style="padding: 8px 25px;">前去人工审核</a>
+				</div>
+				</if>
+			</div>
+<include file="public/Tphome/foot.html" />
+<script type="text/javascript">
+
+function databack(id){
+	layer.prompt({title: '请填写好你要反馈的内容', formType: 2,value:' '}, function(text, index){
+		var data = "type=feedback&beizhu="+text;
+		var indexx = layer.load(1, {
+            shade: [0.1,'#fff'] //0.1透明度的白色背景
+        });  
+		$.post('__ROOT__/index/addtaskogex?id='+id, data, function (data) {
+			layer.msg(data.msg);
+			layer.close(indexx);
+			if (data.status == 1) {
+				layer.close(index)
+				setTimeout(function () {
+					window.location.reload();
+				}, 1000);
+			}
+		}, 'json');
+	  });
+}
+
+
+function order(el,id) {
+	var fbwidth, fbheight;
+	if($("html").width() <= 600) {
+		fbwidth = '100%';
+		fbheight = '100%';
+	} else {
+		fbwidth = '600px';
+		fbheight = '560px';
+	}
+	layer.open({
+		type: 1,
+		title: "下单",
+		btn: ['确定', '取消'],
+		btn1: function (index, layero) {
+			var xs_name = $.trim($(layero).find(".xs_name").val());
+			var data = $(layero).find("form").serialize() + '&taskPlanDay=' + xs_name;
+			var indexx = layer.load(1, {
+                shade: [0.1,'#fff'] //0.1透明度的白色背景
+            });  
+			$.post('__ROOT__/Index/addtaskogex?id='+id, data, function (data) {
+				layer.msg(data.msg);
+				layer.close(indexx);
+				if (data.status == 1) {
+					layer.close(index)
+					setTimeout(function () {
+						window.location.href = '__ROOT__/Index/mywork'
+					}, 1000);
+				}
+			}, 'json');
+		},
+		area: [fbwidth, fbheight],
+		content: $(el).next(".zztable-content").html()
+	}, function() {
+		layer.msg('下单成功', {
+			icon: 1
+		});
+	}, function() {
+		layer.closeAll();
+	});
+}
+
+function removeLastItem(that) {
+	var input = $(that).parent()
+		.find("[name='taskPlanDay']");
+	// 没有项目
+	if (input.val() == "") return;
+	var text = /,?([^,]+)$/.exec(input.val())[1];
+	if (!text) return;
+	input.val(input.val()
+		.toString()
+		.replace(/,?[^,]+$/, "")
+		.replace(/^,/, ""));
+	$(that).parents(".dropdown")
+		.find(".dropdown-menu .droplidiv > li").each(function (i, e) {
+			if ($(e).find("a").text() == text) {
+				$(e).attr("selected", false)
+					.find("span.checkicon")
+					.hide();
+			}
+		});
+}
+function clearSelected(that) {
+	// $(that).parents(".dropdown")
+	// 	.find(".dropdown-menu > li")
+	// 	.attr("selected", false)
+	// 	.find("span")
+	// 	.hide();
+	// $(that).parent()
+	// 	.find("[name='taskPlanDay']")
+	// 	.val("");
+	$(that).parents(".dropdown-menu").find('.droplidiv>li')
+		.attr('selected',false)
+		.find('span.checkicon').hide();
+	$(that).parents('.dropdown').find("[name='taskPlanDay']").val('');
+	//收起下拉框
+	$(that).parents('.dropdown').removeClass('show');
+	$(that).parents('.dropdown-menu').removeClass('show'); 
+	$(that).parents('.dropdown').find('.select-btnla span.fa').toggleClass('fa-rotate-180');
+}
+
+function confirmSelected(that){
+	//收起下拉框
+	$(that).parents('.dropdown').removeClass('show');
+	$(that).parents('.dropdown-menu').removeClass('show'); 
+	$(that).parents('.dropdown').find('.select-btnla span.fa').toggleClass('fa-rotate-180');
+}
+
+// 选中了下单中选项列表中的一项
+function itemsSelected(that) {
+	// 如果没有被选中
+	if (!$(that).attr("selected")) {
+		// 设置选中
+		$(that).attr("selected", true);
+		// 显示图标
+		$(that).find("span").show();
+		// 添加值到 input
+		var input = $(that).parents('.dropdown').find('[name=\'taskPlanDay\']');
+		// window.inputOfMe = input;
+		input.val(input.val() != "" ?
+			(input.val() + "," + $(that).find("a").text()) :
+			$(that).find("a").text());
+		// window.textOfMe = $(that);
+
+	}
+	// 如果被选中
+	else {
+		// 做与上相反的事情
+		$(that).attr("selected", false);
+		$(that).find("span.checkicon").hide();
+		var input = $(that).parents('.dropdown').find('[name=\'taskPlanDay\']');
+		// var reg = 
+		input.val(input.val()
+			.toString()
+			.replace($(that).find("a").text(), "")
+			.replace(/^,/, "")
+			.replace(/,$/, ""));
+
+	}
+}
+</script>
+	
+</body>
+</html>
